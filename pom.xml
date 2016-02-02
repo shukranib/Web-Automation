@@ -13,7 +13,7 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <outputDirectory>../libs</outputDirectory>
+          <outputDirectory>libs</outputDirectory>
         </configuration>
       </plugin>
        
