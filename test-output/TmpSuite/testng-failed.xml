@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TmpSuite]">
+  <test name="TmpTest">
+    <classes>
+      <class name="testcase.Login"/>
+      <class name="testcase.OrderPlacing"/>
+      <class name="testcase.ForgotPassWordTest"/>
+      <class name="testcase.TEST"/>
+      <class name="testcase.Sanity"/>
+    </classes>
+  </test> <!-- TmpTest -->
+  <test name="TmpTest(failed)">
+    <classes>
+      <class name="testcase.Login">
+        <methods>
+          <include name="Register"/>
+          <include name="keepUserNameAndPasswordBlank"/>
+          <include name="login"/>
+          <include name="closeBrowser"/>
+          <include name="checkValidationMessageForRegister"/>
+          <include name="keepPasswordBlank"/>
+        </methods>
+      </class> <!-- testcase.Login -->
+      <class name="testcase.OrderPlacing">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="addToCart"/>
+          <include name="codOrderPlace"/>
+        </methods>
+      </class> <!-- testcase.OrderPlacing -->
+      <class name="testcase.ForgotPassWordTest">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="testforgotPassWord"/>
+          <include name="forgotPassWordEmailValidation"/>
+        </methods>
+      </class> <!-- testcase.ForgotPassWordTest -->
+      <class name="testcase.Sanity">
+        <methods>
+          <include name="addProductToWishlist"/>
+          <include name="closeBrowser"/>
+          <include name="clickOnAllLinkFromHomePage"/>
+        </methods>
+      </class> <!-- testcase.Sanity -->
+    </classes>
+  </test> <!-- TmpTest(failed) -->
+</suite> <!-- Failed suite [TmpSuite] -->

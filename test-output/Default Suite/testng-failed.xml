@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]">
+  <test name="Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0">
+    <classes>
+      <class name="testcase.Login">
+        <methods>
+          <include name="startup"/>
+          <include name="clickOnAllFeedPageTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+        </methods>
+      </class> <!-- testcase.Login -->
+      <class name="testcase.ForgotPassWordTest">
+        <methods>
+          <include name="startup"/>
+          <include name="clickOnAllFeedPageTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+        </methods>
+      </class> <!-- testcase.ForgotPassWordTest -->
+      <class name="testcase.OrderPlacing">
+        <methods>
+          <include name="startup"/>
+          <include name="clickOnAllFeedPageTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+        </methods>
+      </class> <!-- testcase.OrderPlacing -->
+      <class name="testcase.Sanity">
+        <methods>
+          <include name="startup"/>
+          <include name="clickOnAllFeedPageTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+          <exclude name="loginTest"/>
+          <exclude name="RegisterTest"/>
+          <exclude name="keepUserNameAndPasswordBlank"/>
+          <exclude name="keepPasswordBlank"/>
+          <exclude name="checkValidationMessageForRegister"/>
+          <exclude name="testforgotPassWord"/>
+          <exclude name="forgotPassWordEmailValidationTest"/>
+          <exclude name="addToCartTest"/>
+          <exclude name="codOrderPlaceTest"/>
+          <exclude name="clickOnAllLinkFromHomePageTest"/>
+          <exclude name="addProductToWishlistTest"/>
+        </methods>
+      </class> <!-- testcase.Sanity -->
+    </classes>
+  </test> <!-- Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0 -->
+  <test name="Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0(failed)">
+    <classes>
+      <class name="testcase.Login">
+        <methods>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- testcase.Login -->
+      <class name="testcase.Sanity">
+        <methods>
+          <include name="clickOnAllFeedPageTest"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- testcase.Sanity -->
+    </classes>
+  </test> <!-- Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->
