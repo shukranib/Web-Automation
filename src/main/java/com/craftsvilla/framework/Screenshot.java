@@ -19,8 +19,9 @@ public class Screenshot {
 
 			String newFileName = propertyReader.getPropertyValue("sreenshotdirectory")
 					+ propertyReader.getPropertyValue("screenshotname")
-					+ new SimpleDateFormat("yyyymmddhhmm").format(new Date());
+					+ new SimpleDateFormat("yyyymmddhhmm").format(new Date())+".jpg";
 			FileUtils.copyFile(screenshot, new File(newFileName));
+			System.out.println("Screenshot taken");
 		} catch (IOException e) {
 
 			Log4jLogger.writeErrorLog(e.getMessage());
@@ -34,7 +35,7 @@ public class Screenshot {
 		try {
 
 			String newFileName = propertyReader.getPropertyValue("sreenshotdirectory") + name
-					+ new SimpleDateFormat("yyyymmddhhmm").format(new Date());
+					+ new SimpleDateFormat("yyyymmddhhmm").format(new Date())+".jpg";
 			FileUtils.copyFile(screenshot, new File(newFileName));
 		} catch (IOException e) {
 

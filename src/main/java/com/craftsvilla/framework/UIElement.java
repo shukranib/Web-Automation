@@ -2,7 +2,7 @@ package com.craftsvilla.framework;
 
 import java.util.List;
 
-import dataobjects.UIElementsBo;
+import com.craftsvilla.dataobjects.UIElementsBo;
 
 public class UIElement {
 	public static List<UIElementsBo> list;

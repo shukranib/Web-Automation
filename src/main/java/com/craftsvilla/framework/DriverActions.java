@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import exceptions.UIElementNotFound;
+import com.craftsvilla.exceptions.UIElementNotFound;
 
 public class DriverActions {
 	static UIElement elements = new UIElement();

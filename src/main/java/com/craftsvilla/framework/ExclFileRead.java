@@ -14,9 +14,9 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-import dataobjects.TestCaseBo;
-import dataobjects.TestDataBO;
-import dataobjects.UIElementsBo;
+import com.craftsvilla.dataobjects.TestCaseBo;
+import com.craftsvilla.dataobjects.TestDataBO;
+import com.craftsvilla.dataobjects.UIElementsBo;
 
 public class ExclFileRead {
 	public String filelocation;
@@ -47,6 +47,7 @@ public class ExclFileRead {
 
 				Cell by = row.getCell(1);
 				Cell locator = row.getCell(2);
+			
 				elementsBo = new UIElementsBo(elementName.getStringCellValue(), by.getStringCellValue(),
 						locator.getStringCellValue());
 				list.add(elementsBo);
@@ -143,5 +144,11 @@ public class ExclFileRead {
 		}
 		return testCasesList;
 	}
-
+/*	Testing purpose for data
+ public static void main(String[] args) {
+		List<UIElementsBo> elements=ExclFileRead.exclFileRead();
+		for (int i = 0; i < elements.size(); i++) {
+			System.out.println(elements);
+		}
+	}*/
 }

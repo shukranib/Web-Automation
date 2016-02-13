@@ -3,12 +3,12 @@ package com.craftsvilla.framework;
 import java.util.ArrayList;
 import java.util.List;
 
-import dataobjects.TestCaseBo;
+import com.craftsvilla.dataobjects.TestCaseBo;
 
 public class TestCase {
 	private static List<String> testcaselist;
 	private static List<TestCaseBo> listTestCaseBo;
-	private ExclFileRead exclFileRead;
+
 
 	public static List<String> getTestCasesNames(String status) {
 		testcaselist = new ArrayList<>();

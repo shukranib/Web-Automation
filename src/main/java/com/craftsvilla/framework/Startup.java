@@ -11,23 +11,21 @@ import org.reflections.scanners.SubTypesScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
+import org.testng.IReporter;
+import org.testng.ISuite;
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlInclude;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
 
-public class Startup {
+public class Startup implements IReporter{
 	public static void main(String[] args) {
 	
 		List<XmlSuite> listXmlSuit = new ArrayList<>();
 		List<XmlClass> listxmlclasses = new ArrayList<>();
-		List<XmlInclude> includelist = new ArrayList<>();
-
 		List<String> includetestcaseNames = TestCase.getTestCasesNames("Y");
 		List<String> excludetestcaseName = TestCase.getTestCasesNames("N");
-		XmlInclude include;
-
 		XmlSuite xmlSuite = new XmlSuite();
 		XmlClass xmlclass;
 		XmlTest test = new XmlTest(xmlSuite);
@@ -38,7 +36,7 @@ public class Startup {
 		Reflections reflections = new Reflections(
 				new ConfigurationBuilder().setScanners(new SubTypesScanner(false), new ResourcesScanner())
 						.setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0])))
-						.filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix("testcase"))));
+						.filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix("com.craftsvilla.testcase"))));
 		Set<Class<?>> classesset = reflections.getSubTypesOf(Object.class);
 		List<XmlInclude> includel = new ArrayList<>();
 		for (String names : includetestcaseNames) {
@@ -67,6 +65,12 @@ public class Startup {
 		testNG.setXmlSuites(listXmlSuit);
 		testNG.run();
 
+	}
+
+	@Override
+	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+		
+		
 	}
 
 }

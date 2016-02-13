@@ -2,8 +2,8 @@ package com.craftsvilla.framework;
 
 import java.util.List;
 
-import dataobjects.TestDataBO;
-import exceptions.UIElementNotFound;
+import com.craftsvilla.dataobjects.TestDataBO;
+import com.craftsvilla.exceptions.UIElementNotFound;
 
 public class GetTestData {
 	public static List<TestDataBO> list;
