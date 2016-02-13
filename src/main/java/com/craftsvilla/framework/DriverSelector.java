@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import com.gargoylesoftware.htmlunit.javascript.host.URL;
+
 public class DriverSelector {
 	
 
@@ -18,8 +20,10 @@ public class DriverSelector {
 			System.out.println("firefox");
 
 			driver=new FirefoxDriver();
+			System.out.println("Creating mozilla driver");
 			//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 			driver.manage().window().maximize();
+			System.out.println("Redirecting to url"+configReader.getPropertyValue("url"));
 			Wait.defaultHighWait(driver);
 			Screenshot.takeScreenshot(driver, "Login1");
 			driver.get(configReader.getPropertyValue("url"));
