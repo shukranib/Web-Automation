@@ -19,7 +19,10 @@ public class HomePage {
 
 	// this will open login popup
 	public static void clickOnLoginButton(WebDriver driver) {
-		DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
+		System.out.println("Clicking on login");
+		driver.findElement(By.xpath(".//*[@id='loginLogoutResponse']/a")).click();
+		Screenshot.takeScreenshot(driver, "After Login");
+		//DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
 	}
 
 	public static void clickONSignInButton(WebDriver driver) {
@@ -31,6 +34,7 @@ public class HomePage {
 	}
 
 	public static void enterPasswordForLogin(WebDriver driver) {
+		Wait.defaultMediumWait(driver);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, TestData.passWordLogin);
 	}
 

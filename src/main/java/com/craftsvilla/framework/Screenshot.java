@@ -34,8 +34,7 @@ public class Screenshot {
 		PropertyReader propertyReader = new PropertyReader();
 		try {
 
-			String newFileName = propertyReader.getPropertyValue("sreenshotdirectory") + name
-					+ new SimpleDateFormat("yyyymmddhhmm").format(new Date())+".jpg";
+			String newFileName = propertyReader.getPropertyValue("sreenshotdirectory") + name+".jpg";
 			FileUtils.copyFile(screenshot, new File(newFileName));
 		} catch (IOException e) {
 
