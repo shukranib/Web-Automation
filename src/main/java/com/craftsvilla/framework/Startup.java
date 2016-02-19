@@ -19,7 +19,7 @@ import org.testng.xml.XmlInclude;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
 
-public class Startup implements IReporter{
+public class Startup{
 	public static void main(String[] args) {
 	
 		List<XmlSuite> listXmlSuit = new ArrayList<>();
@@ -29,6 +29,7 @@ public class Startup implements IReporter{
 		XmlSuite xmlSuite = new XmlSuite();
 		XmlClass xmlclass;
 		XmlTest test = new XmlTest(xmlSuite);
+		List<Class> listnerclass=new ArrayList<>();
 		List<ClassLoader> classLoadersList = new LinkedList<ClassLoader>();
 		classLoadersList.add(ClasspathHelper.contextClassLoader());
 		classLoadersList.add(ClasspathHelper.staticClassLoader());
@@ -63,14 +64,12 @@ public class Startup implements IReporter{
 		test.setXmlClasses(listxmlclasses);
 		TestNG testNG = new TestNG();
 		testNG.setXmlSuites(listXmlSuit);
+		testNG.addListener(new CustomReportGenerator());
 		testNG.run();
+	
 
 	}
 
-	@Override
-	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
-		
-		
-	}
+	
 
 }
