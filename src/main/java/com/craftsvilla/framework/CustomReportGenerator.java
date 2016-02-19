@@ -26,7 +26,8 @@ public class CustomReportGenerator implements ITestListener {
 	PropertyReader configReader = new PropertyReader();
 	static int failCount = 0;
 	static int passcount = 0;
-	String emailTo = "shukrani.bille@craftsvilla.com,shukranibille@gmail.com,vishal.bhongare@craftsvilla.com";
+	String emailTo = configReader.getPropertyValue("emailIDForMail");
+
 	// String
 	// emailTo="shukrani.bille@craftsvilla.com,shukrani.bille10@gmail.com,shukranibille@gmail.com";
 	String emailfrom = "shukranibille@craftsvilla.com";
@@ -100,7 +101,7 @@ public class CustomReportGenerator implements ITestListener {
 		htmlbody.append("<table style='width:100%' border='1' >");
 		htmlbody.append("<tr style='font-weight:bold'>");
 		htmlbody.append("<th><h2>TestCase</h2></th>");
-		htmlbody.append("<th><h2>Status<h2></th> ");
+		htmlbody.append("<th><h2>Status</h2></th> ");
 		htmlbody.append("</tr>");
 
 	}
