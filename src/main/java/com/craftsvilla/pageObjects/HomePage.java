@@ -22,7 +22,7 @@ public class HomePage {
 		System.out.println("Clicking on login");
 		driver.findElement(By.xpath(".//*[@id='loginLogoutResponse']/a")).click();
 		Screenshot.takeScreenshot(driver, "After Login");
-		//DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
+		// DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
 	}
 
 	public static void clickONSignInButton(WebDriver driver) {
@@ -150,13 +150,9 @@ public class HomePage {
 		DriverActions.click(driver, ObjectRepository_HomePage.button_proceedToPayment);
 	}
 
-	
-
 	public static void checkOnlyCODProduct(WebDriver driver) {
 		DriverActions.click(driver, ObjectRepository_HomePage.checkBox_OnlyCODProducts);
 	}
-
-	
 
 	public static void clickOnContinueButton(WebDriver driver) {
 		DriverActions.click(driver, ObjectRepository_HomePage.button_continueOnCheckoutPage);
@@ -236,6 +232,13 @@ public class HomePage {
 
 	}
 
+	public static void enterTextToSearch(WebDriver driver, String searchtext) {
+
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.button_searchText, searchtext);
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.button_searchText, Keys.ENTER);
+
+	}
+
 	public static void clickOnWishButton(WebDriver driver) {
 		DriverActions.scrollDownWindow(driver);
 
@@ -257,10 +260,9 @@ public class HomePage {
 		Wait.defaultMediumWait(driver);
 		DriverActions.clickByLinkText(driver, "My Wishlist");
 	}
- 
 
 	public static String getmessage(WebDriver driver) {
-		return DriverActions.getText(driver, ObjectRepository_HomePage.span_Message) ;
+		return DriverActions.getText(driver, ObjectRepository_HomePage.span_Message);
 	}
 
 	public static void clickOnAllCategoryFromHomepage(WebDriver driver) {
@@ -293,12 +295,15 @@ public class HomePage {
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstProductFromWishlist);
 	}
 
+	public static void clickOnViewMoreButtonForSubcategory(WebDriver driver) {
+		DriverActions.click(driver, ObjectRepository_HomePage.button_viewMore);
+	}
+
 	public static void clickOnAllFeedPages(WebDriver driver) {
 		// TODO Auto-generated method stub
 		List<WebElement> feedPagesList = DriverActions.findElements(driver,
 				ObjectRepository_HomePage.feedPagesOnHomePage);
 		int size = feedPagesList.size();
-		
 
 		for (int i = 0; i < size; i++) {
 
@@ -325,7 +330,13 @@ public class HomePage {
 	}
 
 	public static String getCurrentpageURL(WebDriver driver) {
-		
+
 		return driver.getCurrentUrl();
+	}
+
+	public static void clickOnSubCategory(WebDriver driver) {
+		// TODO Auto-generated method stub
+		driver.findElement(By.linkText("Kanchivaram Sarees")).click();
+		// DriverActions.click(driver,ObjectRepository_HomePage.link_subcategory);
 	}
 }
