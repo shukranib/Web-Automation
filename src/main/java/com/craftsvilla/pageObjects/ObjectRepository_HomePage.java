@@ -53,5 +53,16 @@ public class ObjectRepository_HomePage {
 	static String checkBox_newCustomer="checkBox_newCustomer";
 	static String CheckBox_existingCustomer="CheckBox_existingCustomer";
 	static String textBox_emailIdforbilling="textBox_emailIdforbilling";
-
-}
+	static String button_viewMore="button_viewMore";
+	static String PriceFilter_500_1000="PriceFilter_500_1000";
+	static String PriceFilter_1000_2000="PriceFilter_1000_2000";
+	static String PriceFilter_2000_5000="PriceFilter_2000_5000";
+	static String PriceFilter_above5000="PriceFilter_above5000";
+	static String productprice="productprice";
+	static String ListBox_sortOrder="ListBox_sortOrder";
+	static public String link_subcategory="link_subcategory";
+	static public String link_subcategory_Uppdasaree="link_subcategory_Uppdasaree";
+	
+	
+	
+}	
