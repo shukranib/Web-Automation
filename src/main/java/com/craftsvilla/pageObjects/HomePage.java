@@ -242,7 +242,7 @@ public class HomePage {
 	public static void clickOnWishButton(WebDriver driver) {
 		DriverActions.scrollDownWindow(driver);
 
-		driver.findElement(By.xpath(".//*[@id='wishthisproduct']")).click();
+		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToWishList);
 
 	}
 
