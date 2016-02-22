@@ -27,30 +27,10 @@ public class CustomReportGenerator implements ITestListener {
 	static int failCount = 0;
 	static int passcount = 0;
 	String emailTo = configReader.getPropertyValue("emailIDForMail");
-
-	// String
-	// emailTo="shukrani.bille@craftsvilla.com,shukrani.bille10@gmail.com,shukranibille@gmail.com";
 	String emailfrom = "shukranibille@craftsvilla.com";
 	String host = "localhost";
-	// String file = "test-output/emailable-report.html";
-	// String fileName = "testcase report";
-	// static String htmlbody="<h1>This is actual message embedded in HTML
-	// tags</h1>";
 
 	static public StringBuffer htmlbody = new StringBuffer("<h3>This is automation testcases result for</h3>");
-
-	/*
-	 * htmlbody.append("<table style='width:100%' border='1' >");
-	 * htmlbody.append("<tr>"); htmlbody.append("<th>TestCase</th>");
-	 * htmlbody.append("<th>Status</th> "); htmlbody.append("</tr>");
-	 */
-
-	/*
-	 * InternetAddress[] cc = new Address[]
-	 * {InternetAddress.parse("abc@abc.com"),
-	 * InternetAddress.parse("abc@def.com"),
-	 * InternetAddress.parse("ghi@abc.com")};
-	 */
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -96,7 +76,7 @@ public class CustomReportGenerator implements ITestListener {
 	@Override
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
-		System.out.println("TESTCASES  STARTED");
+
 		htmlbody.append("<h4>" + configReader.getPropertyValue("url") + "</h4>");
 		htmlbody.append("<table style='width:100%' border='1' >");
 		htmlbody.append("<tr style='font-weight:bold'>");
@@ -124,7 +104,7 @@ public class CustomReportGenerator implements ITestListener {
 			if (failCount == 0) {
 				message.setSubject("Automation testcases result.Passed=" + passcount);
 			} else {
-				message.setSubject("Automation testcases result.Passed=" + passcount + "Failed=" + failCount);
+				message.setSubject("Automation testcases result.Passed=" + passcount + " " + "Failed=" + failCount);
 			}
 			// Setting Content
 			MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
