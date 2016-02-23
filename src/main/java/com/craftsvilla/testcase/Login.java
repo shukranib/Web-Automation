@@ -33,7 +33,7 @@ public class Login {
 
 		LoginFlow login = new LoginFlow();
 		result = login.loginflow(driver);
-		Screenshot.takeScreenshot(driver);
+		// Screenshot.takeScreenshot(driver);
 		Assert.assertTrue(!result);
 	}
 
@@ -43,7 +43,7 @@ public class Login {
 		driver = DriverSelector.getDriver();
 
 		result = Register.registerFlow(driver);
-		Screenshot.takeScreenshot(driver);
+		// Screenshot.takeScreenshot(driver);
 		Wait.defaultMediumWait(driver);
 		Assert.assertTrue(!result);
 
@@ -57,7 +57,7 @@ public class Login {
 		HomePage.clearPassWordNameTextBox(driver);
 		HomePage.clearUserNameTextBox(driver);
 		HomePage.clickONSignInButton(driver);
-		Screenshot.takeScreenshot(driver);
+		// Screenshot.takeScreenshot(driver);
 		result = HomePage.getValidationMessageForLogin(driver);
 
 		Assert.assertTrue(result);
@@ -72,7 +72,7 @@ public class Login {
 		HomePage.clearPassWordNameTextBox(driver);
 		HomePage.EnterUserNameForLogin(driver);
 		HomePage.clickONSignInButton(driver);
-		Screenshot.takeScreenshot(driver);
+		// Screenshot.takeScreenshot(driver);
 		result = HomePage.getValidationMessageForLogin(driver);
 		Assert.assertTrue(result);
 
@@ -83,7 +83,7 @@ public class Login {
 		Boolean result;
 		driver = DriverSelector.getDriver();
 		result = Register.checkValidationRegisterFlow(driver);
-		Screenshot.takeScreenshot(driver);
+		// Screenshot.takeScreenshot(driver);
 		Assert.assertTrue(result);
 
 	}

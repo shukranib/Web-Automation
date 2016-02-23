@@ -45,7 +45,7 @@ public class FiltersFlow {
 
 		// ProductPages.applypricefilter1000_2000(driver);
 		Wait.defaultMediumWait(driver);
-		Screenshot.takeScreenshot(driver, "pricefilter1000To2000");
+		// Screenshot.takeScreenshot(driver, "pricefilter1000To2000");
 		Wait.defaultMediumWait(driver);
 
 		result = ProductPages.getPriceofproductsOncategorypage(driver, 1000, 2000);
@@ -59,7 +59,7 @@ public class FiltersFlow {
 
 		ProductPages.applypricefilter2000_5000(driver);
 		Wait.defaultMediumWait(driver);
-		Screenshot.takeScreenshot(driver, "pricefilter2000To5000");
+		// Screenshot.takeScreenshot(driver, "pricefilter2000To5000");
 		Wait.defaultMediumWait(driver);
 		result = ProductPages.getPriceofproductsOncategorypage(driver, 2000, 5000);
 		return result;

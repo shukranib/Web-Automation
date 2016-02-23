@@ -21,7 +21,7 @@ public class HomePage {
 	public static void clickOnLoginButton(WebDriver driver) {
 		System.out.println("Clicking on login");
 		driver.findElement(By.xpath(".//*[@id='loginLogoutResponse']/a")).click();
-		Screenshot.takeScreenshot(driver, "After Login");
+		// Screenshot.takeScreenshot(driver, "After Login");
 		// DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
 	}
 
@@ -242,7 +242,7 @@ public class HomePage {
 	public static void clickOnWishButton(WebDriver driver) {
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
-		Screenshot.takeScreenshot(driver, "Clicking on WishlistButton");
+		// Screenshot.takeScreenshot(driver, "Clicking on WishlistButton");
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToWishList);
 
@@ -297,7 +297,7 @@ public class HomePage {
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstProductFromWishlist);
-		Screenshot.takeScreenshot(driver, "AfterclickngOn product");
+		// Screenshot.takeScreenshot(driver, "AfterclickngOn product");
 	}
 
 	public static void clickOnViewMoreButtonForSubcategory(WebDriver driver) {
@@ -328,7 +328,7 @@ public class HomePage {
 
 			Log4jLogger.writeErrorLog("Pages");
 			Log4jLogger.writeErrorLog(driver.getCurrentUrl());
-			Screenshot.takeScreenshot(driver);
+			// Screenshot.takeScreenshot(driver);
 			redirecttoHomePage(driver);
 			Wait.defaultHighWait(driver);
 		}
