@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.Log4jLogger;
-import com.craftsvilla.framework.Screenshot;
 import com.craftsvilla.framework.Wait;
 
 public class ProductPages {
@@ -20,7 +19,7 @@ public class ProductPages {
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
-		Screenshot.takeScreenshot(driver, "500-1000 price filter category page");
+
 	}
 
 	public static void applypricefilter500_1000OnSearchPage(WebDriver driver) {
@@ -30,7 +29,7 @@ public class ProductPages {
 		// DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
-		Screenshot.takeScreenshot(driver, "500-1000 price filter search page");
+
 	}
 
 	public static void applypricefilter1000_2000(WebDriver driver) {
@@ -38,40 +37,40 @@ public class ProductPages {
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 		DriverActions.scrollDownWindow(driver);
-		// Screenshot.takeScreenshot(driver, "1000Price1");
-		/*
-		 * WebElement element =
-		 * driver.findElement(By.xpath(".//*[@value='1000_2000']")); Actions
-		 * action = new Actions(driver);
-		 * action.moveToElement(element).click().perform();
-		 */
+
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
-		Screenshot.takeScreenshot(driver, "1000-2000 price filter category page");
+
 	}
 
 	public static void applypricefilter1000_2000OnsearchPage(WebDriver driver) {
 		// Screenshot.takeScreenshot(driver, "1000Price");
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
-		// DriverActions.scrollDownWindow(driver);
-		// Screenshot.takeScreenshot(driver, "1000Price1");
-		/*
-		 * WebElement element =
-		 * driver.findElement(By.xpath(".//*[@value='1000_2000']")); Actions
-		 * action = new Actions(driver);
-		 * action.moveToElement(element).click().perform();
-		 */
+
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
-		Screenshot.takeScreenshot(driver, "1000-2000 price filter search page");
+
 	}
 
 	public static void applypricefilter2000_5000(WebDriver driver) {
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
 	}
 
+	public static void applypricefilter2000_5000OnsearchPage(WebDriver driver) {
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+
+		Wait.defaultHighWait(driver);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+
+	}
+
 	public static void applyPriceFilterAbove5000(WebDriver driver) {
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
+	}
+
+	public static void applyPriceFilterAbove5000OnSearchPage(WebDriver driver) {
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
 	}
 
