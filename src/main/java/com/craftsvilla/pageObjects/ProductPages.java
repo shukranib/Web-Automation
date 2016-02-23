@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.Log4jLogger;
+import com.craftsvilla.framework.Screenshot;
 import com.craftsvilla.framework.Wait;
 
 public class ProductPages {
@@ -20,6 +21,7 @@ public class ProductPages {
 	}
 
 	public static void applypricefilter1000_2000(WebDriver driver) {
+		Screenshot.takeScreenshot(driver, "1000Price");
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 		WebElement element = driver.findElement(By.xpath(".//*[@value='1000_2000']"));
