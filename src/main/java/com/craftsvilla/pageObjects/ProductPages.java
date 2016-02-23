@@ -14,6 +14,11 @@ import com.craftsvilla.framework.Wait;
 public class ProductPages {
 
 	public static void applypricefilter500_1000(WebDriver driver) {
+		Screenshot.takeScreenshot(driver, "500Price");
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+		DriverActions.scrollDownWindow(driver);
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 
 	}
@@ -23,7 +28,7 @@ public class ProductPages {
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 		DriverActions.scrollDownWindow(driver);
-		Screenshot.takeScreenshot(driver, "1000Price1");
+		// Screenshot.takeScreenshot(driver, "1000Price1");
 		/*
 		 * WebElement element =
 		 * driver.findElement(By.xpath(".//*[@value='1000_2000']")); Actions
