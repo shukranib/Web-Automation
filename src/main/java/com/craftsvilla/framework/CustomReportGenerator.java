@@ -41,7 +41,7 @@ public class CustomReportGenerator implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		passcount = passcount + 1;
-
+		System.out.println("Passed");
 		htmlbody.append("<tr bgcolor='green' style='font-weight:bold'>");
 		htmlbody.append("<td><h4>" + result.getName() + "</h4></td>");
 		htmlbody.append("<td><h4>Passed</h4></td> ");
@@ -52,6 +52,7 @@ public class CustomReportGenerator implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
+		System.out.println("Failed");
 		htmlbody.append("<tr bgcolor='red' style='font-weight:bold'>");
 		htmlbody.append("<td><h4>" + result.getName() + "</h4></td>");
 		htmlbody.append(" <td><h4>Failed</h4></td> ");
