@@ -294,7 +294,10 @@ public class HomePage {
 
 	public static void openFirstProductFromWishList(WebDriver driver) {
 		// TODO Auto-generated method stub
+		DriverActions.scrollDownWindow(driver);
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstProductFromWishlist);
+		Screenshot.takeScreenshot(driver, "AfterclickngOn product");
 	}
 
 	public static void clickOnViewMoreButtonForSubcategory(WebDriver driver) {

@@ -2,6 +2,7 @@ package com.craftsvilla.commonflow;
 
 import org.openqa.selenium.WebDriver;
 
+import com.craftsvilla.framework.Screenshot;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 
@@ -21,6 +22,8 @@ public class WishList {
 		HomePage.clickOnAccount(driver);
 		HomePage.clickOnManageAccount(driver);
 		HomePage.clickOnWishListFromManageAccount(driver);
+		Screenshot.takeScreenshot(driver, "AfterClickingOnManaageAccount");
+		Wait.defaultMediumWait(driver);
 		HomePage.openFirstProductFromWishList(driver);
 		String wishlistproductURl = HomePage.getCurrentpageURL(driver);
 		if (productURL.equals(wishlistproductURl)) {
