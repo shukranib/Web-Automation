@@ -187,6 +187,10 @@ public class DriverActions {
 		// TODO Auto-generated method stub
 		driver.findElement(By.linkText(linkText)).sendKeys(Keys.ENTER);
 	}
+	public static void clickOnLinkText(WebDriver driver, String linkText) {
+		// TODO Auto-generated method stub
+		driver.findElement(By.linkText(linkText)).click();
+	}
 
 	public static void selectByvisibleText(WebDriver driver, String elementName, String text) {
 		String by = elements.getbyName(elementName);
