@@ -2,7 +2,6 @@ package com.craftsvilla.commonflow;
 
 import org.openqa.selenium.WebDriver;
 
-import com.craftsvilla.framework.Screenshot;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.ProductPages;
@@ -32,7 +31,7 @@ public class FiltersFlow {
 
 		// ProductPages.applypricefilter500_1000(driver);
 		Wait.defaultMediumWait(driver);
-		Screenshot.takeScreenshot(driver, "pricefilter500to1000");
+		// Screenshot.takeScreenshot(driver, "pricefilter500to1000");
 		Wait.defaultMediumWait(driver);
 		result = ProductPages.getPriceofproductsOncategorypage(driver, 500, 1000);
 		return result;
