@@ -240,8 +240,9 @@ public class HomePage {
 	}
 
 	public static void clickOnWishButton(WebDriver driver) {
-		// DriverActions.scrollDownWindow(driver);
-
+		DriverActions.scrollDownWindow(driver);
+		Wait.defaultHighWait(driver);
+		Screenshot.takeScreenshot(driver, "Clicking on WishlistButton");
 		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToWishList);
 
 	}
