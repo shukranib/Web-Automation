@@ -10,6 +10,7 @@ import com.craftsvilla.commonflow.SortFlow;
 import com.craftsvilla.commonflow.WishList;
 import com.craftsvilla.framework.DriverSelector;
 import com.craftsvilla.pageObjects.HomePage;
+import com.craftsvilla.pageObjects.ProductPages;
 
 public class Sanity {
 	WebDriver driver;
@@ -56,6 +57,7 @@ public class Sanity {
 	public void verifypriceFilter500_1000CategoryPage() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
+		ProductPages.applypricefilter500_1000(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter500_1000(driver));
 
 	}
@@ -64,6 +66,7 @@ public class Sanity {
 	public void verifypriceFilter1000_2000CategoryPage() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
+		ProductPages.applypricefilter1000_2000(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter1000_2000(driver));
 
 	}
@@ -72,6 +75,7 @@ public class Sanity {
 	public void verifypriceFilter500_1000SearchPage() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
+		ProductPages.applypricefilter500_1000OnSearchPage(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter500_1000(driver));
 
 	}
@@ -80,6 +84,7 @@ public class Sanity {
 	public void verifypriceFilter1000_2000SearchPage() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
+		ProductPages.applypricefilter1000_2000OnsearchPage(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter1000_2000(driver));
 
 	}

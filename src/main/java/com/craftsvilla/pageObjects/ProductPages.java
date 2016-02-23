@@ -23,11 +23,37 @@ public class ProductPages {
 
 	}
 
+	public static void applypricefilter500_1000OnSearchPage(WebDriver driver) {
+		Screenshot.takeScreenshot(driver, "500Price");
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+		// DriverActions.scrollDownWindow(driver);
+		Wait.defaultHighWait(driver);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+
+	}
+
 	public static void applypricefilter1000_2000(WebDriver driver) {
 		Screenshot.takeScreenshot(driver, "1000Price");
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 		DriverActions.scrollDownWindow(driver);
+		// Screenshot.takeScreenshot(driver, "1000Price1");
+		/*
+		 * WebElement element =
+		 * driver.findElement(By.xpath(".//*[@value='1000_2000']")); Actions
+		 * action = new Actions(driver);
+		 * action.moveToElement(element).click().perform();
+		 */
+		Wait.defaultHighWait(driver);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+	}
+
+	public static void applypricefilter1000_2000OnsearchPage(WebDriver driver) {
+		Screenshot.takeScreenshot(driver, "1000Price");
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		// DriverActions.scrollDownWindow(driver);
 		// Screenshot.takeScreenshot(driver, "1000Price1");
 		/*
 		 * WebElement element =

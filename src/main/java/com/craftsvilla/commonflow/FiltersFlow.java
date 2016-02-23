@@ -30,7 +30,7 @@ public class FiltersFlow {
 	{
 		boolean result;
 
-		ProductPages.applypricefilter500_1000(driver);
+		// ProductPages.applypricefilter500_1000(driver);
 		Wait.defaultMediumWait(driver);
 		Screenshot.takeScreenshot(driver, "pricefilter500to1000");
 		Wait.defaultMediumWait(driver);
@@ -43,7 +43,7 @@ public class FiltersFlow {
 	{
 		boolean result;
 
-		ProductPages.applypricefilter1000_2000(driver);
+		// ProductPages.applypricefilter1000_2000(driver);
 		Wait.defaultMediumWait(driver);
 		Screenshot.takeScreenshot(driver, "pricefilter1000To2000");
 		Wait.defaultMediumWait(driver);
