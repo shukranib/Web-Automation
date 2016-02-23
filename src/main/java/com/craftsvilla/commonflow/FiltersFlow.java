@@ -11,12 +11,13 @@ public class FiltersFlow {
 	public static void gotosubcategory(WebDriver driver) {
 		HomePage.clickOnFistCategory(driver);
 		Wait.defaultMediumWait(driver);
-		HomePage.clickOnViewMoreButtonForSubcategory(driver);
-		Wait.defaultMediumWait(driver);
-		// DriverActions.scrollDownhalfWindow(driver);
-		// Wait.defaultHighWait(driver);
-		HomePage.clickOnSubCategory(driver);
-		Wait.defaultMediumWait(driver);
+		/*
+		 * HomePage.clickOnViewMoreButtonForSubcategory(driver);
+		 * Wait.defaultMediumWait(driver); //
+		 * DriverActions.scrollDownhalfWindow(driver); //
+		 * Wait.defaultHighWait(driver); HomePage.clickOnSubCategory(driver);
+		 * Wait.defaultMediumWait(driver);
+		 */
 
 	}
 
