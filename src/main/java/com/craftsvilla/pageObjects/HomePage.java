@@ -243,6 +243,7 @@ public class HomePage {
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		Screenshot.takeScreenshot(driver, "Clicking on WishlistButton");
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToWishList);
 
 	}
