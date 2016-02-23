@@ -29,7 +29,7 @@ public class Login {
 		Boolean result;
 
 		driver = DriverSelector.getDriver();
-		Screenshot.takeScreenshot(driver, "Login1");
+		// Screenshot.takeScreenshot(driver, "Login1");
 
 		LoginFlow login = new LoginFlow();
 		result = login.loginflow(driver);
