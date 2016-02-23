@@ -3,11 +3,14 @@ package com.craftsvilla.pageObjects;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.Log4jLogger;
+import com.craftsvilla.framework.Wait;
 
 public class ProductPages {
 
@@ -17,7 +20,13 @@ public class ProductPages {
 	}
 
 	public static void applypricefilter1000_2000(WebDriver driver) {
-		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		WebElement element = driver.findElement(By.xpath(".//*[@value='1000_2000']"));
+		Actions action = new Actions(driver);
+		action.moveToElement(element).click().perform();
+		// DriverActions.click(driver,
+		// ObjectRepository_HomePage.PriceFilter_1000_2000);
 	}
 
 	public static void applypricefilter2000_5000(WebDriver driver) {
