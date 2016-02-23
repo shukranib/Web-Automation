@@ -105,9 +105,9 @@ public class CustomReportGenerator implements ITestListener {
 			message.setFrom(new InternetAddress(emailfrom));
 			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTo));
 			if (failCount == 0) {
-				message.setSubject("Automation testcases result.Passed= " + passcount);
+				message.setSubject("Automation testcases result. Passed= " + passcount);
 			} else {
-				message.setSubject("Automation testcases result.Passed= " + passcount + " " + " Failed=" + failCount);
+				message.setSubject("Automation testcases result. Passed= " + passcount + " " + " Failed=" + failCount);
 			}
 			// Setting Content
 			// MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
