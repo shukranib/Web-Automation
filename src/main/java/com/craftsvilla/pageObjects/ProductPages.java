@@ -14,27 +14,27 @@ import com.craftsvilla.framework.Wait;
 public class ProductPages {
 
 	public static void applypricefilter500_1000(WebDriver driver) {
-		Screenshot.takeScreenshot(driver, "500Price");
+		// Screenshot.takeScreenshot(driver, "500Price");
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
-
+		Screenshot.takeScreenshot(driver, "500-1000 price filter category page");
 	}
 
 	public static void applypricefilter500_1000OnSearchPage(WebDriver driver) {
-		Screenshot.takeScreenshot(driver, "500Price");
+		// Screenshot.takeScreenshot(driver, "500Price");
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 		// DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
-
+		Screenshot.takeScreenshot(driver, "500-1000 price filter search page");
 	}
 
 	public static void applypricefilter1000_2000(WebDriver driver) {
-		Screenshot.takeScreenshot(driver, "1000Price");
+		// Screenshot.takeScreenshot(driver, "1000Price");
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 		DriverActions.scrollDownWindow(driver);
@@ -47,10 +47,11 @@ public class ProductPages {
 		 */
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		Screenshot.takeScreenshot(driver, "1000-2000 price filter category page");
 	}
 
 	public static void applypricefilter1000_2000OnsearchPage(WebDriver driver) {
-		Screenshot.takeScreenshot(driver, "1000Price");
+		// Screenshot.takeScreenshot(driver, "1000Price");
 		Wait.defaultMediumWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 		// DriverActions.scrollDownWindow(driver);
@@ -63,6 +64,7 @@ public class ProductPages {
 		 */
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		Screenshot.takeScreenshot(driver, "1000-2000 price filter search page");
 	}
 
 	public static void applypricefilter2000_5000(WebDriver driver) {
