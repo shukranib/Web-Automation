@@ -97,7 +97,7 @@ public class CustomReportGenerator implements ITestListener {
 		properties.setProperty("mail.smtp.host", host);
 		Session session = Session.getDefaultInstance(properties);
 		MimeMessage message = new MimeMessage(session);
-		DataSource source;
+		// DataSource source;
 		// Setting subject
 		try {
 			message.setFrom(new InternetAddress(emailfrom));
@@ -108,7 +108,7 @@ public class CustomReportGenerator implements ITestListener {
 				message.setSubject("Automation testcases result.Passed= " + passcount + " " + " Failed=" + failCount);
 			}
 			// Setting Content
-			MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
+			// MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
 			BodyPart messageTextBodyPart = new MimeBodyPart();
 			Multipart multipart = new MimeMultipart();
 			messageTextBodyPart.setContent(htmlbody.toString(), "text/html");
@@ -120,10 +120,11 @@ public class CustomReportGenerator implements ITestListener {
 			for (int i = 0; i < listfile.length; i++) {
 				String str = listfile[i].getName();
 				if (str.endsWith(".jpg")) {
+					MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
 					System.out.println(listfile[i].getName());
-					source = new FileDataSource(new File("test-output/" + str));
+					DataSource source = new FileDataSource(new File("test-output/" + listfile[i].getName()));
 					attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
-					attachmentmessageBodyPart.setFileName(str);
+					attachmentmessageBodyPart.setFileName(listfile[i].getName());
 					multipart.addBodyPart(attachmentmessageBodyPart);
 				}
 
