@@ -30,6 +30,7 @@ public class ProductPages {
 		 * action = new Actions(driver);
 		 * action.moveToElement(element).click().perform();
 		 */
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 	}
 
