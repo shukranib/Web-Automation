@@ -34,7 +34,7 @@ public class CustomReportGenerator implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		System.out.println("Excuting" + result.getName());
+		System.out.println("Excuting  " + result.getName());
 	}
 
 	@Override
