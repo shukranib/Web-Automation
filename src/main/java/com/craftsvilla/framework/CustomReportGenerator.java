@@ -34,7 +34,7 @@ public class CustomReportGenerator implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-
+		System.out.println("Excuting" + result.getName());
 	}
 
 	@Override
@@ -102,9 +102,9 @@ public class CustomReportGenerator implements ITestListener {
 			message.setFrom(new InternetAddress(emailfrom));
 			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTo));
 			if (failCount == 0) {
-				message.setSubject("Automation testcases result.Passed=" + passcount);
+				message.setSubject("Automation testcases result.Passed= " + passcount);
 			} else {
-				message.setSubject("Automation testcases result.Passed=" + passcount + " " + "Failed=" + failCount);
+				message.setSubject("Automation testcases result.Passed= " + passcount + " " + " Failed=" + failCount);
 			}
 			// Setting Content
 			MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
@@ -112,16 +112,14 @@ public class CustomReportGenerator implements ITestListener {
 			Multipart multipart = new MimeMultipart();
 			messageTextBodyPart.setContent(htmlbody.toString(), "text/html");
 			multipart.addBodyPart(messageTextBodyPart);
-			// multipart.addBodyPart(attachmentmessageBodyPart);
 
-			// multipart.addBodyPart(attachmentmessageBodyPart);
 			// attaching screenshot
 			File screenshotfile = new File("test-output");
 			File[] listfile = screenshotfile.listFiles();
 			for (int i = 0; i < listfile.length; i++) {
 				String str = listfile[i].getName();
 				if (str.endsWith(".jpg")) {
-					// System.out.println(listfile[i].getName());
+					System.out.println(listfile[i].getName());
 					source = new FileDataSource(new File("test-output/" + str));
 					attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
 					attachmentmessageBodyPart.setFileName(str);
