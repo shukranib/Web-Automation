@@ -2,6 +2,7 @@ package com.craftsvilla.testcase;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -9,6 +10,8 @@ import com.craftsvilla.commonflow.FiltersFlow;
 import com.craftsvilla.commonflow.SortFlow;
 import com.craftsvilla.commonflow.WishList;
 import com.craftsvilla.framework.DriverSelector;
+import com.craftsvilla.framework.Screenshot;
+import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.ProductPages;
 
@@ -90,8 +93,12 @@ public class Sanity {
 	}
 
 	@AfterMethod
-	public void closeBrowser() {
-		driver.close();
+	public void closeBrowser(ITestResult result) {
+		if (result.getStatus() == 2) {
+			Wait.defaultHighWait(driver);
+			Screenshot.takeScreenshot(driver, result.getName());
+
+		}
 		driver.quit();
 
 	}

@@ -1,10 +1,12 @@
 package com.craftsvilla.testcase;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.craftsvilla.framework.DriverSelector;
+import com.craftsvilla.framework.Screenshot;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 
@@ -22,7 +24,6 @@ public class ForgotPassWordTest {
 
 	@Test(testName = "testforgotPassWordTest")
 	public void testforgotPassWord() {
-		
 
 		driver = DriverSelector.getDriver();
 		HomePage.clickOnLoginButton(driver);
@@ -40,7 +41,7 @@ public class ForgotPassWordTest {
 
 	@Test()
 	public void forgotPassWordEmailValidationTest() {
-		
+
 		driver = DriverSelector.getDriver();
 		HomePage.clickOnLoginButton(driver);
 		HomePage.clickOnForgotPassWordButton(driver);
@@ -51,8 +52,13 @@ public class ForgotPassWordTest {
 	}
 
 	@AfterMethod
-	public void closeBrowser() {
-		driver.close();
+
+	public void closeBrowser(ITestResult result) {
+		if (result.getStatus() == 2) {
+			Wait.defaultHighWait(driver);
+			Screenshot.takeScreenshot(driver, result.getName());
+
+		}
 		driver.quit();
 
 	}

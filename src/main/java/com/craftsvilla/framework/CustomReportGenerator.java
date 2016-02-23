@@ -40,6 +40,7 @@ public class CustomReportGenerator implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
+
 		passcount = passcount + 1;
 		System.out.println("Passed");
 		htmlbody.append("<tr bgcolor='green' style='font-weight:bold'>");
@@ -52,6 +53,7 @@ public class CustomReportGenerator implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
+		// Screenshot.takeScreenshot(driver, result.getName());
 		System.out.println("Failed");
 		htmlbody.append("<tr bgcolor='red' style='font-weight:bold'>");
 		htmlbody.append("<td><h4>" + result.getName() + "</h4></td>");

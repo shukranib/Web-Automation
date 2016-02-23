@@ -16,22 +16,21 @@ import com.craftsvilla.pageObjects.HomePage;
 public class Login {
 
 	WebDriver driver;
-	
+
 	@Test()
-	
+
 	public void startup() {
-		Assert.assertFalse(false);
+
 	}
 
 	@Test()
 	public void loginTest() {
-		
 
 		Boolean result;
-		
+
 		driver = DriverSelector.getDriver();
 		Screenshot.takeScreenshot(driver, "Login1");
-	
+
 		LoginFlow login = new LoginFlow();
 		result = login.loginflow(driver);
 		Screenshot.takeScreenshot(driver);
@@ -90,8 +89,12 @@ public class Login {
 	}
 
 	@AfterMethod
-	public void closeBrowser() {
-		
+	public void closeBrowser(ITestResult result) {
+		if (result.getStatus() == 2) {
+			Wait.defaultHighWait(driver);
+			Screenshot.takeScreenshot(driver, result.getName());
+
+		}
 		driver.quit();
 
 	}
