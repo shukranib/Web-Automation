@@ -2,6 +2,7 @@ package com.craftsvilla.testcase;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -15,15 +16,16 @@ import com.craftsvilla.pageObjects.HomePage;
 public class Login {
 
 	WebDriver driver;
-
+	
 	@Test()
+	
 	public void startup() {
-
+		Assert.assertFalse(false);
 	}
 
 	@Test()
 	public void loginTest() {
-		// driverselector = new DriverSelector();
+		
 
 		Boolean result;
 		
