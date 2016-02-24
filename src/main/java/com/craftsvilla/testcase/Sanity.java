@@ -61,7 +61,7 @@ public class Sanity {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
 		ProductPages.applypricefilter500_1000(driver);
-		Assert.assertTrue(FiltersFlow.applyPriceFilter500_1000(driver));
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 500, 1000));
 
 	}
 
@@ -70,7 +70,7 @@ public class Sanity {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
 		ProductPages.applypricefilter1000_2000(driver);
-		Assert.assertTrue(FiltersFlow.applyPriceFilter1000_2000(driver));
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 1000, 2000));
 
 	}
 
@@ -79,7 +79,7 @@ public class Sanity {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applypricefilter500_1000OnSearchPage(driver);
-		Assert.assertTrue(FiltersFlow.applyPriceFilter500_1000(driver));
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 500, 1000));
 
 	}
 
@@ -88,8 +88,40 @@ public class Sanity {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applypricefilter1000_2000OnsearchPage(driver);
-		Assert.assertTrue(FiltersFlow.applyPriceFilter1000_2000(driver));
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 1000, 2000));
 
+	}
+
+	@Test
+	public void VerifyPriceFilter0_500CategoryPageTest() {
+		driver = DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		ProductPages.applypricefilter0_500(driver);
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 0, 500));
+	}
+
+	@Test
+	public void VerifyPriceFilter0_500SearchPageTest() {
+		driver = DriverSelector.getDriver();
+		FiltersFlow.goToSearchPage(driver);
+		ProductPages.applypricefilter0_500OnSearchPage(driver);
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 0, 500));
+	}
+
+	@Test
+	public void VerifyPriceFilterAbove5000CategoryPageTest() {
+		driver = DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		ProductPages.applyPriceFilterAbove5000(driver);
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 5000, 0));
+	}
+
+	@Test
+	public void VerifyPriceFilterAbove5000SearchPageTest() {
+		driver = DriverSelector.getDriver();
+		FiltersFlow.goToSearchPage(driver);
+		ProductPages.applyPriceFilterAbove5000OnSearchPage(driver);
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 5000, 0));
 	}
 
 	@AfterMethod
@@ -102,4 +134,5 @@ public class Sanity {
 		driver.quit();
 
 	}
+
 }

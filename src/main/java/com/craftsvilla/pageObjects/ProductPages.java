@@ -97,15 +97,38 @@ public class ProductPages {
 			}
 		}
 		for (int i = 0; i < intproductprice.size(); i++) {
-			if (intproductprice.get(i) < min || intproductprice.get(i) > max) {
-				Log4jLogger.writeErrorLog("Invalid price product" + intproductprice.get(i));
-				Log4jLogger.writeErrorLog("Price filter Not Working for" + min + "To" + max);
-				return false;
+			if (min == 5000) {
+				if (intproductprice.get(i) < min) {
+					Log4jLogger.writeErrorLog("Invalid price product" + intproductprice.get(i));
+					Log4jLogger.writeErrorLog("Price filter Not Working for above" + min);
+					return false;
+				}
+			} else {
+				if (intproductprice.get(i) < min || intproductprice.get(i) > max) {
+					Log4jLogger.writeErrorLog("Invalid price product" + intproductprice.get(i));
+					Log4jLogger.writeErrorLog("Price filter Not Working for" + min + "To" + max);
+					return false;
+				}
 			}
-
 		}
 		return true;
 
+	}
+
+	public static void applypricefilter0_500(WebDriver driver) {
+		// TODO Auto-generated method stub
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
+		Wait.defaultHighWait(driver);
+		DriverActions.scrollDownWindow(driver);
+		Wait.defaultHighWait(driver);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500);
+	}
+
+	public static void applypricefilter0_500OnSearchPage(WebDriver driver) {
+		// TODO Auto-generated method stub
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
+		Wait.defaultHighWait(driver);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 	}
 
 }
