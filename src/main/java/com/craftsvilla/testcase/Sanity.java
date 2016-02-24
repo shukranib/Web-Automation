@@ -109,6 +109,22 @@ public class Sanity {
 	}
 
 	@Test
+	public void VerifyPriceFilter2000_5000CategoryPageTest() {
+		driver = DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		ProductPages.applypricefilter2000_5000(driver);
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 2000, 5000));
+	}
+
+	@Test
+	public void VerifyPriceFilter2000_5000SearchPageTest() {
+		driver = DriverSelector.getDriver();
+		FiltersFlow.goToSearchPage(driver);
+		ProductPages.applypricefilter2000_5000OnsearchPage(driver);
+		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 2000, 5000));
+	}
+
+	@Test
 	public void VerifyPriceFilterAbove5000CategoryPageTest() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);

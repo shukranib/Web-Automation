@@ -54,23 +54,36 @@ public class ProductPages {
 	}
 
 	public static void applypricefilter2000_5000(WebDriver driver) {
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
+		DriverActions.scrollDownWindow(driver);
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
+
 	}
 
 	public static void applypricefilter2000_5000OnsearchPage(WebDriver driver) {
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
 
 		Wait.defaultHighWait(driver);
-		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
 
 	}
 
 	public static void applyPriceFilterAbove5000(WebDriver driver) {
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_above5000);
+
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
 	}
 
 	public static void applyPriceFilterAbove5000OnSearchPage(WebDriver driver) {
+		Wait.defaultMediumWait(driver);
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+		Wait.defaultHighWait(driver);
+
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
 	}
 
