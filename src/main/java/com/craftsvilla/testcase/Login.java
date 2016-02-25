@@ -21,8 +21,6 @@ public class Login {
 
 	public void startup() {
 
-		driver = DriverSelector.getDriver();
-		Assert.assertTrue(false);
 	}
 
 	@Test()
