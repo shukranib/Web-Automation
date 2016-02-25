@@ -8,8 +8,7 @@ import org.testng.annotations.Test;
 import com.craftsvilla.commonflow.AddToCart;
 import com.craftsvilla.commonflow.CheckOut;
 import com.craftsvilla.framework.DriverSelector;
-import com.craftsvilla.framework.Screenshot;
-import com.craftsvilla.framework.Wait;
+import com.craftsvilla.framework.FailedTestCases;
 
 public class OrderPlacing {
 	WebDriver driver;
@@ -54,9 +53,7 @@ public class OrderPlacing {
 	@AfterMethod
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == 2) {
-			Wait.defaultHighWait(driver);
-			Screenshot.takeScreenshot(driver, result.getName());
-
+			FailedTestCases.actionAfterFailedTestcase(driver, result);
 		}
 		driver.quit();
 

@@ -10,8 +10,7 @@ import com.craftsvilla.commonflow.FiltersFlow;
 import com.craftsvilla.commonflow.SortFlow;
 import com.craftsvilla.commonflow.WishList;
 import com.craftsvilla.framework.DriverSelector;
-import com.craftsvilla.framework.Screenshot;
-import com.craftsvilla.framework.Wait;
+import com.craftsvilla.framework.FailedTestCases;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.ProductPages;
 
@@ -143,9 +142,7 @@ public class Sanity {
 	@AfterMethod
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == 2) {
-			Wait.defaultHighWait(driver);
-			Screenshot.takeScreenshot(driver, result.getName());
-
+			FailedTestCases.actionAfterFailedTestcase(driver, result);
 		}
 		driver.quit();
 

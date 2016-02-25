@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.craftsvilla.framework.DriverSelector;
-import com.craftsvilla.framework.Screenshot;
+import com.craftsvilla.framework.FailedTestCases;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 
@@ -55,9 +55,7 @@ public class ForgotPassWordTest {
 
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == 2) {
-			Wait.defaultHighWait(driver);
-			Screenshot.takeScreenshot(driver, result.getName());
-
+			FailedTestCases.actionAfterFailedTestcase(driver, result);
 		}
 		driver.quit();
 

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.craftsvilla.commonflow.LoginFlow;
 import com.craftsvilla.commonflow.Register;
 import com.craftsvilla.framework.DriverSelector;
-import com.craftsvilla.framework.Screenshot;
+import com.craftsvilla.framework.FailedTestCases;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 
@@ -21,6 +21,8 @@ public class Login {
 
 	public void startup() {
 
+		driver = DriverSelector.getDriver();
+		Assert.assertTrue(false);
 	}
 
 	@Test()
@@ -91,9 +93,7 @@ public class Login {
 	@AfterMethod
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == 2) {
-			Wait.defaultHighWait(driver);
-			Screenshot.takeScreenshot(driver, result.getName());
-
+			FailedTestCases.actionAfterFailedTestcase(driver, result);
 		}
 		driver.quit();
 
