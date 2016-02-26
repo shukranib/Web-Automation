@@ -12,6 +12,7 @@ public class WishList {
 		Register.registerFlow(driver);
 		HomePage.redirecttoHomePage(driver);
 		HomePage.clickOnFistCategory(driver);
+		Wait.defaultHighWait(driver);
 		HomePage.clickOnFirstProduct(driver);
 
 		Wait.defaultHighWait(driver);
