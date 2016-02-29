@@ -132,21 +132,7 @@ public class Sanity {
 		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 5000, 0));
 	}
 
-	@Test
-	public void TestASCPriceSortingOnCategoryPage() {
-		driver = DriverSelector.getDriver();
-		HomePage.clickOnFistCategory(driver);
-		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
-
-	}
-
-	@Test
-	public void TestDSCPriceSortingOnCategoryPage() {
-		driver = DriverSelector.getDriver();
-		HomePage.clickOnFistCategory(driver);
-		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "DSC"));
-	}
-
+	
 	@AfterMethod
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == 2) {
