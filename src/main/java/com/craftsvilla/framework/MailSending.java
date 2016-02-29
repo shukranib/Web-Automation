@@ -58,7 +58,7 @@ public class MailSending {
 			htmlbody.append("</h3>");
 			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
 			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
-			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase(Total Passed Testcases = " + passcount  +")</th>");
+			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase  Passed = " + passcount  +"</th>");
 			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
 			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
 			htmlbody.append("</thead>");
@@ -86,7 +86,7 @@ public class MailSending {
 			htmlbody.append("</h3>");
 			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
 			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
-			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase(Total Failed Testcases = " + failCount  +")</th>");
+			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase Failed = " + failCount  +"</th>");
 			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
 			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
 			htmlbody.append("</thead>");
