@@ -49,13 +49,6 @@ public class Sanity {
 	}
 
 	@Test
-	public void verifyAscSortOnCategoryPage() {
-		driver = DriverSelector.getDriver();
-		SortFlow.ascSortOnCategoryPage(driver);
-
-	}
-
-	@Test
 	public void verifypriceFilter500_1000CategoryPage() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
@@ -129,7 +122,7 @@ public class Sanity {
 		FiltersFlow.gotosubcategory(driver);
 		ProductPages.applyPriceFilterAbove5000(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 5000, 0));
-	}
+	} 
 
 	@Test
 	public void VerifyPriceFilterAbove5000SearchPageTest() {
@@ -137,6 +130,21 @@ public class Sanity {
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applyPriceFilterAbove5000OnSearchPage(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 5000, 0));
+	}
+
+	@Test
+	public void TestASCPriceSortingOnCategoryPage() {
+		driver = DriverSelector.getDriver();
+		HomePage.clickOnFistCategory(driver);
+		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
+
+	}
+
+	@Test
+	public void TestDSCPriceSortingOnCategoryPage() {
+		driver = DriverSelector.getDriver();
+		HomePage.clickOnFistCategory(driver);
+		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "DSC"));
 	}
 
 	@AfterMethod

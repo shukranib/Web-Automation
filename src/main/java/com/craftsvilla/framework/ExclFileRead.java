@@ -47,7 +47,7 @@ public class ExclFileRead {
 
 				Cell by = row.getCell(1);
 				Cell locator = row.getCell(2);
-			
+
 				elementsBo = new UIElementsBo(elementName.getStringCellValue(), by.getStringCellValue(),
 						locator.getStringCellValue());
 				list.add(elementsBo);
@@ -121,9 +121,10 @@ public class ExclFileRead {
 				Cell testCase = row.getCell(0);
 				Cell status = row.getCell(1);
 				Cell module = row.getCell(2);
+				Cell severity = row.getCell(3);
 
 				TestCaseBo testCaseBo = new TestCaseBo(testCase.getStringCellValue(), status.getStringCellValue(),
-						module.getStringCellValue());
+						module.getStringCellValue(), severity.getStringCellValue());
 				testCasesList.add(testCaseBo);
 			}
 		} catch (FileNotFoundException e)
@@ -144,11 +145,14 @@ public class ExclFileRead {
 		}
 		return testCasesList;
 	}
-/*	Testing purpose for data
- public static void main(String[] args) {
-		List<UIElementsBo> elements=ExclFileRead.exclFileRead();
-		for (int i = 0; i < elements.size(); i++) {
-			System.out.println(elements);
-		}
-	}*/
+
+	// Testing purpose for data
+
+	// public static void main(String[] args) {
+	// List<TestCaseBo> elements = ExclFileRead.readTestCasexls();
+	// for (int i = 0; i < elements.size(); i++) {
+	// System.out.println(elements.get(i));
+	// }
+	// System.out.println(elements);
+	// }
 }

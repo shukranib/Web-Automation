@@ -4,6 +4,7 @@ public class TestCaseBo {
 	String testCaseName;
 	String status;
 	String ModuleName;
+	String Severity;
 
 	public String getTestCaseName() {
 		return testCaseName;
@@ -11,6 +12,14 @@ public class TestCaseBo {
 
 	public void setTestCaseName(String testCaseName) {
 		this.testCaseName = testCaseName;
+	}
+
+	public String getSeverity() {
+		return Severity;
+	}
+
+	public void setSeverity(String severity) {
+		Severity = severity;
 	}
 
 	public String getStatus() {
@@ -21,20 +30,22 @@ public class TestCaseBo {
 		this.status = status;
 	}
 
-	public TestCaseBo(String testCaseName, String status, String moduleName) {
-		super();
-		this.testCaseName = testCaseName;
-		this.status = status;
-		ModuleName = moduleName;
-	}
-
 	public String getModuleName() {
 		return ModuleName;
 	}
 
+	public TestCaseBo(String testCaseName, String status, String moduleName, String severity) {
+		super();
+		this.testCaseName = testCaseName;
+		this.status = status;
+		ModuleName = moduleName;
+		Severity = severity;
+	}
+
 	@Override
 	public String toString() {
-		return "TestCaseBo [testCaseName=" + testCaseName + ", status=" + status + ", ModuleName=" + ModuleName + "]";
+		return "TestCaseBo [testCaseName=" + testCaseName + ", status=" + status + ", ModuleName=" + ModuleName
+				+ ", Severity=" + Severity + "]";
 	}
 
 	public void setModuleName(String moduleName) {

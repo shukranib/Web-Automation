@@ -2,6 +2,7 @@ package com.craftsvilla.framework;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.activation.DataHandler;
@@ -26,89 +27,194 @@ public class MailSending {
 	static String emailTo = configReader.getPropertyValue("emailIDForMail");
 	static String emailfrom = "shukranibille@craftsvilla.com";
 	static String host = "localhost";
-	static StringBuffer htmlbody = new StringBuffer("<h3>This is automation testcases result for</h3>");
+	static StringBuffer htmlbody = new StringBuffer(
+			"<h3>This is automation testcases result for</h3>");
+	static int  critical,high,medium,low;
+	static TestCaseResult caseResult;
+	static List<TestCaseResult> passedTestCases = new ArrayList<>();
+	static List<TestCaseResult> failedTestCases = new ArrayList<>();
 
-	public static void mailTestcasesResult(ArrayList<TestCaseResult> testcasesResult, int passcount, int failCount) {
-		System.out.println("Inside Mailing");
-		htmlbody.append("<h4>" + configReader.getPropertyValue("url") + "</h4>");
-		htmlbody.append("<table style='width:100%' border='1' >");
-		htmlbody.append("<tr style='font-weight:bold'>");
-		htmlbody.append("<th><h2>TestCase</h2></th>");
-		htmlbody.append("<th><h2>Status</h2></th> ");
-		htmlbody.append("</tr>");
-		TestCaseResult caseResult;
+	public static void mailTestcasesResult(
+			ArrayList<TestCaseResult> testcasesResult, int passcount,
+			int failCount) {
+
+		htmlbody.append(
+				"<h4>" + configReader.getPropertyValue("url") + "</h4>");
+
+	
+				//);
+
 		Properties properties = System.getProperties();
 		properties.setProperty("mail.smtp.host", host);
 		Session session = Session.getDefaultInstance(properties);
 		MimeMessage message = new MimeMessage(session);
+		passedTestCases.addAll(getStatusWiseList(testcasesResult, "Passed"));
+		failedTestCases.addAll(getStatusWiseList(testcasesResult, "Failed"));
+		if (passedTestCases.size() > 0) {
+			htmlbody.append("\n");
+			htmlbody.append("<h3> Total Passed Testcases = " + passcount  +"\n");
+			htmlbody.append("\n");
+			htmlbody.append("Total Failed Testcases = " + failCount  +"\n");
+			htmlbody.append("</h3>");
+			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
+			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
+			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase(Total Passed Testcases = " + passcount  +")</th>");
+			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
+			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
+			htmlbody.append("</thead>");
+			for (int i = 0; i < passedTestCases.size(); i++) {
+				caseResult = new TestCaseResult(
+						passedTestCases.get(i).getTestCaseName(),
+						passedTestCases.get(i).getStatus(),
+						passedTestCases.get(i).getSeverity());
 
-		for (int i = 0; i < testcasesResult.size(); i++) {
-			caseResult = new TestCaseResult(testcasesResult.get(i).getTestCaseName(),
-					testcasesResult.get(i).getStatus());
-			if (caseResult.getStatus().equalsIgnoreCase("Passed")) {
-				htmlbody.append("<tr bgcolor='green' style='font-weight:bold'>");
-				htmlbody.append("<td><h4>" + caseResult.getTestCaseName() + "</h4></td>");
-				htmlbody.append("<td><h4>Passed</h4></td> ");
+				htmlbody.append(
+						"<tr style='background-color:#599953; padding:10px 0;font-size:16px; color:#000000;'>");
+				htmlbody.append("<td style='padding:5px;'>" + caseResult.getTestCaseName()
+						+ "</td>");
+				htmlbody.append("<td style='padding:5px;'>Passed</td> ");
+				htmlbody.append(
+						"<td style='padding:5px'>" + caseResult.getSeverity() + "</td> ");
+				htmlbody.append("</tr>");
+
+			}
+			htmlbody.append("</table>");
+		}
+		if (failedTestCases.size() > 0) {
+			htmlbody.append("\n");
+			htmlbody.append("<h3> Total Failed Testcases = " + failCount  +"\n");
+			htmlbody.append("</h3>");
+			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
+			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
+			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase(Total Failed Testcases = " + failCount  +")</th>");
+			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
+			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
+			htmlbody.append("</thead>");
+			for (int i = 0; i < failedTestCases.size(); i++) {
+				caseResult = new TestCaseResult(
+						failedTestCases.get(i).getTestCaseName(),
+						failedTestCases.get(i).getStatus(),
+						failedTestCases.get(i).getSeverity());
+				htmlbody.append(
+						"<tr style='background-color:#C91909; padding:10px 0;font-size:16px; color:#000000;'>");
+				htmlbody.append("<td style='padding:5px;'>" + caseResult.getTestCaseName()
+						+ "</td>");
+				htmlbody.append("<td style='padding:5px;'>Failed</td> ");
+				htmlbody.append(
+						"<td style='padding:5px'>" + caseResult.getSeverity() + "</td> ");
 				htmlbody.append("</tr>");
 			}
-			if (caseResult.getStatus().equalsIgnoreCase("Failed")) {
-				htmlbody.append("<tr bgcolor='red' style='font-weight:bold'>");
-				htmlbody.append("<td><h4>" + caseResult.getTestCaseName() + "</h4></td>");
-				htmlbody.append(" <td><h4>Failed</h4></td> ");
-				htmlbody.append(" </tr>");
-
-			}
-
+			htmlbody.append("</table>");
+			htmlbody.append("\n");
 		}
-		htmlbody.append("</table>");
-		/*
-		 * htmlbody.append("<tr bgcolor='green' style='font-weight:bold'>");
-		 * htmlbody.append("<td><h4>" + testcasesResult.get(i) + "</h4></td>");
-		 * htmlbody.append("<td><h4>Passed</h4></td> ");
-		 * htmlbody.append("</tr>");
-		 */
-		try {
-			message.setFrom(new InternetAddress(emailfrom));
-			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTo));
-			if (failCount == 0) {
-				message.setSubject("Automation testcases result. Passed= " + passcount);
+
+
+	try
+
+	{
+	message.setFrom(new InternetAddress(emailfrom));
+	message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailTo));
+	if(failCount==0){message.setSubject("All testcases are passed");
+
+	}else{message.setSubject(severityWiseCount(failedTestCases));
+
+	}
+
+	BodyPart messageTextBodyPart = new MimeBodyPart();
+	Multipart multipart = new MimeMultipart();messageTextBodyPart.setContent(htmlbody.toString(),"text/html");multipart.addBodyPart(messageTextBodyPart);
+
+	// attaching screenshot
+	File screenshotfile = new File("test-output");
+	File[] listfile = screenshotfile.listFiles();for(
+	int i = 0;i<listfile.length;i++)
+
+	{
+		String str = listfile[i].getName();
+		if (str.endsWith(".jpg")
+				|| str.equalsIgnoreCase("FailedTestcasesUrl.txt")) {
+			MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
+			System.out.println(listfile[i].getName());
+			DataSource source = new FileDataSource(
+					new File("test-output/" + listfile[i].getName()));
+			attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
+			attachmentmessageBodyPart.setFileName(listfile[i].getName());
+			multipart.addBodyPart(attachmentmessageBodyPart);
+		}
+
+	}
+
+	message.setContent(multipart);Transport.send(message);System.out.println("message sent successfully....");
+
+	}catch(
+
+	AddressException e)
+
+	{
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch(
+
+	MessagingException e)
+
+	{
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+	}
+
+	public static ArrayList<TestCaseResult> getStatusWiseList(ArrayList<TestCaseResult> result, String status) {
+		ArrayList<TestCaseResult> testcaseResult = new ArrayList<>();
+		for (int j = 0; j < result.size(); j++) {
+
+			if (result.get(j).getStatus().equalsIgnoreCase(status)) {
+				TestCaseResult caseResult = new TestCaseResult(result.get(j).getTestCaseName(),
+						result.get(j).getStatus(), result.get(j).getSeverity());
+				testcaseResult.add(caseResult);
+			}
+		}
+		return testcaseResult;
+	}
+
+	public static String severityWiseCount(List<TestCaseResult> failedTestCaseslist) {
+		String result;
+		for (int i = 0; i < failedTestCaseslist.size(); i++) {
+			System.out.println("INSIDE COUNT----------------");
+			System.out.println(failedTestCaseslist.get(i).getSeverity()+failedTestCaseslist.get(i).getTestCaseName());
+			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("Medium")) {
+				medium++;
+			}
+			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("Critical")) {
+				critical++;
+			}
+			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("high")) {
+				high++;
+			}
+			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("low")) {
+				low++;
+			}
+		}
+		if (critical != 0) {
+			result = critical + " Critical testcases are failing";
+			return result;
+		} else {
+			if (high > 0) {
+				result = high + " Major testcases are failing";
+				return result;
 			} else {
-				message.setSubject("Automation testcases result. Passed= " + passcount + " " + " Failed=" + failCount);
-			}
-			// Setting Content
-			// MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
-			BodyPart messageTextBodyPart = new MimeBodyPart();
-			Multipart multipart = new MimeMultipart();
-			messageTextBodyPart.setContent(htmlbody.toString(), "text/html");
-			multipart.addBodyPart(messageTextBodyPart);
-
-			// attaching screenshot
-			File screenshotfile = new File("test-output");
-			File[] listfile = screenshotfile.listFiles();
-			for (int i = 0; i < listfile.length; i++) {
-				String str = listfile[i].getName();
-				if (str.endsWith(".jpg") || str.equalsIgnoreCase("FailedTestcasesUrl.txt")) {
-					MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
-					System.out.println(listfile[i].getName());
-					DataSource source = new FileDataSource(new File("test-output/" + listfile[i].getName()));
-					attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
-					attachmentmessageBodyPart.setFileName(listfile[i].getName());
-					multipart.addBodyPart(attachmentmessageBodyPart);
+				if(medium>0)
+				{
+				result = medium + "  Medium testcases are failing";
+				return result;
 				}
-
+				else
+				{
+				result= low + "  Minor testcases are failing";
+				return result;
+				}
 			}
-
-			message.setContent(multipart);
-			Transport.send(message);
-			System.out.println("message sent successfully....");
-
-		} catch (AddressException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			
+	}
 
 	}
 }

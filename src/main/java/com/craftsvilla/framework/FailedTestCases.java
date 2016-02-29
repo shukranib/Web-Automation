@@ -55,7 +55,7 @@ public class FailedTestCases {
 		}
 		File[] listfile = screenshotfile.listFiles();
 		for (int i = 0; i < listfile.length; i++) {
-			System.out.println("deleting" + listfile[i].getName());
+			//System.out.println("deleting" + listfile[i].getName());
 			listfile[i].delete();
 		}
 

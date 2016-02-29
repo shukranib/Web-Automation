@@ -28,7 +28,7 @@ public class CustomReportGenerator implements ITestListener {
 
 		passcount = passcount + 1;
 		System.out.println("Passed");
-		caseResult = new TestCaseResult(result.getName(), "Passed");
+		caseResult = new TestCaseResult(result.getName(), "Passed", null);
 		testCaseResults.add(caseResult);
 	}
 
@@ -38,7 +38,7 @@ public class CustomReportGenerator implements ITestListener {
 		// Screenshot.takeScreenshot(driver, result.getName());
 
 		System.out.println("Failed");
-		caseResult = new TestCaseResult(result.getName(), "Failed");
+		caseResult = new TestCaseResult(result.getName(), "Failed", null);
 		failCount = failCount + 1;
 		testCaseResults.add(caseResult);
 	}
@@ -64,7 +64,9 @@ public class CustomReportGenerator implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
+		testCaseResults = TestCase.prepareTestCaseResult(testCaseResults);
 		MailSending.mailTestcasesResult(testCaseResults, passcount, failCount);
+
 		System.out.println("Started code cleanup");
 		FailedTestCases.codecleanup();
 
