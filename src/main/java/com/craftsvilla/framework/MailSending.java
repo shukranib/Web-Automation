@@ -25,7 +25,7 @@ import com.craftsvilla.dataobjects.TestCaseResult;
 public class MailSending {
 	static PropertyReader configReader = new PropertyReader();
 	static String emailTo = configReader.getPropertyValue("emailIDForMail");
-	static String emailfrom = "shukranibille@craftsvilla.com";
+	static String emailfrom = "QA.Automation@craftsvilla.com";
 	static String host = "localhost";
 	static StringBuffer htmlbody = new StringBuffer(
 			"<h3>This is automation testcases result for</h3>");
