@@ -50,40 +50,9 @@ public class MailSending {
 		MimeMessage message = new MimeMessage(session);
 		passedTestCases.addAll(getStatusWiseList(testcasesResult, "Passed"));
 		failedTestCases.addAll(getStatusWiseList(testcasesResult, "Failed"));
-		if (passedTestCases.size() > 0) {
-			htmlbody.append("\n");
-			htmlbody.append("<h3> Total Passed Testcases = " + passcount  +"\n");
-			htmlbody.append("\n");
-			htmlbody.append("Total Failed Testcases = " + failCount  +"\n");
-			htmlbody.append("</h3>");
-			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
-			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
-			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase  Passed = " + passcount  +"</th>");
-			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
-			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
-			htmlbody.append("</thead>");
-			for (int i = 0; i < passedTestCases.size(); i++) {
-				caseResult = new TestCaseResult(
-						passedTestCases.get(i).getTestCaseName(),
-						passedTestCases.get(i).getStatus(),
-						passedTestCases.get(i).getSeverity());
-
-				htmlbody.append(
-						"<tr style='background-color:#599953; padding:10px 0;font-size:16px; color:#000000;'>");
-				htmlbody.append("<td style='padding:5px;'>" + caseResult.getTestCaseName()
-						+ "</td>");
-				htmlbody.append("<td style='padding:5px;'>Passed</td> ");
-				htmlbody.append(
-						"<td style='padding:5px'>" + caseResult.getSeverity() + "</td> ");
-				htmlbody.append("</tr>");
-
-			}
-			htmlbody.append("</table>");
-		}
+		
 		if (failedTestCases.size() > 0) {
-			htmlbody.append("\n");
-			htmlbody.append("<h3> Total Failed Testcases = " + failCount  +"\n");
-			htmlbody.append("</h3>");
+			
 			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
 			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
 			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase Failed = " + failCount  +"</th>");
@@ -108,7 +77,33 @@ public class MailSending {
 			htmlbody.append("\n");
 		}
 
+		if (passedTestCases.size() > 0) {
+			htmlbody.append("\n");
+	
+			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
+			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
+			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase  Passed = " + passcount  +"</th>");
+			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
+			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
+			htmlbody.append("</thead>");
+			for (int i = 0; i < passedTestCases.size(); i++) {
+				caseResult = new TestCaseResult(
+						passedTestCases.get(i).getTestCaseName(),
+						passedTestCases.get(i).getStatus(),
+						passedTestCases.get(i).getSeverity());
 
+				htmlbody.append(
+						"<tr style='background-color:#599953; padding:10px 0;font-size:16px; color:#000000;'>");
+				htmlbody.append("<td style='padding:5px;'>" + caseResult.getTestCaseName()
+						+ "</td>");
+				htmlbody.append("<td style='padding:5px;'>Passed</td> ");
+				htmlbody.append(
+						"<td style='padding:5px'>" + caseResult.getSeverity() + "</td> ");
+				htmlbody.append("</tr>");
+
+			}
+			htmlbody.append("</table>");
+		}
 	try
 
 	{
