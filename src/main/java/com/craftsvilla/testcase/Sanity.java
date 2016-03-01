@@ -85,7 +85,7 @@ public class Sanity {
 	}
 
 	@Test
-	public void VerifyPriceFilter0_500CategoryPageTest() {
+	public void verifyPriceFilter0_500CategoryPageTest() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
 		ProductPages.applypricefilter0_500(driver);
@@ -93,7 +93,7 @@ public class Sanity {
 	}
 
 	@Test
-	public void VerifyPriceFilter0_500SearchPageTest() {
+	public void verifyPriceFilter0_500SearchPageTest() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applypricefilter0_500OnSearchPage(driver);
@@ -101,7 +101,7 @@ public class Sanity {
 	}
 
 	@Test
-	public void VerifyPriceFilter2000_5000CategoryPageTest() {
+	public void verifyPriceFilter2000_5000CategoryPageTest() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
 		ProductPages.applypricefilter2000_5000(driver);
@@ -109,7 +109,7 @@ public class Sanity {
 	}
 
 	@Test
-	public void VerifyPriceFilter2000_5000SearchPageTest() {
+	public void verifyPriceFilter2000_5000SearchPageTest() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applypricefilter2000_5000OnsearchPage(driver);
@@ -117,7 +117,7 @@ public class Sanity {
 	}
 
 	@Test
-	public void VerifyPriceFilterAbove5000CategoryPageTest() {
+	public void verifyPriceFilterAbove5000CategoryPageTest() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.gotosubcategory(driver);
 		ProductPages.applyPriceFilterAbove5000(driver);
@@ -125,14 +125,44 @@ public class Sanity {
 	} 
 
 	@Test
-	public void VerifyPriceFilterAbove5000SearchPageTest() {
+	public void verifyPriceFilterAbove5000SearchPageTest() {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applyPriceFilterAbove5000OnSearchPage(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 5000, 0));
 	}
+	@Test
+	public void testASCPriceSortingOnCategoryPage() {
+		driver = DriverSelector.getDriver();
+		HomePage.clickOnFistCategory(driver);
+		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
 
+	}
 	
+
+	@Test
+	public void testDSCPriceSortingOnCategoryPage() {
+		driver = DriverSelector.getDriver();
+		HomePage.clickOnFistCategory(driver);
+		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "DSC"));
+	}
+
+	@Test
+	public void testASCPriceSortingOnSearchPage() {
+		driver = DriverSelector.getDriver();
+		HomePage.enterTextToSearch(driver,"Kareena kapoor");
+		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
+
+	}
+	
+
+	@Test
+	public void testDSCPriceSortingOnSearchPage() {
+		driver = DriverSelector.getDriver();
+		HomePage.enterTextToSearch(driver, "Kareena kapoor");
+		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "DSC"));
+	}
+
 	@AfterMethod
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == 2) {

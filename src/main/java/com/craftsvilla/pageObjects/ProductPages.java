@@ -1,6 +1,7 @@
 package com.craftsvilla.pageObjects;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -142,6 +143,59 @@ public class ProductPages {
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500);
+	}
+
+	public static boolean getPriceofproductsOncategorypage(WebDriver driver, String sort) {
+		// TODO Auto-generated method stub
+		List<WebElement> productsprice = DriverActions.findElements(driver, ObjectRepository_HomePage.productprice);
+		List<Integer> intproductprice = new ArrayList<>();
+		List<Integer> sortedPrice = new ArrayList<>();
+		Boolean result = true;
+		int price;
+		for (int i = 0; i < productsprice.size(); i++) {
+			String formattedvalue = productsprice.get(i).getText();
+			if (formattedvalue.contains(",")) {
+				StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
+				int pos = formattedvaluebuffer.indexOf(",");
+				while (pos != -1) {
+					formattedvaluebuffer.deleteCharAt(pos);
+					pos = formattedvaluebuffer.indexOf(",");
+
+				}
+				price = Integer.parseInt(formattedvaluebuffer.toString());
+				intproductprice.add(price);
+			} else {
+				price = Integer.parseInt(formattedvalue);
+				intproductprice.add(price);
+			}
+
+		}
+		sortedPrice.addAll(intproductprice);
+		if (sort.equalsIgnoreCase("ASC")) {
+			System.out.println("ASC sorting");
+			Collections.sort(sortedPrice);
+		} else {
+			Collections.sort(sortedPrice, Collections.reverseOrder());
+		}
+		for (int i = 0; i < intproductprice.size(); i++) {
+			if (!intproductprice.get(i).equals(sortedPrice.get(i))) {
+				System.out.println("Price Sorting mismatch" + sortedPrice.get(i));
+				result = false;
+			}
+		}
+
+		return result;
+	}
+
+	public static void clickOnPriceSorting(WebDriver driver, String sort) {
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.ListBox_sortOrder);
+		if (sort.equalsIgnoreCase("ASC")) {
+			DriverActions.selectByvisibleText(driver, ObjectRepository_HomePage.ListBox_sortOrder,
+					"Price: Low to High");
+		} else {
+			DriverActions.selectByvisibleText(driver, ObjectRepository_HomePage.ListBox_sortOrder,
+					"Price: High to Low");
+		}
 	}
 
 }

@@ -3,17 +3,18 @@ package com.craftsvilla.commonflow;
 import org.openqa.selenium.WebDriver;
 
 import com.craftsvilla.framework.Wait;
-import com.craftsvilla.pageObjects.HomePage;
+import com.craftsvilla.pageObjects.ProductPages;
 
 public class SortFlow {
-	public static void ascSortOnCategoryPage(WebDriver driver) {
-		HomePage.clickOnFistCategory(driver);
-		Wait.defaultMediumWait(driver);
-		/*
-		 * HomePage.clickOnViewMoreButtonForSubcategory(driver);
-		 * Wait.defaultMediumWait(driver); HomePage.clickOnSubCategory(driver);
-		 * Wait.defaultMediumWait(driver);
-		 */
+	public static boolean priceSortOnCategoryPage(WebDriver driver, String sort) {
+		boolean result;
+
+		Wait.defaultHighWait(driver);
+		ProductPages.clickOnPriceSorting(driver, sort);
+		Wait.defaultHighWait(driver);
+		result = ProductPages.getPriceofproductsOncategorypage(driver, sort);
+		Wait.defaultHighWait(driver);
+		return result;
 
 	}
 
