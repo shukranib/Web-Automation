@@ -50,7 +50,9 @@ public class MailSending {
 		MimeMessage message = new MimeMessage(session);
 		passedTestCases.addAll(getStatusWiseList(testcasesResult, "Passed"));
 		failedTestCases.addAll(getStatusWiseList(testcasesResult, "Failed"));
-		
+		htmlbody.append("<h3>Total Passed testcases = "+passcount);
+		htmlbody.append("<br>");
+		htmlbody.append("Total Failed testcases = "+failCount+"</h3>");
 		if (failedTestCases.size() > 0) {
 			
 			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
@@ -79,7 +81,7 @@ public class MailSending {
 
 		if (passedTestCases.size() > 0) {
 			htmlbody.append("\n");
-	
+			htmlbody.append("<br>");
 			htmlbody.append("<table width='100%' cellpadding='0'  style='border:1px solid #000000;' >");
 			htmlbody.append("<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
 			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase  Passed = " + passcount  +"</th>");
