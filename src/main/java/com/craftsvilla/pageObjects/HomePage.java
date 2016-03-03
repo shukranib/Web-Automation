@@ -34,11 +34,13 @@ public class HomePage {
 	}
 
 	public static void enterPasswordForLogin(WebDriver driver) {
+		System.out.println("User NAme"+TestData.passWordLogin);
 		Wait.defaultMediumWait(driver);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, TestData.passWordLogin);
 	}
 
 	public static void EnterUserNameForLogin(WebDriver driver) {
+		System.out.println("User NAme"+TestData.userNameLogin);
 		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, TestData.userNameLogin);
 	}
@@ -48,6 +50,7 @@ public class HomePage {
 	}
 
 	public static boolean checkIfRegisterPopupIsDisplay(WebDriver driver) {
+		
 		return DriverActions.isElementDisplay(driver, ObjectRepository_HomePage.popUp_login);
 
 	}
