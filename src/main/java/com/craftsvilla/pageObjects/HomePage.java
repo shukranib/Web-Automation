@@ -20,7 +20,8 @@ public class HomePage {
 	// this will open login popup
 	public static void clickOnLoginButton(WebDriver driver) {
 		System.out.println("Clicking on login");
-		driver.findElement(By.xpath(".//*[@id='loginLogoutResponse']/a")).click();
+		Wait.defaultMediumWait(driver);
+		driver.findElement(By.xpath(".//*[@class='user-icon']")).click();
 		// Screenshot.takeScreenshot(driver, "After Login");
 		// DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
 	}
