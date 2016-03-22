@@ -229,7 +229,7 @@ public class DriverActions {
 	public static void waitUntilElementdisplay(WebDriver driver, String elementName) {
 		String by = elements.getbyName(elementName);
 		String locator = elements.getlocatorName(elementName);
-
+		System.out.println("Locator is" + locator);
 		wait = new WebDriverWait(driver, 600);
 		if (by.equals("xpath")) {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));

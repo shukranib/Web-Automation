@@ -47,6 +47,8 @@ public class HomePage {
 	}
 
 	public static void clickOnFirstProduct(WebDriver driver) {
+		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.FirstProductFromCategory);
+
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstProductFromCategory);
 	}
 
