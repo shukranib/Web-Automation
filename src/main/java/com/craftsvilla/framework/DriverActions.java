@@ -2,6 +2,7 @@ package com.craftsvilla.framework;
 
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -260,7 +261,12 @@ public class DriverActions {
 		}
 
 	}
-
+public static void clickOnOkButtonForPopUp(WebDriver driver)
+{
+	Alert alert=driver.switchTo().alert();
+	alert.accept();
+	
+}
 	public static List<WebElement> findElements(WebDriver driver, String elementName) {
 		// TODO Auto-generated method stub
 		String by = elements.getbyName(elementName);
