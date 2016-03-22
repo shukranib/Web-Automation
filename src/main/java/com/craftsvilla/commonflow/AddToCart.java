@@ -13,10 +13,13 @@ public class AddToCart {
 		
 		HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
+		Wait.defaultHighWait(driver);
 		HomePage.checkOnlyCODProduct(driver);
 		Wait.defaultMediumWait(driver);
+		Wait.defaultHighWait(driver);
 		HomePage.clickOnFirstProduct(driver);
 		Wait.defaultMediumWait(driver);
+		Wait.defaultHighWait(driver);
 		HomePage.clickOnBuyNowButton(driver);
 		
 	}
