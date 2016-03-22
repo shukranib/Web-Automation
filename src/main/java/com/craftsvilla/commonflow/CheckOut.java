@@ -54,8 +54,9 @@ public class CheckOut {
 		Wait.defaultHighWait(driver);
 		String productName=CheckOutPage.getProductNameOnOrderHistoryPage(driver);
 		Wait.defaultHighWait(driver);
-		
+		Wait.defaultHighWait(driver);
 		HomePage.clickOnProceedToPaymentButton(driver);
+		Wait.defaultHighWait(driver);
 		Wait.defaultHighWait(driver);
 	
 		//CheckOutPage.chooseNewCustomerOption(driver);
