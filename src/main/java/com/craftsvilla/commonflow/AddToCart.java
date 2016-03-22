@@ -24,10 +24,12 @@ public class AddToCart {
 	public static void addToCartWithoutLogin(WebDriver driver) {
 		HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
+		Wait.defaultHighWait(driver);
 		HomePage.checkOnlyCODProduct(driver);
 		Wait.defaultHighWait(driver);
-
+		Wait.defaultHighWait(driver);
 		HomePage.clickOnFirstProduct(driver);
+		Wait.defaultHighWait(driver);
 		Wait.defaultHighWait(driver);
 		HomePage.clickOnBuyNowButton(driver);
 		String cartMessage=HomePage.getmessage(driver);
