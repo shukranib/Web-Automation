@@ -15,7 +15,8 @@ public class CommonFunctionRepo {
 		CheckOutPage.enterFirstName_BillingInfo(driver);
 		CheckOutPage.enterLastName_BillingInfo(driver);
 		CheckOutPage.enterstreet1_BillingInfo(driver);
-		CheckOutPage.enterstreet2_BilligInfo(driver);
+		//CheckOutPage.enterEmailForguestcheckout(driver);
+		//CheckOutPage.enterstreet2_BilligInfo(driver);
 		DriverActions.scrollDownWindow(driver);
 		CheckOutPage.entercity_BillingInfo(driver);
 		CheckOutPage.enterpostcode_BillingInfo(driver);
@@ -28,10 +29,12 @@ public class CommonFunctionRepo {
 	public static void enterBillingAddressGuest(WebDriver driver) {
 		CheckOutPage.enterFirstName_BillingInfo(driver);
 		CheckOutPage.enterLastName_BillingInfo(driver);
-		CheckOutPage.enterstreet1_BillingInfo(driver);
-		CheckOutPage.enterstreet2_BilligInfo(driver);
 		CheckOutPage.enterEmailForguestcheckout(driver);
 		CheckOutPage.entertelephone_BillingInfo(driver);
+		CheckOutPage.enterstreet1_BillingInfo(driver);
+		//CheckOutPage.enterstreet2_BilligInfo(driver);
+		
+	
 		DriverActions.scrollDownWindow(driver);
 		
 		CheckOutPage.entercity_BillingInfo(driver);

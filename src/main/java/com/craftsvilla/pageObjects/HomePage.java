@@ -167,7 +167,7 @@ public class HomePage {
 	}
 
 	public static void clickOnCODPaymentMethod(WebDriver driver) {
-		DriverActions.click(driver, ObjectRepository_HomePage.checkBox_OnlyCODProducts);
+		DriverActions.click(driver, ObjectRepository_HomePage.button_paymentCOD);
 
 	}
 

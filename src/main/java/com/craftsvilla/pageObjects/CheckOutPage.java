@@ -63,7 +63,19 @@ public static void entertelephone_BillingInfo(WebDriver driver) {
 public static void enterEmailForguestcheckout(WebDriver driver)
 {
 	String userEmail = TestData.emailIdRegister + new Date().getTime() + "@gmail.com";
+	System.out.println("Regiser"+userEmail);
 	Log4jLogger.writeErrorLog("New register Email" + userEmail);
 	DriverActions.sendKeys(driver,ObjectRepository_HomePage.textBox_emailIdforbilling,userEmail);
+}
+public static String getProductNameOnOrderHistoryPage(WebDriver driver)
+{
+	String productName=DriverActions.getText(driver, ObjectRepository_HomePage.product_nameOnOrdeSummaryPage);
+	return productName;
+}
+public static void clickOnLoginHereButton(WebDriver driver)
+{
+	DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.Button_loginHere);
+	DriverActions.click(driver, ObjectRepository_HomePage.Button_loginHere);
+	
 }
 }
