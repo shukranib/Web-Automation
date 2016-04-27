@@ -35,13 +35,13 @@ public class CheckOut {
 		Wait.defaultHighWait(driver);
 		OrderHistoryPage.gotoconfirmedOrderPage(driver);
 		Wait.defaultMediumWait(driver);
-		OrderHistoryPage.clickOnExpandButtonForOrderDetails(driver);
-		Wait.defaultMediumWait(driver);
-		String productNameOrdeHistory=OrderHistoryPage.getOrderProductNameOrderHistory(driver);
-		Wait.defaultMediumWait(driver);
-		if (!productNameOrdeHistory.equalsIgnoreCase(productName)) {
-			System.out.println("Wrong Product Shown");
-		}
+		//OrderHistoryPage.clickOnExpandButtonForOrderDetails(driver);
+		//Wait.defaultMediumWait(driver);
+		//String productNameOrdeHistory=OrderHistoryPage.getOrderProductNameOrderHistory(driver);
+		//Wait.defaultMediumWait(driver);
+		//if (!productNameOrdeHistory.equalsIgnoreCase(productName)) {
+			//System.out.println("Wrong Product Shown");
+		//}
 		OrderHistoryPage.clickOnCancelButtonForOrderDetails(driver);
 		Wait.defaultMediumWait(driver);
 		DriverActions.clickOnOkButtonForPopUp(driver);
@@ -88,7 +88,7 @@ public class CheckOut {
 		HomePage.clickONSignInButton(driver);
 		Wait.defaultMediumWait(driver);*/
 		// HomePage.clickOnCODPaymentMethod(driver);
-		CommonFunctionRepo.enterBillingAddress(driver);
+		//CommonFunctionRepo.enterBillingAddress(driver);
 		Wait.defaultMediumWait(driver);
 		HomePage.clickOnContinueButton(driver);
 		Wait.defaultMediumWait(driver);
