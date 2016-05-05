@@ -20,7 +20,7 @@ public class OrderPlacing {
 
 	}
 
-	@Test
+	@Test(testName = "codOrderPlaceTest")
 	public void codOrderPlaceTest() {
 		driver = DriverSelector.getDriver();
 		CheckOut.CODOrderPlaceAfterRegister(driver);
@@ -47,7 +47,7 @@ public class OrderPlacing {
 	@Test
 	public void codOrderPlaceGuestCheckout() {
 		driver = DriverSelector.getDriver();
-		CheckOut.CODOrderPlaceAfterRegister(driver);
+		CheckOut.codOrderPlaceGuestCheckout(driver);
 	}
 
 	@AfterMethod

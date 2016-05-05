@@ -15,9 +15,10 @@ public class CheckOut {
 		HomePage.redirecttoHomePage(driver);
 		AddToCart.addToCartWithoutLogin(driver);
 		Wait.defaultHighWait(driver);
-		String productName=CheckOutPage.getProductNameOnOrderHistoryPage(driver);
+		String productName="TEST";//CheckOutPage.getProductNameOnOrderHistoryPage(driver);
 		Wait.defaultHighWait(driver);
 		HomePage.clickOnProceedToPaymentButton(driver);
+		System.out.println("Clicked");
 		Wait.defaultHighWait(driver);
 		CommonFunctionRepo.enterBillingAddress(driver);
 		HomePage.clickOnContinueButton(driver);
@@ -25,7 +26,6 @@ public class CheckOut {
 		HomePage.clickOnCODPaymentMethod(driver);
 		Wait.defaultMediumWait(driver);
 		HomePage.clickOnPlaceOrder(driver);
-		
 		Wait.defaultMediumWait(driver);
 		cancelFirstOrderFromOrderHistory(driver,productName);
 
@@ -47,6 +47,7 @@ public class CheckOut {
 		DriverActions.clickOnOkButtonForPopUp(driver);
 		Wait.defaultMediumWait(driver);
 		System.out.println("Order has been cancelled successfully");
+		Wait.defaultsmallWait(driver);
 		
 	}
 	public static void codOrderPlaceAddtoCartThenregister(WebDriver driver) {
@@ -76,10 +77,15 @@ public class CheckOut {
 	{
 		AddToCart.addFirstProductToCart(driver);
 		Wait.defaultMediumWait(driver);
-		String productName=CheckOutPage.getProductNameOnOrderHistoryPage(driver);
+		String productName="TEST";//CheckOutPage.getProductNameOnOrderHistoryPage(driver);
 		Wait.defaultsmallWait(driver);
 		HomePage.clickOnProceedToPaymentButton(driver);
-		Wait.defaultMediumWait(driver);
+		Wait.defaultHighWait(driver);
+		
+		CheckOutPage.clickOnDeliverToThisAddressButton(driver);
+		Wait.defaultHighWait(driver);
+		CheckOutPage.clickOnCODOrderPlace(driver);
+		cancelFirstOrderFromOrderHistory(driver, productName);
 		/*CheckOutPage.clickOnLoginHereButton(driver);
 		Wait.defaultMediumWait(driver);
 		HomePage.EnterUserNameForLogin(driver);
@@ -89,16 +95,35 @@ public class CheckOut {
 		Wait.defaultMediumWait(driver);*/
 		// HomePage.clickOnCODPaymentMethod(driver);
 		//CommonFunctionRepo.enterBillingAddress(driver);
-		Wait.defaultMediumWait(driver);
-		HomePage.clickOnContinueButton(driver);
-		Wait.defaultMediumWait(driver);
-		HomePage.clickOnPlaceOrder(driver);
-		Wait.defaultHighWait(driver);
+	
 		cancelFirstOrderFromOrderHistory(driver, productName);
 		
 	}
-
+public static void codOrderPlaceGuestCheckout(WebDriver  driver)
+{
+	//System.out.println("Method Called");
+	AddToCart.addToCartWithoutLogin(driver);
+	Wait.defaultHighWait(driver);
+	String productName="Test";//CheckOutPage.getProductNameOnOrderHistoryPage(driver);
+	Wait.defaultHighWait(driver);
+	HomePage.clickOnProceedToPaymentButton(driver);
+	Wait.defaultHighWait(driver);
+	DriverActions.scrollDownWindow(driver);
+	Wait.defaultHighWait(driver);
+	CheckOutPage.clickOncontinueAsGuestButton(driver);
+	Wait.defaultHighWait(driver);
+	CheckOutPage.enterEmailIdForGuestCheckout(driver);
+	CheckOutPage.clickOnGuestCheckout(driver);
+	Wait.defaultHighWait(driver);
+	CommonFunctionRepo.enterBillingAddressGuest(driver);
+	Wait.defaultMediumWait(driver);
+	CheckOutPage.clickOnsaveAndContinueGuest(driver);
+	//CheckOutPage.clickOnDeliverToThisAddressButton(driver);
+	Wait.defaultHighWait(driver);
+	CheckOutPage.clickOnCODOrderPlace(driver);
+	cancelFirstOrderFromOrderHistory(driver, productName);
+}
 	public static void PrePaymentOrderPlace(WebDriver driver) {
-
+		
 	}
 }

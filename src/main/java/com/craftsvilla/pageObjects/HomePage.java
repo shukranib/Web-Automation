@@ -35,13 +35,13 @@ public class HomePage {
 	}
 
 	public static void enterPasswordForLogin(WebDriver driver) {
-		System.out.println("User NAme"+TestData.passWordLogin);
+		System.out.println("User NAme" + TestData.passWordLogin);
 		Wait.defaultMediumWait(driver);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, TestData.passWordLogin);
 	}
 
 	public static void EnterUserNameForLogin(WebDriver driver) {
-		System.out.println("User NAme"+TestData.userNameLogin);
+		System.out.println("User NAme" + TestData.userNameLogin);
 		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, TestData.userNameLogin);
 	}
@@ -53,7 +53,7 @@ public class HomePage {
 	}
 
 	public static boolean checkIfRegisterPopupIsDisplay(WebDriver driver) {
-		
+
 		return DriverActions.isElementDisplay(driver, ObjectRepository_HomePage.popUp_login);
 
 	}
@@ -89,7 +89,9 @@ public class HomePage {
 	}
 
 	public static void eneterMobileNo(WebDriver driver) {
-		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_MobileNo, TestData.mobileNo);
+		System.out.println("Method called"+TestData.mobileNo);
+		//DriverActions.clear(driver, ObjectRepository_HomePage.textBox_MobileNo);
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_MobileNo, TestData.telephone_BillingInfo);
 	}
 
 	public static void clearPasswordForRegister(WebDriver driver) {
@@ -246,7 +248,7 @@ public class HomePage {
 	}
 
 	public static void clickOnWishButton(WebDriver driver) {
-		
+
 		Wait.defaultHighWait(driver);
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.Button_addToWishList);
 		// Screenshot.takeScreenshot(driver, "Clicking on WishlistButton");
@@ -348,7 +350,7 @@ public class HomePage {
 
 	public static void clickOnSubCategory(WebDriver driver) {
 		// TODO Auto-generated method stub
-		driver.findElement(By.linkText("Kanchivaram Sarees")).click();
+		DriverActions.click(driver, ObjectRepository_HomePage.link_banarasiSubcategory);
 		// DriverActions.click(driver,ObjectRepository_HomePage.link_subcategory);
 	}
 }

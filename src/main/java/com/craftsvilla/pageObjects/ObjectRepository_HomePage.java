@@ -1,8 +1,7 @@
 package com.craftsvilla.pageObjects;
 
-
-
 public class ObjectRepository_HomePage {
+	static String button_saveAndContinueGuest="button_saveAndContinueGuest";
 	static String button_Login = "button_Login";
 	static String textBox_emailId = "textBox_emailId";
 	static String textBox_password = "textBox_password";
@@ -17,7 +16,7 @@ public class ObjectRepository_HomePage {
 	static String link_Register = "link_Register";
 	static String button_CloseLoginPoup = "button_CloseLoginPoup";
 	static String button_register = "button_register";
-	static String FirstProductFromCategory = "FirstProductFromCategory";
+	static public String FirstProductFromCategory = "FirstProductFromCategory";
 	static String checkBox_OnlyCODProducts = "checkBox_OnlyCODProducts";
 	static String link_firstCategory = "link_firstCategory";
 	static String button_buyNow = "button_buyNow";
@@ -32,7 +31,7 @@ public class ObjectRepository_HomePage {
 	static String textBox_postcodeBilligInfo = "textBox_postcodeBilligInfo";
 	static String textBox_countryBilligInfo = "textBox_countryBilligInfo";
 	static String textBox_regoinBilligInfo = "textBox_regoinBilligInfo";
-	static String textBox_telephoneBillIngInfo = "textBox_telephoneBillIngInfo";
+	static String Shipping_textBox_mobileNo = "Shipping_textBox_mobileNo";
 	static String button_continueOnCheckoutPage = "button_continueOnCheckoutPage";
 	static String button_paymentCOD = "button_paymentCOD";
 	static String button_homePageLogo = "button_homePageLogo";
@@ -70,4 +69,13 @@ public class ObjectRepository_HomePage {
 	static public String product_nameOnOrdeSummaryPage="product_nameOnOrdeSummaryPage";
 	static public String product_nameOnOrderHistoryPage="product_nameOnOrderHistoryPage";
 	static public String Button_loginHere="Button_loginHere";
+	static public String button_continueAsGuest="button_continueAsGuest";
+	static public String textBox_emaildForGuest="textBox_emaildForGuest";
+	static public String button_guestCheckout="button_guestCheckout";
+	static public String button_deliverToThisAddress="button_deliverToThisAddress";
+	static public String textBox_shippingAdress="textBox_shippingAdress";
+	static public String link_banarasiSubcategory="link_banarasiSubcategory";
+	static public String button_placeOrderCOD="button_placeOrderCOD";
+	//static public String button_proceedToPayment="button_proceedToPayment";
+
 }
