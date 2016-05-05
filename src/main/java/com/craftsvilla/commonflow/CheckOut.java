@@ -47,7 +47,7 @@ public class CheckOut {
 		DriverActions.clickOnOkButtonForPopUp(driver);
 		Wait.defaultMediumWait(driver);
 		System.out.println("Order has been cancelled successfully");
-		Wait.defaultsmallWait(driver);
+		//Wait.defaultsmallWait(driver);
 		
 	}
 	public static void codOrderPlaceAddtoCartThenregister(WebDriver driver) {
@@ -96,7 +96,7 @@ public class CheckOut {
 		// HomePage.clickOnCODPaymentMethod(driver);
 		//CommonFunctionRepo.enterBillingAddress(driver);
 	
-		cancelFirstOrderFromOrderHistory(driver, productName);
+		//cancelFirstOrderFromOrderHistory(driver, productName);
 		
 	}
 public static void codOrderPlaceGuestCheckout(WebDriver  driver)
