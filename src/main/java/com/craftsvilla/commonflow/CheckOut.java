@@ -120,8 +120,10 @@ public static void codOrderPlaceGuestCheckout(WebDriver  driver)
 	CheckOutPage.clickOnsaveAndContinueGuest(driver);
 	//CheckOutPage.clickOnDeliverToThisAddressButton(driver);
 	Wait.defaultHighWait(driver);
+	
 	CheckOutPage.clickOnCODOrderPlace(driver);
-	cancelFirstOrderFromOrderHistory(driver, productName);
+	Wait.defaultMediumWait(driver);
+	//cancelFirstOrderFromOrderHistory(driver, productName);
 }
 	public static void PrePaymentOrderPlace(WebDriver driver) {
 		

@@ -30,6 +30,7 @@ public class OrderPlacing {
 	public void codOrderAfterLogin() {
 		driver = DriverSelector.getDriver();
 		CheckOut.codOrderAfterLogin(driver);
+		driver.quit();
 	}
 
 	@Test
@@ -49,13 +50,18 @@ public class OrderPlacing {
 		driver = DriverSelector.getDriver();
 		CheckOut.codOrderPlaceGuestCheckout(driver);
 	}
-
+	@Test(dependsOnMethods={"codOrderPlaceGuestCheckout"})
+	public void cancelfirstOrder()
+	{
+		CheckOut.cancelFirstOrderFromOrderHistory(driver, "Test");
+		driver.quit();
+	}
 	@AfterMethod
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == 2) {
 			FailedTestCases.actionAfterFailedTestcase(driver, result);
 		}
-		driver.quit();
+
 
 	}
 }
