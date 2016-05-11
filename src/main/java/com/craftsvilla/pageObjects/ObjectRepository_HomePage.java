@@ -1,6 +1,7 @@
 package com.craftsvilla.pageObjects;
 
 public class ObjectRepository_HomePage {
+	public static String FirstProductFromSubCategory="FirstProductFromSubCategory";
 	static String button_saveAndContinueGuest="button_saveAndContinueGuest";
 	static String button_Login = "button_Login";
 	static String textBox_emailId = "textBox_emailId";
@@ -19,10 +20,11 @@ public class ObjectRepository_HomePage {
 	static public String FirstProductFromCategory = "FirstProductFromCategory";
 	static String checkBox_OnlyCODProducts = "checkBox_OnlyCODProducts";
 	static String link_firstCategory = "link_firstCategory";
-	static String button_buyNow = "button_buyNow";
+	static public String FirstProductFromSearch="FirstProductFromSearch";
+	public static String button_buyNow = "button_buyNow";
 	static String span_loginMessage = "span_loginMessage";
 	static String text_loginMessage = "Invalid login or password.";
-	static String button_proceedToPayment = "button_proceedToPayment";
+	public static String button_proceedToPayment = "button_proceedToPayment";
 	static String textBox_firstNameBillingInfo = "textBox_firstNameBillingInfo";
 	static String textBox_lastNameBillingInfo = "textBox_lastNameBillingInfo";
 	static String textBox_street1BillingInfo = "textBox_street1BillingInfo";
@@ -34,6 +36,7 @@ public class ObjectRepository_HomePage {
 	static String Shipping_textBox_mobileNo = "Shipping_textBox_mobileNo";
 	static String button_continueOnCheckoutPage = "button_continueOnCheckoutPage";
 	static String button_paymentCOD = "button_paymentCOD";
+	//public static String button_buyNow="button_buyNow";
 	static String button_homePageLogo = "button_homePageLogo";
 	static String ListBox_countryBilligInfo = "ListBox_countryBilligInfo";
 	static String ListBox_regoinBilligInfo = "ListBox_regoinBilligInfo";
