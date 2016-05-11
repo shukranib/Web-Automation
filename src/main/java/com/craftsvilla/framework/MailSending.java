@@ -137,19 +137,19 @@ public class MailSending {
 			attachmentmessageBodyPart.setFileName(listfile[i].getName());
 			multipart.addBodyPart(attachmentmessageBodyPart);
 		}
-		File performancereport = new File("src/main/resources/Input/PerformanceReport.csv");
-		MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
-		System.out.println(performancereport.getName());
-		DataSource source = new FileDataSource(
-				new File(performancereport.getName()));
-		attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
-		attachmentmessageBodyPart.setFileName(performancereport.getName());
-		multipart.addBodyPart(attachmentmessageBodyPart);
-
-		message.setContent(multipart);Transport.send(message);System.out.println("message sent successfully....");
-
+		
 	}
-	
+	File performancereport = new File("src/main/resources/Input/PerformanceReport.csv");
+	MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
+	System.out.println(performancereport.getName());
+	DataSource source = new FileDataSource(
+			new File("src/main/resources/Input/PerformanceReport.csv"));
+	attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
+	attachmentmessageBodyPart.setFileName(performancereport.getName());
+	multipart.addBodyPart(attachmentmessageBodyPart);
+
+	message.setContent(multipart);Transport.send(message);System.out.println("message sent successfully....");
+
 	}catch(
 
 	AddressException e)
