@@ -4,17 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
-import com.craftsvilla.commonflow.CheckOut;
-import com.craftsvilla.commonflow.LoginFlow;
 import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.PropertyReader;
 import com.craftsvilla.framework.Wait;
-import com.craftsvilla.pageObjects.CheckOutPage;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.ObjectRepository_HomePage;
 
@@ -27,13 +22,18 @@ public class PerformanceReport {
 	
 	@Test
 	public void loadingTimeForCategoryPage() {
-		 //LoginFlow login = new LoginFlow();
+		 
 		 PropertyReader read=new PropertyReader();
-
-		//login.loginflow(driver);
-		
 		File csvfile = new File("src/main/resources/Input/PerformanceReport.csv");
-
+			if(!csvfile.exists())
+			{
+				try {
+					csvfile.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				System.out.println("FILE is created");
+			}
 		try {
 			Date date=new Date();
 			String datestring=date.toString();

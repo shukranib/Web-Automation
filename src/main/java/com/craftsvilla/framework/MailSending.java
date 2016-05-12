@@ -122,14 +122,15 @@ public class MailSending {
 
 	// attaching screenshot
 	File screenshotfile = new File("test-output");
-	File[] listfile = screenshotfile.listFiles();for(
-	int i = 0;i<listfile.length;i++)
+	File[] listfile = screenshotfile.listFiles();
+	MimeBodyPart attachmentmessageBodyPart;
+	for(int i = 0;i<listfile.length;i++)
 
 	{
 		String str = listfile[i].getName();
 		if (str.endsWith(".jpg")
 				|| str.equalsIgnoreCase("FailedTestcasesUrl.txt")) {
-			MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
+			attachmentmessageBodyPart = new MimeBodyPart();
 			System.out.println(listfile[i].getName());
 			DataSource source = new FileDataSource(
 					new File("test-output/" + listfile[i].getName()));
@@ -139,15 +140,14 @@ public class MailSending {
 		}
 		
 	}
-	File performancereport = new File("src/main/resources/Input/PerformanceReport.csv");
-	MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
-	System.out.println(performancereport.getName());
-	DataSource source = new FileDataSource(
-			new File("src/main/resources/Input/PerformanceReport.csv"));
+	attachmentmessageBodyPart = new MimeBodyPart();
+	String filename = "src/main/resources/Input/PerformanceReport.csv";
+	DataSource source = new FileDataSource(new File(filename));
 	attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
-	attachmentmessageBodyPart.setFileName(performancereport.getName());
+	attachmentmessageBodyPart.setFileName("Performance report");
 	multipart.addBodyPart(attachmentmessageBodyPart);
-
+	
+	
 	message.setContent(multipart);Transport.send(message);System.out.println("message sent successfully....");
 
 	}catch(
