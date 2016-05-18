@@ -20,11 +20,14 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.apache.log4j.net.SyslogAppender;
+
 import com.craftsvilla.dataobjects.TestCaseResult;
 
 public class MailSending {
 	static PropertyReader configReader = new PropertyReader();
 	static String emailTo = configReader.getPropertyValue("emailIDForMail");
+ 
 	static String emailfrom = "QA.Automation@craftsvilla.com";
 	static String host = "localhost";
 	static StringBuffer htmlbody = new StringBuffer(
@@ -36,8 +39,10 @@ public class MailSending {
 
 	public static void mailTestcasesResult(
 			ArrayList<TestCaseResult> testcasesResult, int passcount,
-			int failCount) {
-
+			int failCount)
+	{
+		System.out.println(emailfrom);
+		System.out.println(emailTo);
 		htmlbody.append(
 				"<h4>" + configReader.getPropertyValue("url") + "</h4>");
 
@@ -119,11 +124,18 @@ public class MailSending {
 
 	BodyPart messageTextBodyPart = new MimeBodyPart();
 	Multipart multipart = new MimeMultipart();messageTextBodyPart.setContent(htmlbody.toString(),"text/html");multipart.addBodyPart(messageTextBodyPart);
-
+	MimeBodyPart attachmentmessageBodyPart;
+	/*attachmentmessageBodyPart = new MimeBodyPart();
+	String filename = "src/main/resources/Input/PerformanceReport.csv";
+	DataSource source = new FileDataSource(new File(filename));
+	attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
+	attachmentmessageBodyPart.setFileName("Performance report");
+	multipart.addBodyPart(attachmentmessageBodyPart);*/
+	
 	// attaching screenshot
 	File screenshotfile = new File("test-output");
 	File[] listfile = screenshotfile.listFiles();
-	MimeBodyPart attachmentmessageBodyPart;
+	
 	for(int i = 0;i<listfile.length;i++)
 
 	{
@@ -140,15 +152,10 @@ public class MailSending {
 		}
 		
 	}
-	attachmentmessageBodyPart = new MimeBodyPart();
-	String filename = "src/main/resources/Input/PerformanceReport.csv";
-	DataSource source = new FileDataSource(new File(filename));
-	attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
-	attachmentmessageBodyPart.setFileName("Performance report");
-	multipart.addBodyPart(attachmentmessageBodyPart);
-	
-	
-	message.setContent(multipart);Transport.send(message);System.out.println("message sent successfully....");
+
+	message.setContent(multipart);
+	Transport.send(message);
+	System.out.println("message sent successfully....");
 
 	}catch(
 
