@@ -27,7 +27,6 @@ import com.craftsvilla.dataobjects.TestCaseResult;
 public class MailSending {
 	static PropertyReader configReader = new PropertyReader();
 	static String emailTo = configReader.getPropertyValue("emailIDForMail");
- 
 	static String emailfrom = "QA.Automation@craftsvilla.com";
 	static String host = "localhost";
 	static StringBuffer htmlbody = new StringBuffer(
@@ -39,10 +38,8 @@ public class MailSending {
 
 	public static void mailTestcasesResult(
 			ArrayList<TestCaseResult> testcasesResult, int passcount,
-			int failCount)
-	{
-		System.out.println(emailfrom);
-		System.out.println(emailTo);
+			int failCount) {
+
 		htmlbody.append(
 				"<h4>" + configReader.getPropertyValue("url") + "</h4>");
 
@@ -124,25 +121,17 @@ public class MailSending {
 
 	BodyPart messageTextBodyPart = new MimeBodyPart();
 	Multipart multipart = new MimeMultipart();messageTextBodyPart.setContent(htmlbody.toString(),"text/html");multipart.addBodyPart(messageTextBodyPart);
-	MimeBodyPart attachmentmessageBodyPart;
-	/*attachmentmessageBodyPart = new MimeBodyPart();
-	String filename = "src/main/resources/Input/PerformanceReport.csv";
-	DataSource source = new FileDataSource(new File(filename));
-	attachmentmessageBodyPart.setDataHandler(new DataHandler(source));
-	attachmentmessageBodyPart.setFileName("Performance report");
-	multipart.addBodyPart(attachmentmessageBodyPart);*/
-	
+
 	// attaching screenshot
 	File screenshotfile = new File("test-output");
-	File[] listfile = screenshotfile.listFiles();
-	
-	for(int i = 0;i<listfile.length;i++)
+	File[] listfile = screenshotfile.listFiles();for(
+	int i = 0;i<listfile.length;i++)
 
 	{
 		String str = listfile[i].getName();
 		if (str.endsWith(".jpg")
 				|| str.equalsIgnoreCase("FailedTestcasesUrl.txt")) {
-			attachmentmessageBodyPart = new MimeBodyPart();
+			MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
 			System.out.println(listfile[i].getName());
 			DataSource source = new FileDataSource(
 					new File("test-output/" + listfile[i].getName()));
@@ -150,12 +139,10 @@ public class MailSending {
 			attachmentmessageBodyPart.setFileName(listfile[i].getName());
 			multipart.addBodyPart(attachmentmessageBodyPart);
 		}
-		
+
 	}
 
-	message.setContent(multipart);
-	Transport.send(message);
-	System.out.println("message sent successfully....");
+	message.setContent(multipart);Transport.send(message);System.out.println("message sent successfully....");
 
 	}catch(
 
