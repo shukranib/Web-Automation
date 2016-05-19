@@ -47,12 +47,12 @@ public class MailSending {
 				//);
 
 		Properties properties = System.getProperties();
-		
-		
-		
-		
-		properties.setProperty("mail.smtp.host", host);
-		properties.put("mail.smtp.auth", "true");
+	      String host = "localhost";
+
+	    
+
+	     
+	      properties.setProperty("mail.smtp.host", host);
       //  Session session = Session.getDefaultInstance(properties, new SMTPAuthenticator());
 		Session session = Session.getDefaultInstance(properties);
 		MimeMessage message = new MimeMessage(session);
@@ -124,9 +124,11 @@ public class MailSending {
 	}else{message.setSubject(severityWiseCount(failedTestCases));
 
 	}
+	
 
 	BodyPart messageTextBodyPart = new MimeBodyPart();
-	Multipart multipart = new MimeMultipart();messageTextBodyPart.setContent(htmlbody.toString(),"text/html");multipart.addBodyPart(messageTextBodyPart);
+	Multipart multipart = new MimeMultipart();
+	messageTextBodyPart.setContent(htmlbody.toString(),"text/html");multipart.addBodyPart(messageTextBodyPart);
 
 	// attaching screenshot
 	File screenshotfile = new File("test-output");
