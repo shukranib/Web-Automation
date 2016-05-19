@@ -47,7 +47,13 @@ public class MailSending {
 				//);
 
 		Properties properties = System.getProperties();
+		
+		
+		
+		
 		properties.setProperty("mail.smtp.host", host);
+		properties.put("mail.smtp.auth", "true");
+      //  Session session = Session.getDefaultInstance(properties, new SMTPAuthenticator());
 		Session session = Session.getDefaultInstance(properties);
 		MimeMessage message = new MimeMessage(session);
 		passedTestCases.addAll(getStatusWiseList(testcasesResult, "Passed"));
