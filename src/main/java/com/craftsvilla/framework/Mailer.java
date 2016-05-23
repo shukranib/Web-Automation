@@ -56,8 +56,8 @@ public class Mailer {
             mes.setSubject(message.getSubject());
 
             BodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText(message.getBody());
-
+          //  messageBodyPart.setText(message.getBody());
+            messageBodyPart.setContent(message.getBody().toString(),"text/html");
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
 
