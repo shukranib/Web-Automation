@@ -169,7 +169,7 @@ if (str.endsWith(".jpg")
 }
 
 //message.setContent(multipart);Transport.send(message);System.out.println("message sent successfully....");
-Mailer mailer = new Mailer(properties,"shukrani.bille@craftsvilla.com","Raani@240024");
+Mailer mailer = new Mailer(properties,"shukrani.bille@craftsvilla.com","Raani@2400245");
 
 try {
 	mailer.sendMessage(emailMessage);
