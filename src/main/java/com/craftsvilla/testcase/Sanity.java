@@ -11,6 +11,7 @@ import com.craftsvilla.commonflow.SortFlow;
 import com.craftsvilla.commonflow.WishList;
 import com.craftsvilla.framework.DriverSelector;
 import com.craftsvilla.framework.FailedTestCases;
+import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.ProductPages;
 
@@ -80,16 +81,23 @@ public class Sanity {
 		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applypricefilter1000_2000OnsearchPage(driver);
+		System.out.println("CLICKED");
 		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 1000, 2000));
+		System.out.println("CLICKED");
+		Wait.defaultMediumWait(driver);
 
 	}
 
 	@Test
 	public void verifyPriceFilter0_500CategoryPageTest() {
 		driver = DriverSelector.getDriver();
+		
 		FiltersFlow.gotosubcategory(driver);
+		System.out.println("TEST");
 		ProductPages.applypricefilter0_500(driver);
+		System.out.println("TEST");
 		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 0, 500));
+		System.out.println("TEST");
 	}
 
 	@Test

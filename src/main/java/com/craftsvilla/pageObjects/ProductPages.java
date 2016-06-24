@@ -16,8 +16,8 @@ public class ProductPages {
 	public static void applypricefilter500_1000(WebDriver driver) {
 		// Screenshot.takeScreenshot(driver, "500Price");
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
-		DriverActions.scrollDownWindow(driver);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+		//DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 
@@ -26,7 +26,7 @@ public class ProductPages {
 	public static void applypricefilter500_1000OnSearchPage(WebDriver driver) {
 		// Screenshot.takeScreenshot(driver, "500Price");
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 		// DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
@@ -36,8 +36,8 @@ public class ProductPages {
 	public static void applypricefilter1000_2000(WebDriver driver) {
 		// Screenshot.takeScreenshot(driver, "1000Price");
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
-		DriverActions.scrollDownWindow(driver);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		//DriverActions.scrollDownWindow(driver);
 
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
@@ -47,7 +47,7 @@ public class ProductPages {
 	public static void applypricefilter1000_2000OnsearchPage(WebDriver driver) {
 		// Screenshot.takeScreenshot(driver, "1000Price");
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
@@ -56,8 +56,8 @@ public class ProductPages {
 
 	public static void applypricefilter2000_5000(WebDriver driver) {
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
-		DriverActions.scrollDownWindow(driver);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
+		//DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
 
@@ -65,7 +65,7 @@ public class ProductPages {
 
 	public static void applypricefilter2000_5000OnsearchPage(WebDriver driver) {
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
 
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
@@ -74,7 +74,7 @@ public class ProductPages {
 
 	public static void applyPriceFilterAbove5000(WebDriver driver) {
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_above5000);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_above5000);
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
@@ -82,7 +82,7 @@ public class ProductPages {
 
 	public static void applyPriceFilterAbove5000OnSearchPage(WebDriver driver) {
 		Wait.defaultMediumWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 		Wait.defaultHighWait(driver);
 
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
@@ -131,16 +131,16 @@ public class ProductPages {
 
 	public static void applypricefilter0_500(WebDriver driver) {
 		// TODO Auto-generated method stub
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 		Wait.defaultHighWait(driver);
-		DriverActions.scrollDownWindow(driver);
+		//DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 	}
 
 	public static void applypricefilter0_500OnSearchPage(WebDriver driver) {
 		// TODO Auto-generated method stub
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 	}

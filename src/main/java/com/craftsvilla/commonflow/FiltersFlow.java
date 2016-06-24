@@ -8,7 +8,8 @@ import com.craftsvilla.pageObjects.ProductPages;
 
 public class FiltersFlow {
 	public static void gotosubcategory(WebDriver driver) {
-		HomePage.clickOnFistCategory(driver);
+		//HomePage.clickOnFistCategory(driver);
+		driver.get("http://www.craftsvilla.com/womens-clothing/salwar-suits/");
 		Wait.defaultMediumWait(driver);
 	}
 
@@ -20,6 +21,7 @@ public class FiltersFlow {
 		Boolean result;
 		Wait.defaultMediumWait(driver);
 		result = ProductPages.getPriceofproductsOncategorypage(driver, min, max);
+		System.out.println("TEST");
 		return result;
 	}
 
