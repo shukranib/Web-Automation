@@ -2,8 +2,10 @@ package com.craftsvilla.commonflow;
 
 import org.openqa.selenium.WebDriver;
 
+import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
+import com.craftsvilla.pageObjects.ObjectRepository_HomePage;
 
 public class WishList {
 
@@ -12,20 +14,24 @@ public class WishList {
 		Register.registerFlow(driver);
 		HomePage.redirecttoHomePage(driver);
 		//login.loginflow(driver);
-		HomePage.clickOnFistCategory(driver);
+		driver.get("http://www.craftsvilla.com/womens-clothing/salwar-suits/");
 		Wait.defaultHighWait(driver);
 		HomePage.clickOnFirstProduct(driver);
 
 		Wait.defaultHighWait(driver);
 		String productURL = HomePage.getCurrentpageURL(driver);
 		System.out.println("URL IS"+productURL);
+		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToCart);
+		Wait.defaultMediumWait(driver);
 		HomePage.clickOnWishButton(driver);
 		Wait.defaultMediumWait(driver);
-		HomePage.clickOnAccount(driver);
-		HomePage.clickOnManageAccount(driver);
-		HomePage.clickOnWishListFromManageAccount(driver);
-		// Screenshot.takeScreenshot(driver, "AfterClickingOnManaageAccount");
+		/*HomePage.clickOnAccount(driver);
+		HomePage.clickOnManageAccount(driver);*/
 		Wait.defaultMediumWait(driver);
+		driver.get("https://securestatic.craftsvilla.com/wishlist/");
+		//HomePage.clickOnWishListFromManageAccount(driver);
+		// Screenshot.takeScreenshot(driver, "AfterClickingOnManaageAccount");
+		Wait.defaultHighWait(driver);
 		HomePage.openFirstProductFromWishList(driver);
 		String wishlistproductURl = HomePage.getCurrentpageURL(driver);
 		System.out.println("URL IS"+wishlistproductURl);

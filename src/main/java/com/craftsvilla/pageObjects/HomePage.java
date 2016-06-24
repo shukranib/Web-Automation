@@ -48,8 +48,10 @@ public class HomePage {
 
 	public static void clickOnFirstProduct(WebDriver driver) {
 		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.FirstProductFromCategory);
-
+		System.out.println("DISPLAY");
+		DriverActions.scrollDownWindow(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstProductFromCategory);
+		System.out.println("Clicked");
 	}
 
 	public static boolean checkIfRegisterPopupIsDisplay(WebDriver driver) {

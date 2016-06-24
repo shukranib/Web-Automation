@@ -36,6 +36,7 @@ public class ObjectRepository_HomePage {
 	static String Shipping_textBox_mobileNo = "Shipping_textBox_mobileNo";
 	static String button_continueOnCheckoutPage = "button_continueOnCheckoutPage";
 	static String button_paymentCOD = "button_paymentCOD";
+	public static String Button_addToCart="Button_addToCart";
 	//public static String button_buyNow="button_buyNow";
 	static String button_homePageLogo = "button_homePageLogo";
 	static String ListBox_countryBilligInfo = "ListBox_countryBilligInfo";
@@ -80,5 +81,7 @@ public class ObjectRepository_HomePage {
 	static public String link_banarasiSubcategory="link_banarasiSubcategory";
 	static public String button_placeOrderCOD="button_placeOrderCOD";
 	//static public String button_proceedToPayment="button_proceedToPayment";
+	static public String Span_orderId="Span_orderId";
+	static public String Button_loginDeliverToThisAddress="Button_loginDeliverToThisAddress";
 
 }
