@@ -126,7 +126,7 @@ public class HomePage {
 	}
 
 	public static void clickOnFistCategory(WebDriver driver) {
-		DriverActions.clickByLinkText(driver, TestData.ProductCategorysarees);
+		DriverActions.click(driver, ObjectRepository_HomePage.link_firstCategory);
 
 	}
 
