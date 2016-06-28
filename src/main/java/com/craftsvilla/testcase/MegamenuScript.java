@@ -57,7 +57,7 @@ public void writeDataToTextFile(String categoryName, String categoryUrl)
 }	
 
 	@Test
-	public static void getResult()
+	public static void megamenuScript()
 	{
 		 boolean  mailsend=false;
 		MegamenuScript requestSender=new MegamenuScript();
