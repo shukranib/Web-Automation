@@ -14,9 +14,11 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
+import com.craftsvilla.dataobjects.MultitabBo;
 import com.craftsvilla.dataobjects.TestCaseBo;
 import com.craftsvilla.dataobjects.TestDataBO;
 import com.craftsvilla.dataobjects.UIElementsBo;
+
 
 public class ExclFileRead {
 	public String filelocation;
@@ -28,8 +30,50 @@ public class ExclFileRead {
 	public static UIElementsBo elementsBo;
 	public static TestDataBO testDataBO;
 	public static List<TestDataBO> listTestData = new ArrayList<>();
-
+	public static List<MultitabBo> listmultilab=new  ArrayList<>();
 	public static List<TestCaseBo> testCasesList = new ArrayList<>();
+	public static MultitabBo multitabobj;
+	
+	public static List<MultitabBo> readMultiTabXls()
+	{
+		try {
+			ipstr = new FileInputStream(new File("src/main/resources/Multitab.xls"));
+		
+			wb = new HSSFWorkbook(ipstr);
+			ws = wb.getSheetAt(0);
+
+			Iterator<Row> rowiterator = ws.iterator();
+			while (rowiterator.hasNext()) {
+				Row row = rowiterator.next();
+
+				Cell mainCategory = row.getCell(0);
+
+				Cell subCategory = row.getCell(1);
+				Cell link = row.getCell(2);
+				multitabobj=new MultitabBo(mainCategory.getStringCellValue(),subCategory.getStringCellValue(),link.getStringCellValue());
+				listmultilab.add(multitabobj);
+				//return listmultilab;
+				
+			}
+		} catch (FileNotFoundException e)
+		{
+
+
+		} catch (IOException e) {
+			
+		} finally {
+			try {
+				ipstr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		
+		return listmultilab;
+	}
+
 
 	public static List<UIElementsBo> exclFileRead() {
 
@@ -148,11 +192,15 @@ public class ExclFileRead {
 
 	// Testing purpose for data
 
-	// public static void main(String[] args) {
-	// List<TestCaseBo> elements = ExclFileRead.readTestCasexls();
-	// for (int i = 0; i < elements.size(); i++) {
-	// System.out.println(elements.get(i));
-	// }
-	// System.out.println(elements);
-	// }
+	 public static void main(String[] args) {
+	List<UIElementsBo> elements = ExclFileRead.exclFileRead();
+	 for (int i = 0; i < elements.size(); i++) {
+		 if(elements.get(i).getElemetName().equals("textBox_MobileNo"))
+		 {
+	 System.out.println(elements.get(i));
+	 
+	 //System.out.println(elements);
+	 }
+	 }
+	 }
 }
