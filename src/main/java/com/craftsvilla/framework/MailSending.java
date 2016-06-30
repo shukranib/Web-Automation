@@ -136,7 +136,7 @@ if(st.countTokens() > 0){
 
 if(failCount==0){
     //message.setSubject("All testcases are passed");
-    emailMessage.setSubject("All testcases are passed");
+    emailMessage.setSubject("Placed COD order testcase is passed");
 }
 else{
     emailMessage.setSubject(severityWiseCount(failedTestCases));
@@ -212,7 +212,7 @@ for (int i = 0; i < failedTestCaseslist.size(); i++) {
     }
 }
 if (critical != 0) {
-    result = critical + " Critical testcases are failing";
+    result = critical + " COD order place testcase is failing";
     return result;
 } else {
     if (high > 0) {
