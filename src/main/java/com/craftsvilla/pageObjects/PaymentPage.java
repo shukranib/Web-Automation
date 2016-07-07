@@ -13,7 +13,9 @@ public static void click_On_DebitCardOption(WebDriver driver)
 public static void enterDebitCardNo(WebDriver driver)
 {
 	
+
 	DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_DebitCardNo, TestData.debitCardNo);
+
 }
 public static void enterDebitCardName(WebDriver driver)
 {
