@@ -12,7 +12,30 @@ import com.craftsvilla.framework.Log4jLogger;
 import com.craftsvilla.framework.Wait;
 
 public class ProductPages {
-
+	public static void applyDiscountFilterAbove50(WebDriver driver)
+	{
+		DriverActions.click(driver, ObjectRepository_HomePage.span_DiscountFilter50);
+	}
+	public static void applyDiscountFilterAbove40(WebDriver driver)
+	{
+		DriverActions.click(driver, ObjectRepository_HomePage.span_DiscountFilterAbove40);
+	}
+	public static void applyDiscountFilterAbove30(WebDriver driver)
+	{
+		DriverActions.click(driver, ObjectRepository_HomePage.span_DiscountFilterAbove30);
+	}
+	public static void applyDiscountFilterAbove20(WebDriver driver)
+	{
+	DriverActions.click(driver, ObjectRepository_HomePage.span_DiscountFilterAbove20);	
+	}
+	public static void applyDiscountFilterAbove10(WebDriver driver)
+	{
+		DriverActions.click(driver, ObjectRepository_HomePage.span_DiscountFilterAbove10);
+	}
+	public static void clickToExpandDiscountFilter(WebDriver driver)
+	{
+		DriverActions.click(driver, ObjectRepository_HomePage.span_DiscountFilter);
+	}
 	public static void applypricefilter500_1000(WebDriver driver) {
 		// Screenshot.takeScreenshot(driver, "500Price");
 		Wait.defaultMediumWait(driver);
@@ -196,6 +219,24 @@ public class ProductPages {
 			DriverActions.selectByvisibleText(driver, ObjectRepository_HomePage.ListBox_sortOrder,
 					"Price: High to Low");
 		}
+	}
+	public static Boolean getDiscountofproductsOncategorypage(WebDriver driver, int min) {
+		List<WebElement> discountList=DriverActions.findElements(driver, ObjectRepository_HomePage.span_DiscountSaveOnProduct);
+		int price;
+		boolean result=true;
+		for (int i = 0; i < discountList.size(); i++) {
+			String discount=discountList.get(i).getText().trim();
+			discount=discount.replace("Save","  ");
+			discount=discount.replace("%","  ").trim();
+			price = Integer.parseInt(discount);
+			if(price<min)
+			{
+				System.out.println("Wrong discount is"+price);
+				result=false;
+				return result;
+			}
+		}
+		return result;
 	}
 
 }
