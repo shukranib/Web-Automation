@@ -16,7 +16,7 @@ public class UIElement {
 		String locator = "";
 		for (UIElementsBo iterator : list) {
 
-			if (iterator.getElemetName().equals(elementName)) {
+			if (iterator.getElemetName().trim().equalsIgnoreCase(elementName.trim())) {
 
 				locator = iterator.getLocator();
 				return locator;
