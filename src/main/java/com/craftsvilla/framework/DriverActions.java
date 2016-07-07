@@ -23,7 +23,9 @@ public class DriverActions {
 	public static void click(WebDriver driver, String elementName) {
 		String by = elements.getbyName(elementName);
 		String locator = elements.getlocatorName(elementName);
-
+		System.out.println("element name"+elementName);
+		System.out.println("Locator is"+locator);
+	
 		if (by != null && locator != null) {
 			if (by.equals("xpath")) {
 				Wait.defaultsmallWait(driver);
@@ -57,7 +59,10 @@ public class DriverActions {
 	public static void sendKeys(WebDriver driver, String elementName, String text) {
 		String by = elements.getbyName(elementName);
 		String locator = elements.getlocatorName(elementName);
+		System.out.println("element name"+elementName);
+		System.out.println("Locator is"+locator);
 		if (by != null && locator != null) {
+			
 			if (by.equals("xpath")) {
 				Wait.defaultsmallWait(driver);
 				driver.findElement(By.xpath(locator)).clear();
@@ -229,7 +234,7 @@ public class DriverActions {
 	public static void waitUntilElementdisplay(WebDriver driver, String elementName) {
 		String by = elements.getbyName(elementName);
 		String locator = elements.getlocatorName(elementName);
-		System.out.println("Locator is" + locator);
+
 		wait = new WebDriverWait(driver, 600);
 		if (by.equals("xpath")) {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
@@ -287,13 +292,23 @@ public static void clickOnOkButtonForPopUp(WebDriver driver)
 	public static void scrollDownWindow(WebDriver driver) {
 		// TODO Auto-generated method stub
 		jse = (JavascriptExecutor) driver;
-		jse.executeScript("scroll(0,250)");
+		jse.executeScript("scroll(0,260)");
+	}
+	public static void scrollDownWindowsmall(WebDriver driver) {
+		// TODO Auto-generated method stub
+		jse = (JavascriptExecutor) driver;
+		jse.executeScript("scroll(0,350)");
 	}
 
 	public static void scrollDownhalfWindow(WebDriver driver) {
 
 		jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,500)", "");
+	}
+	public static void scrollmorethanhalfWindow(WebDriver driver) {
+
+		jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,600)", "");
 	}
 
 	public static void scrollTopWindow(WebDriver driver) {
