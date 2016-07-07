@@ -20,8 +20,7 @@ public class Login {
 	@Test()
 
 	public void startup() {
-		// driver = DriverSelector.getDriver();
-		// Assert.assertTrue(false);
+
 	}
 
 	@Test()
@@ -30,7 +29,6 @@ public class Login {
 		Boolean result;
 
 		driver = DriverSelector.getDriver();
-		// Screenshot.takeScreenshot(driver, "Login1");
 
 		LoginFlow login = new LoginFlow();
 		result = login.loginflow(driver);
