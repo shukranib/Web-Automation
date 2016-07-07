@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-
+import java.util.*;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
@@ -44,9 +44,10 @@ public class Startup{
 			Log4jLogger.writeErrorLog("Executing testcase" + names.toString());
 
 			includel.add(new XmlInclude(names.toString()));
+			//System.out.println("include"+includel);
 
 		}
-
+		
 		for (Class classlist : classesset) {
 
 			xmlclass = new XmlClass(classlist.getName());
