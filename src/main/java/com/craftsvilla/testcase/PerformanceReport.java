@@ -59,7 +59,7 @@ public class PerformanceReport {
 			writer.append("\n");
 			reset();
 
-			Wait.defaultHighWait(driver);
+			/*Wait.defaultHighWait(driver);
 			HomePage.enterTextToSearch(driver);
 			starttime = System.currentTimeMillis();
 			DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.FirstProductFromSearch);
@@ -145,7 +145,7 @@ public class PerformanceReport {
 			writer.append(datestring);
 			
 			writer.append("\n");
-			reset();
+			reset();*/
 					
 			//Wait.defaultHighWait(driver);
 
