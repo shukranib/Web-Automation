@@ -7,12 +7,16 @@ import com.craftsvilla.pageObjects.HomePage;
 
 public class Register {
 	public static boolean registerFlow(WebDriver driver) {
+		Wait.defaultMediumWait(driver);
+		
 		HomePage.clickOnLoginButton(driver);
 		HomePage.clickOnRegisterLink(driver);
 		Wait.defaultMediumWait(driver);
 		HomePage.eneterFirstName(driver);
 		HomePage.enterLastName(driver);
+		Wait.defaultMediumWait(driver);
 		HomePage.eneterMobileNo(driver);
+		//HomePage.eneterMobileNo(driver);
 		Wait.defaultMediumWait(driver);
 		HomePage.enetrEmailIdForregister(driver);
 		HomePage.eneterPasswordForRegister(driver);
