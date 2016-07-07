@@ -4,6 +4,11 @@ import com.craftsvilla.framework.GetTestData;
 
 public class TestData {
 	static public GetTestData testData = new GetTestData();
+	static public String debitCardName = testData.getTestData("debitCardName");
+	static public String debitCardNo = testData.getTestData("debitCardNo");
+	static public String debitCardExpiraryMonth = testData.getTestData("debitCardExpiraryMonth");
+	static public String debitCardExpiraryYear= testData.getTestData("debitCardExpiraryYear");
+	static public String debitCardCsvNo = testData.getTestData("debitCardCsvNo");
 	static public String userNameLogin = testData.getTestData("userNameLogin");
 	static public String passWordLogin = testData.getTestData("passWordLogin");
 	static public String firstName = testData.getTestData("firstName");
