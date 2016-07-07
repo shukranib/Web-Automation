@@ -62,13 +62,19 @@ public static void clickOnDeliverToThisAddressButton(WebDriver driver)
 {
 	Wait.defaultHighWait(driver);
 	//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.button_deliverToThisAddress);
-	DriverActions.click(driver, ObjectRepository_HomePage.button_deliverToThisAddress);
+	DriverActions.click(driver, ObjectRepository_HomePage.Button_loginDeliverToThisAddress);
 }
 public static void  enterEmailIdForGuestCheckout(WebDriver driver)
 {
 	String userEmail = TestData.emailIdRegister + new Date().getTime() + "@gmail.com";
 	Log4jLogger.writeErrorLog("New register Email" + userEmail);
 	DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emaildForGuest, userEmail);
+}
+public static void  enterEmailIdForGuestCheckout(WebDriver driver,String email)
+{
+	
+	Log4jLogger.writeErrorLog("New register Email" + email);
+	DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emaildForGuest, email);
 }
 public static void enterstreet2_BilligInfo(WebDriver driver) {
 	DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_street2BilligInfo,
