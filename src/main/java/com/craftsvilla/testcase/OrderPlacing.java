@@ -44,7 +44,12 @@ public class OrderPlacing {
 		driver = DriverSelector.getDriver();
 		CheckOut.CODOrderPlaceAfterRegister(driver);
 	}
-
+	@Test
+	public void prepaidOrderWithGuestCheckout()
+	{
+		driver = DriverSelector.getDriver();
+		CheckOut.PrePaymentOrderPlace(driver);
+	}
 	@Test
 	public void codOrderPlaceGuestCheckout() {
 		driver = DriverSelector.getDriver();
