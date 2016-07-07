@@ -15,6 +15,7 @@ public class FiltersFlow {
 
 	public static void goToSearchPage(WebDriver driver) {
 		HomePage.enterTextToSearch(driver, "Kareena kapoor");
+		Wait.defaultMediumWait(driver);
 	}
 
 	public static boolean applyPriceFilter(WebDriver driver, int min, int max) {
@@ -24,5 +25,11 @@ public class FiltersFlow {
 		System.out.println("TEST");
 		return result;
 	}
-
+	public static boolean applyDiscountFilter(WebDriver driver, int min) {
+		Boolean result;
+		Wait.defaultMediumWait(driver);
+		result = ProductPages.getDiscountofproductsOncategorypage(driver, min);
+		System.out.println("TEST");
+		return result;
+	}
 }
