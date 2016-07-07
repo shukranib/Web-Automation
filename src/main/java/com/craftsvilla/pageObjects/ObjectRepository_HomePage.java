@@ -1,6 +1,20 @@
 package com.craftsvilla.pageObjects;
 
 public class ObjectRepository_HomePage {
+	
+	public static String span_DiscountFilter="span_DiscountFilter";
+	public static String span_DiscountFilter50="span_DiscountFilter50";
+	public static String span_DiscountFilterAbove40="span_DiscountFilterAbove40";
+	public static String span_DiscountFilterAbove30	="span_DiscountFilterAbove300";
+	public static String span_DiscountFilterAbove20="span_DiscountFilterAbove20";
+	public static String span_DiscountFilterAbove10="span_DiscountFilterAbove10";
+	public static String span_DiscountSaveOnProduct="span_DiscountSaveOnProduct";
+	public static String textBox_DebitCardNo="textBox_DebitCardNo";
+	public static String textBox_DebitCardName="textBox_DebitCardName";
+	public static String textBox_DebitCardCSV="textBox_DebitCardCSV";
+	public static String textBox_DebitCardExpMonth="textBox_DebitCardExpMonth";
+	public static String textBox_DebitCardexpYear="textBox_DebitCardexpYear";
+	public static String Button_DebitCard="Button_DebitCard";
 	public static String FirstProductFromSubCategory="FirstProductFromSubCategory";
 	static String button_saveAndContinueGuest="button_saveAndContinueGuest";
 	static String button_Login = "button_Login";
