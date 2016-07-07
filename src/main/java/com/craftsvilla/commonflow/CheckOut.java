@@ -8,14 +8,17 @@ import com.craftsvilla.pageObjects.CheckOutPage;
 import com.craftsvilla.pageObjects.CommonFunctionRepo;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.OrderHistoryPage;
+import com.craftsvilla.pageObjects.PaymentPage;
 
 public class CheckOut {
+	
 	public static void CODOrderPlaceAfterRegister(WebDriver driver) {
 		Register.registerFlow(driver);
 		HomePage.redirecttoHomePage(driver);
 		AddToCart.addToCartWithoutLogin(driver);
 		Wait.defaultHighWait(driver);
 		String productName="TEST";//CheckOutPage.getProductNameOnOrderHistoryPage(driver);
+		
 		Wait.defaultHighWait(driver);
 		HomePage.clickOnProceedToPaymentButton(driver);
 		System.out.println("Clicked");
@@ -85,8 +88,8 @@ public class CheckOut {
 		CheckOutPage.clickOnDeliverToThisAddressButton(driver);
 		Wait.defaultHighWait(driver);
 		CheckOutPage.clickOnCODOrderPlace(driver);
-		cancelFirstOrderFromOrderHistory(driver, productName);
-		/*CheckOutPage.clickOnLoginHereButton(driver);
+		/*cancelFirstOrderFromOrderHistory(driver, productName);
+		CheckOutPage.clickOnLoginHereButton(driver);
 		Wait.defaultMediumWait(driver);
 		HomePage.EnterUserNameForLogin(driver);
 		Wait.defaultsmallWait(driver);
@@ -127,5 +130,29 @@ public static void codOrderPlaceGuestCheckout(WebDriver  driver)
 }
 	public static void PrePaymentOrderPlace(WebDriver driver) {
 		
+		//System.out.println("Method Called");
+		AddToCart.addToCartWithoutLogin(driver);
+		Wait.defaultHighWait(driver);
+		String productName="Test";//CheckOutPage.getProductNameOnOrderHistoryPage(driver);
+		Wait.defaultHighWait(driver);
+		HomePage.clickOnProceedToPaymentButton(driver);
+		Wait.defaultHighWait(driver);
+		DriverActions.scrollDownWindow(driver);
+		Wait.defaultHighWait(driver);
+		CheckOutPage.clickOncontinueAsGuestButton(driver);
+		Wait.defaultHighWait(driver);
+		CheckOutPage.enterEmailIdForGuestCheckout(driver);
+		CheckOutPage.clickOnGuestCheckout(driver);
+		Wait.defaultHighWait(driver);
+		CommonFunctionRepo.enterBillingAddressGuest(driver);
+		Wait.defaultMediumWait(driver);
+		CheckOutPage.clickOnsaveAndContinueGuest(driver);
+		//CheckOutPage.clickOnDeliverToThisAddressButton(driver);
+		Wait.defaultHighWait(driver);
+		PaymentPage.click_On_DebitCardOption(driver);
+		Wait.defaultMediumWait(driver);
+		CommonFunctionRepo.enterDetailsForDebitPayments(driver);
+		Wait.defaultsmallWait(driver);
+		CheckOutPage.clickOnCODOrderPlace(driver);
 	}
 }
