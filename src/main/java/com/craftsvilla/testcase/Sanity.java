@@ -9,11 +9,13 @@ import org.testng.annotations.Test;
 import com.craftsvilla.commonflow.FiltersFlow;
 import com.craftsvilla.commonflow.SortFlow;
 import com.craftsvilla.commonflow.WishList;
+import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.DriverSelector;
 import com.craftsvilla.framework.FailedTestCases;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.ProductPages;
+import com.sun.tools.internal.xjc.Driver;
 
 public class Sanity {
 	WebDriver driver;
@@ -162,7 +164,74 @@ public class Sanity {
 		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
 
 	}
-	
+	@Test
+	public void testdiscountFilterAbove50_OnCategoryPage()
+	{
+		driver=DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		Wait.defaultHighWait(driver);
+		DriverActions.scrollDownhalfWindow(driver);
+		Wait.defaultMediumWait(driver);
+		ProductPages.clickToExpandDiscountFilter(driver);
+		ProductPages.applyDiscountFilterAbove50(driver);
+		Wait.defaultHighWait(driver);
+		Assert.assertTrue(FiltersFlow.applyDiscountFilter(driver, 50));
+	}
+	@Test
+	public void testdiscountFilterAbove40_OnCategoryPage()
+	{
+		driver=DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		Wait.defaultHighWait(driver);
+		DriverActions.scrollDownhalfWindow(driver);
+		Wait.defaultMediumWait(driver);
+		ProductPages.clickToExpandDiscountFilter(driver);
+		ProductPages.applyDiscountFilterAbove40(driver);
+		Wait.defaultHighWait(driver);
+		Assert.assertTrue(FiltersFlow.applyDiscountFilter(driver, 40));
+		
+		
+	}
+	@Test
+	public void testdiscountFilterAbove30_OnCategoryPage()
+	{
+		driver=DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		Wait.defaultHighWait(driver);
+		DriverActions.scrollDownhalfWindow(driver);
+		Wait.defaultMediumWait(driver);
+		ProductPages.clickToExpandDiscountFilter(driver);
+		ProductPages.applyDiscountFilterAbove30(driver);
+		Wait.defaultHighWait(driver);
+		Assert.assertTrue(FiltersFlow.applyDiscountFilter(driver, 30));
+	}
+	@Test
+	public void testdiscountFilterAbove20_OnCategoryPage()
+	{
+		driver=DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		Wait.defaultHighWait(driver);
+		DriverActions.scrollDownhalfWindow(driver);
+		Wait.defaultMediumWait(driver);
+		ProductPages.clickToExpandDiscountFilter(driver);
+		ProductPages.applyDiscountFilterAbove20(driver);
+		Wait.defaultHighWait(driver);
+		Assert.assertTrue(FiltersFlow.applyDiscountFilter(driver, 20));
+	}
+	@Test
+	public void testdiscountFilterAbove10_OnCategoryPage()
+	{
+		driver=DriverSelector.getDriver();
+		FiltersFlow.gotosubcategory(driver);
+		Wait.defaultMediumWait(driver);
+		DriverActions.scrollDownhalfWindow(driver);
+		ProductPages.clickToExpandDiscountFilter(driver);
+		Wait.defaultMediumWait(driver);
+		//DriverActions.scrollDownWindowsmall(driver);
+		ProductPages.applyDiscountFilterAbove10(driver);
+		Wait.defaultHighWait(driver);
+		Assert.assertTrue(FiltersFlow.applyDiscountFilter(driver, 10));
+	}
 
 	@Test
 	public void testDSCPriceSortingOnSearchPage() {
