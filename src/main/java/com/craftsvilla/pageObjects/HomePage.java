@@ -39,11 +39,21 @@ public class HomePage {
 		Wait.defaultMediumWait(driver);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, TestData.passWordLogin);
 	}
+	public static void enterPasswordForLogin(WebDriver driver,String password) {
+		System.out.println("User NAme" + password);
+		Wait.defaultMediumWait(driver);
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, password);
+	}
 
 	public static void EnterUserNameForLogin(WebDriver driver) {
 		System.out.println("User NAme" + TestData.userNameLogin);
 		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, TestData.userNameLogin);
+	}
+	public static void EnterUserNameForLogin(WebDriver driver,String userNames) {
+		System.out.println("User NAme" + userNames);
+		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, userNames);
 	}
 
 	public static void clickOnFirstProduct(WebDriver driver) {
