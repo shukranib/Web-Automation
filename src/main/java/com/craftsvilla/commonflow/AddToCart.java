@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import com.craftsvilla.framework.PropertyReader;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
-import com.sun.tools.internal.jxc.ConfigReader;
+
 
 public class AddToCart {
 	static LoginFlow login = new LoginFlow();
@@ -15,7 +15,7 @@ public class AddToCart {
 		
 		login.loginflow(driver);
 		Wait.defaultHighWait(driver);
-		driver.get(read.getPropertyValue("url")+"catalog/product/view/id/4331545/s/test");
+		driver.get(read.getPropertyValue("url")+"catalog/product/view/id/43118/s/glitter-red-bag");
 		/*HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
 		Wait.defaultHighWait(driver);
@@ -31,7 +31,8 @@ public class AddToCart {
 	}
 
 	public static void addToCartWithoutLogin(WebDriver driver) {
-		driver.get(read.getPropertyValue("url")+"catalog/product/view/id/4331545/s/test");
+		driver.get(read.getPropertyValue("url")+"catalog/product/view/id/3828220/s/sutra-decor-glass-metal-votive-yellow");
+		
 		/*HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
 		Wait.defaultHighWait(driver);
