@@ -27,6 +27,18 @@ public class CommonFunctionRepo {
 		CheckOutPage.entertelephone_BillingInfo(driver);
 
 	}
+	public static void enterDetailsForDebitPayments(WebDriver driver) {
+	PaymentPage.enterDebitCardNo(driver);
+	Wait.defaultMediumWait(driver);
+	PaymentPage.enterDebitCardName(driver);
+	Wait.defaultMediumWait(driver);
+	PaymentPage.enterDebitCardExpiraryMonth(driver);
+	Wait.defaultMediumWait(driver);
+	PaymentPage.enterDebitCardExpiraryYear(driver);
+	Wait.defaultMediumWait(driver);
+	PaymentPage.enterDebitCardCsvNo(driver);
+
+	}
 	public static void enterBillingAddressGuest(WebDriver driver) {
 		CheckOutPage.enterFirstName_BillingInfo(driver);
 		CheckOutPage.enterLastName_BillingInfo(driver);
