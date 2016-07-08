@@ -15,7 +15,7 @@ public class AddToCart {
 		
 		login.loginflow(driver);
 		Wait.defaultHighWait(driver);
-		driver.get(read.getPropertyValue("url")+"catalog/product/view/id/43118/s/glitter-red-bag");
+		driver.get(read.getPropertyValue("url")+"catalog/product/view/id/4331545/s/test");
 		/*HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
 		Wait.defaultHighWait(driver);
