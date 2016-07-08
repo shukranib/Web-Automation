@@ -144,7 +144,10 @@ public class Sanity {
 	@Test
 	public void testASCPriceSortingOnCategoryPage() {
 		driver = DriverSelector.getDriver();
-		HomePage.clickOnFistCategory(driver);
+		FiltersFlow.gotosubcategory(driver);
+		Wait.defaultHighWait(driver);
+		ProductPages.clickOnPriceSortingOnCategoryPage(driver, "ASC");
+		Wait.defaultHighWait(driver);
 		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
 
 	}
@@ -153,7 +156,10 @@ public class Sanity {
 	@Test
 	public void testDSCPriceSortingOnCategoryPage() {
 		driver = DriverSelector.getDriver();
-		HomePage.clickOnFistCategory(driver);
+		FiltersFlow.gotosubcategory(driver);
+		Wait.defaultHighWait(driver);
+		ProductPages.clickOnPriceSortingOnCategoryPage(driver, "DSC");
+		Wait.defaultHighWait(driver);
 		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "DSC"));
 	}
 
@@ -161,6 +167,9 @@ public class Sanity {
 	public void testASCPriceSortingOnSearchPage() {
 		driver = DriverSelector.getDriver();
 		HomePage.enterTextToSearch(driver,"Kareena kapoor");
+		Wait.defaultHighWait(driver);
+		ProductPages.clickOnPriceSorting(driver, "ASC");
+		Wait.defaultHighWait(driver);
 		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
 
 	}
@@ -237,6 +246,9 @@ public class Sanity {
 	public void testDSCPriceSortingOnSearchPage() {
 		driver = DriverSelector.getDriver();
 		HomePage.enterTextToSearch(driver, "Kareena kapoor");
+		Wait.defaultHighWait(driver);
+		ProductPages.clickOnPriceSorting(driver, "DSC");
+		Wait.defaultHighWait(driver);
 		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "DSC"));
 	}
 

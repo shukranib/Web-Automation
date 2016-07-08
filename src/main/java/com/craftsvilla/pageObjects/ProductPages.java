@@ -58,7 +58,7 @@ public class ProductPages {
 
 	public static void applypricefilter1000_2000(WebDriver driver) {
 		// Screenshot.takeScreenshot(driver, "1000Price");
-		Wait.defaultMediumWait(driver);
+		
 		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 		//DriverActions.scrollDownWindow(driver);
 
@@ -218,6 +218,14 @@ public class ProductPages {
 		} else {
 			DriverActions.selectByvisibleText(driver, ObjectRepository_HomePage.ListBox_sortOrder,
 					"Price: High to Low");
+		}
+	}
+	public static void clickOnPriceSortingOnCategoryPage(WebDriver driver, String sort) {
+		Wait.defaultHighWait(driver);
+		if (sort.equalsIgnoreCase("ASC")) {
+			DriverActions.click(driver, ObjectRepository_HomePage.button_AscSort);
+		} else {
+			DriverActions.click(driver, ObjectRepository_HomePage.button_DescSort);
 		}
 	}
 	public static Boolean getDiscountofproductsOncategorypage(WebDriver driver, int min) {

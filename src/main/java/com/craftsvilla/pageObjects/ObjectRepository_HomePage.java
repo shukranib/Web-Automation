@@ -2,6 +2,9 @@ package com.craftsvilla.pageObjects;
 
 public class ObjectRepository_HomePage {
 	
+	public static String button_DescSort="button_DescSort";
+	public static String button_AscSort="button_AscSort";
+	public static String button_DiscountSort="button_DiscountSort";
 	public static String span_DiscountFilter="span_DiscountFilter";
 	public static String span_DiscountFilter50="span_DiscountFilter50";
 	public static String span_DiscountFilterAbove40="span_DiscountFilterAbove40";
