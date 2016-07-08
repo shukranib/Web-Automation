@@ -32,7 +32,7 @@ public class AddToCart {
 	}
 
 	public static void addToCartWithoutLogin(WebDriver driver) {
-		driver.get(read.getPropertyValue("url")+"catalog/product/view/id/3828220/s/sutra-decor-glass-metal-votive-yellow");
+		driver.get(read.getPropertyValue("url")+"/catalog/product/view/id/4331545/s/test");
 		
 		/*HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
