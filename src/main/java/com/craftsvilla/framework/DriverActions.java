@@ -301,12 +301,12 @@ public static void clickOnOkButtonForPopUp(WebDriver driver)
 	}
 
 	public static void scrollDownhalfWindow(WebDriver driver) {
-
+			System.out.println("Scrolling Down Window");
 		jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,500)", "");
 	}
 	public static void scrollmorethanhalfWindow(WebDriver driver) {
-
+		System.out.println("Scrolling Down More Than half window");
 		jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");
 	}
