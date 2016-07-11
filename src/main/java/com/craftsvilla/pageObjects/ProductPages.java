@@ -52,7 +52,7 @@ public class ProductPages {
 		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 		// DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
-		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500SearchPage);
 
 	}
 
@@ -73,7 +73,7 @@ public class ProductPages {
 		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
 
 		Wait.defaultHighWait(driver);
-		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_1000_2000SearchPage);
 
 	}
 
@@ -91,7 +91,7 @@ public class ProductPages {
 		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
 
 		Wait.defaultHighWait(driver);
-		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_2000_5000);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_2000_5000SearchPage);
 
 	}
 
@@ -108,7 +108,7 @@ public class ProductPages {
 		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_500_1000);
 		Wait.defaultHighWait(driver);
 
-		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000SearchPage);
 	}
 
 	public static boolean getPriceofproductsOncategorypage(WebDriver driver, int min, int max) {
@@ -158,6 +158,7 @@ public class ProductPages {
 		Wait.defaultHighWait(driver);
 		//DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 	}
 
@@ -165,7 +166,7 @@ public class ProductPages {
 		// TODO Auto-generated method stub
 		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_0_500);
 		Wait.defaultHighWait(driver);
-		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500);
+		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_0_500SearchPage);
 	}
 
 	public static boolean getPriceofproductsOncategorypage(WebDriver driver, String sort) {
