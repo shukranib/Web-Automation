@@ -181,7 +181,7 @@ public class Sanity {
 	DriverActions.scrollDownhalfWindow(driver);
 	Wait.defaultMediumWait(driver);
 	ProductPages.clickToExpandDiscountFilter(driver);
-	Wait.defaultMediumWait(driver);
+	Wait.defaultHighWait(driver);
 	//DriverActions.scrollDownWindowsmall(driver);
 		ProductPages.applyDiscountFilterAbove50(driver);
 		Wait.defaultHighWait(driver);
