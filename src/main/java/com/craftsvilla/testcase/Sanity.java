@@ -234,6 +234,7 @@ public class Sanity {
 		FiltersFlow.gotosubcategory(driver);
 		Wait.defaultMediumWait(driver);
 		DriverActions.scrollDownhalfWindow(driver);
+		Wait.defaultMediumWait(driver);
 		ProductPages.clickToExpandDiscountFilter(driver);
 		Wait.defaultMediumWait(driver);
 		//DriverActions.scrollDownWindowsmall(driver);
