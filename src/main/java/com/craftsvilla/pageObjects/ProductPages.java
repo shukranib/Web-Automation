@@ -98,7 +98,7 @@ public class ProductPages {
 	public static void applyPriceFilterAbove5000(WebDriver driver) {
 		Wait.defaultMediumWait(driver);
 		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.PriceFilter_above5000);
-		DriverActions.scrollDownWindow(driver);
+		//DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.PriceFilter_above5000);
 	}
