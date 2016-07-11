@@ -175,13 +175,14 @@ public class Sanity {
 	}
 	@Test
 	public void testdiscountFilterAbove50_OnCategoryPage()
-	{
-		driver=DriverSelector.getDriver();
-		FiltersFlow.gotosubcategory(driver);
-		Wait.defaultHighWait(driver);
-		DriverActions.scrollDownhalfWindow(driver);
-		Wait.defaultMediumWait(driver);
-		ProductPages.clickToExpandDiscountFilter(driver);
+	{	driver=DriverSelector.getDriver();
+	FiltersFlow.gotosubcategory(driver);
+	Wait.defaultMediumWait(driver);
+	DriverActions.scrollDownhalfWindow(driver);
+	Wait.defaultMediumWait(driver);
+	ProductPages.clickToExpandDiscountFilter(driver);
+	Wait.defaultMediumWait(driver);
+	//DriverActions.scrollDownWindowsmall(driver);
 		ProductPages.applyDiscountFilterAbove50(driver);
 		Wait.defaultHighWait(driver);
 		Assert.assertTrue(FiltersFlow.applyDiscountFilter(driver, 50));
