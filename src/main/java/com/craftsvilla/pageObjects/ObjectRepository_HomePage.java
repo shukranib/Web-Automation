@@ -1,7 +1,11 @@
 package com.craftsvilla.pageObjects;
 
 public class ObjectRepository_HomePage {
-	
+	public static String PriceFilter_0_500SearchPage="PriceFilter_0_500SearchPage";
+	public static String PriceFilter_500_1000SearchPage="PriceFilter_500_1000SearchPage";
+	public static String PriceFilter_1000_2000SearchPage="PriceFilter_1000_2000SearchPage";
+	public static String PriceFilter_2000_5000SearchPage="PriceFilter_2000_5000SearchPage";
+	public static String PriceFilter_above5000SearchPage="PriceFilter_above5000SearchPage";
 	public static String button_DescSort="button_DescSort";
 	public static String button_AscSort="button_AscSort";
 	public static String button_DiscountSort="button_DiscountSort";
