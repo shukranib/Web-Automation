@@ -66,14 +66,23 @@ public class WishList {
 		Assert.assertTrue(!result);
 		FiltersFlow.gotosubcategory(driver);
 		Wait.defaultHighWait(driver);
+		Wait.defaultHighWait(driver);
+		Wait.defaultHighWait(driver);
+		WebElement firstproduct = driver.findElement(By.xpath(".//*[@id='product_data']/div[1]/div[1]/a/img"));
+
+		Actions action = new Actions(driver);
+		action.moveToElement(firstproduct).perform();
+		//DriverActions.mousehover(driver, ObjectRepository_HomePage.FirstProductFromCategory);
+		Wait.defaultsmallWait(driver);
+
 		HomePage.clickOnFirstProduct(driver);
 
 		Wait.defaultHighWait(driver);
 		String productURL = HomePage.getCurrentpageURL(driver);
 		System.out.println("URL IS" + productURL);
-		WebElement firstproduct = driver.findElement(By.id("buynow"));
+		firstproduct = driver.findElement(By.id("buynow"));
 
-		Actions action = new Actions(driver);
+		action = new Actions(driver);
 		action.moveToElement(firstproduct).perform();
 		Wait.defaultMediumWait(driver);
 		HomePage.clickOnWishButton(driver);
