@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,9 +24,9 @@ public class DriverActions {
 	public static void click(WebDriver driver, String elementName) {
 		String by = elements.getbyName(elementName);
 		String locator = elements.getlocatorName(elementName);
-		System.out.println("element name"+elementName);
-		System.out.println("Locator is"+locator);
-	
+		System.out.println("element name" + elementName);
+		System.out.println("Locator is" + locator);
+
 		if (by != null && locator != null) {
 			if (by.equals("xpath")) {
 				Wait.defaultsmallWait(driver);
@@ -59,10 +60,10 @@ public class DriverActions {
 	public static void sendKeys(WebDriver driver, String elementName, String text) {
 		String by = elements.getbyName(elementName);
 		String locator = elements.getlocatorName(elementName);
-		System.out.println("element name"+elementName);
-		System.out.println("Locator is"+locator);
+		System.out.println("element name" + elementName);
+		System.out.println("Locator is" + locator);
 		if (by != null && locator != null) {
-			
+
 			if (by.equals("xpath")) {
 				Wait.defaultsmallWait(driver);
 				driver.findElement(By.xpath(locator)).clear();
@@ -193,6 +194,7 @@ public class DriverActions {
 		// TODO Auto-generated method stub
 		driver.findElement(By.linkText(linkText)).sendKeys(Keys.ENTER);
 	}
+
 	public static void clickOnLinkText(WebDriver driver, String linkText) {
 		// TODO Auto-generated method stub
 		driver.findElement(By.linkText(linkText)).click();
@@ -266,12 +268,53 @@ public class DriverActions {
 		}
 
 	}
-public static void clickOnOkButtonForPopUp(WebDriver driver)
-{
-	Alert alert=driver.switchTo().alert();
-	alert.accept();
-	
-}
+
+	public static void clickOnOkButtonForPopUp(WebDriver driver) {
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+
+	}
+
+	public static void mousehover(WebDriver driver, String elementName) {
+		String by = elements.getbyName(elementName);
+		String locator = elements.getlocatorName(elementName);
+		System.out.println("element name" + elementName);
+		System.out.println("Locator is" + locator);
+
+		Actions action = new Actions(driver);
+
+		if (by != null && locator != null) {
+			if (by.equals("xpath")) {
+				Wait.defaultsmallWait(driver);
+				WebElement we = driver.findElement(By.xpath(elementName));
+				action.moveToElement(we).build().perform();
+			}
+			if (by.equals("id")) {
+				Wait.defaultsmallWait(driver);
+				WebElement we = driver.findElement(By.id(elementName));
+				action.moveToElement(we).build().perform();
+			}
+			if (by.equals("class")) {
+
+				WebElement we = driver.findElement(By.className(elementName));
+				action.moveToElement(we).build().perform();
+			}
+			if (by.equals("linktext")) {
+
+				WebElement we = driver.findElement(By.linkText(elementName));
+				action.moveToElement(we).build().perform();
+
+			}
+		} else {
+			try {
+				throw new UIElementNotFound("ElementName/Locator Not Found in UI element sheet" + elementName);
+			} catch (UIElementNotFound e) {
+
+				e.printStackTrace();
+			}
+		}
+	}
+
 	public static List<WebElement> findElements(WebDriver driver, String elementName) {
 		// TODO Auto-generated method stub
 		String by = elements.getbyName(elementName);
@@ -294,17 +337,19 @@ public static void clickOnOkButtonForPopUp(WebDriver driver)
 		jse = (JavascriptExecutor) driver;
 		jse.executeScript("scroll(0,260)");
 	}
+
 	public static void scrollDownWindowsmall(WebDriver driver) {
 		// TODO Auto-generated method stub
 		jse = (JavascriptExecutor) driver;
-		jse.executeScript("scroll(0,350)");
+		jse.executeScript("scroll(0,100)");
 	}
 
 	public static void scrollDownhalfWindow(WebDriver driver) {
-			System.out.println("Scrolling Down Window");
+		System.out.println("Scrolling Down Window");
 		jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,500)", "");
 	}
+
 	public static void scrollmorethanhalfWindow(WebDriver driver) {
 		System.out.println("Scrolling Down More Than half window");
 		jse = (JavascriptExecutor) driver;
@@ -316,4 +361,5 @@ public static void clickOnOkButtonForPopUp(WebDriver driver)
 		jse = (JavascriptExecutor) driver;
 		jse.executeScript("scroll(250,0)");
 	}
+
 }

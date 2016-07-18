@@ -146,6 +146,7 @@ public class Cart {
 
 		Wait.defaultHighWait(driver);
 		String productURL = HomePage.getCurrentpageURL(driver);
+		DriverActions.scrollDownWindowsmall(driver);
 		System.out.println("URL IS" + productURL);
 		WebElement firstproduct = driver.findElement(By.id("buynow"));
 
