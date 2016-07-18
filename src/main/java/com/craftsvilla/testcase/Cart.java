@@ -272,11 +272,12 @@ public class Cart {
 		String currentcount = DriverActions.getText(driver, ObjectRepository_HomePage.Span_noofproductincart);
 		int currentcountint = Integer.parseInt(currentcount);
 		System.out.println("count=" + currentcount);
+
+		Wait.defaultHighWait(driver);
 		AddToCart.addToCartWithoutLoginAddtocartbutton(driver);
 		Wait.defaultHighWait(driver);
 		System.out.println("Click");
-		String aftercount = DriverActions.getText(driver,
-				ObjectRepository_HomePage.Span_noofproductincartonproductpage);
+		String aftercount = DriverActions.getText(driver, ObjectRepository_HomePage.Span_noofproductincartonproduct);
 		int aftercountint = Integer.parseInt(aftercount);
 		int diff = aftercountint - currentcountint;
 		System.out.println("current cunt" + aftercount);
