@@ -218,7 +218,7 @@ public class Cart {
 		//diff = currentproductcountint - aftercounproducttint;
 		System.out.println("before is" + currentcount);
 		System.out.println("after is" + aftercounproducttint);
-		if (currentcountint > aftercounproducttint) {
+		if (currentproductcountint > aftercounproducttint) {
 			Assert.assertTrue(true);
 		} else {
 			Assert.assertTrue(false);
