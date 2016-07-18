@@ -22,8 +22,19 @@ public class HomePage {
 		System.out.println("Clicking on login");
 		Wait.defaultMediumWait(driver);
 		driver.findElement(By.xpath(".//*[@class='user-icon']")).click();
-		// Screenshot.takeScreenshot(driver, "After Login");
-		// DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
+
+	}
+
+	public static void clickonLogoutbutton(WebDriver driver) {
+		DriverActions.click(driver, ObjectRepository_HomePage.Button_logout);
+	}
+
+	public static void clickonAddToCartButton(WebDriver driver) {
+		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToCart);
+	}
+
+	public static void clickOnWishListbutton(WebDriver driver) {
+		DriverActions.click(driver, ObjectRepository_HomePage.link_wishlistfromhomepage);
 	}
 
 	public static void clickONSignInButton(WebDriver driver) {
@@ -39,7 +50,8 @@ public class HomePage {
 		Wait.defaultMediumWait(driver);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, TestData.passWordLogin);
 	}
-	public static void enterPasswordForLogin(WebDriver driver,String password) {
+
+	public static void enterPasswordForLogin(WebDriver driver, String password) {
 		System.out.println("User NAme" + password);
 		Wait.defaultMediumWait(driver);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, password);
@@ -50,7 +62,8 @@ public class HomePage {
 		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, TestData.userNameLogin);
 	}
-	public static void EnterUserNameForLogin(WebDriver driver,String userNames) {
+
+	public static void EnterUserNameForLogin(WebDriver driver, String userNames) {
 		System.out.println("User NAme" + userNames);
 		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, userNames);
@@ -101,7 +114,7 @@ public class HomePage {
 	}
 
 	public static void eneterMobileNo(WebDriver driver) {
-		System.out.println("Method called"+TestData.mobileNo);
+		System.out.println("Method called" + TestData.mobileNo);
 		//DriverActions.clear(driver, ObjectRepository_HomePage.textBox_MobileNo);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_MobileNo, TestData.telephone_BillingInfo);
 	}
@@ -262,7 +275,7 @@ public class HomePage {
 	public static void clickOnWishButton(WebDriver driver) {
 
 		Wait.defaultHighWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.Button_addToWishList);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.Button_addToWishList);
 		// Screenshot.takeScreenshot(driver, "Clicking on WishlistButton");
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToWishList);

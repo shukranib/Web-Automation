@@ -2,14 +2,18 @@ package com.craftsvilla.commonflow;
 
 import org.openqa.selenium.WebDriver;
 
+import com.craftsvilla.framework.PropertyReader;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
 import com.craftsvilla.pageObjects.ProductPages;
+import com.sun.tools.internal.jxc.ConfigReader;
 
 public class FiltersFlow {
+	
 	public static void gotosubcategory(WebDriver driver) {
+		PropertyReader read=new PropertyReader();
 		//HomePage.clickOnFistCategory(driver);
-		driver.get("http://www.craftsvilla.com/womens-clothing/salwar-suits/");
+		driver.get(read.getPropertyValue("url")+"/womens-clothing/salwar-suits/");
 		Wait.defaultMediumWait(driver);
 	}
 
