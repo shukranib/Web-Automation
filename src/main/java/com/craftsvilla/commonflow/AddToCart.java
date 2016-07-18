@@ -2,6 +2,7 @@ package com.craftsvilla.commonflow;
 
 import org.openqa.selenium.WebDriver;
 
+import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.PropertyReader;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
@@ -50,6 +51,7 @@ public class AddToCart {
 	public static void addToCartWithoutLoginAddtocartbutton(WebDriver driver) {
 		driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/4331545/s/test");
 		Wait.defaultHighWait(driver);
+		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		HomePage.clickonAddToCartButton(driver);
 		Wait.defaultHighWait(driver);
