@@ -28,7 +28,7 @@ public class Login {
 
 		Boolean result;
 
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstack();
 
 		LoginFlow login = new LoginFlow();
 		result = login.loginflow(driver);
