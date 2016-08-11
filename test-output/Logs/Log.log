@@ -616,3 +616,9 @@ ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcasestartup
 ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcaseclickOnAllFeedPageTest
 ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcasestartup
 ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcaseclickOnAllFeedPageTest
+ERROR main TEST - Executing testcasestartup
+ERROR main TEST - Executing testcasecodOrderPlaceGuestCheckout
+ERROR main TEST - Executing testcasetestDiscountSortingOnCategoryPage
+ERROR main TEST - Executing testcasestartup
+ERROR main TEST - Executing testcasecodOrderPlaceGuestCheckout
+ERROR main TEST - New register EmailTestordercraftsvilla1470893579833@gmail.com

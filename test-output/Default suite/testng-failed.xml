@@ -3,22 +3,38 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="testcase.Login"/>
+      <class name="com.craftsvilla.testcase.Sanity"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="testcase.Login">
+      <class name="com.craftsvilla.testcase.Sanity">
         <methods>
-          <include name="loginTest"/>
-          <include name="checkValidationMessageForRegisterTest"/>
-          <include name="keepUserNameAndPasswordBlankTest"/>
-          <include name="startup"/>
-          <include name="keepPasswordBlankTest"/>
-          <include name="RegisterTest"/>
+          <include name="clickOnAllFeedPageTest"/>
+          <include name="verifypriceFilter1000_2000SearchPage"/>
+          <include name="testdiscountFilterAbove30_OnCategoryPage"/>
+          <include name="testDSCPriceSortingOnSearchPage"/>
           <include name="closeBrowser"/>
+          <include name="verifypriceFilter500_1000SearchPage"/>
+          <include name="testASCPriceSortingOnSearchPage"/>
+          <include name="testdiscountFilterAbove20_OnCategoryPage"/>
+          <include name="verifyPriceFilterAbove5000CategoryPageTest"/>
+          <include name="addProductToWishlistTest"/>
+          <include name="testASCPriceSortingOnCategoryPage"/>
+          <include name="verifyPriceFilter2000_5000SearchPageTest"/>
+          <include name="verifypriceFilter500_1000CategoryPage"/>
+          <include name="testdiscountFilterAbove40_OnCategoryPage"/>
+          <include name="verifyPriceFilter2000_5000CategoryPageTest"/>
+          <include name="testDSCPriceSortingOnCategoryPage"/>
+          <include name="testdiscountFilterAbove50_OnCategoryPage"/>
+          <include name="verifyPriceFilter0_500CategoryPageTest"/>
+          <include name="verifyPriceFilter0_500SearchPageTest"/>
+          <include name="verifyPriceFilterAbove5000SearchPageTest"/>
+          <include name="testdiscountFilterAbove10_OnCategoryPage"/>
+          <include name="verifypriceFilter1000_2000CategoryPage"/>
+          <include name="clickOnAllLinkFromHomePageTest"/>
         </methods>
-      </class> <!-- testcase.Login -->
+      </class> <!-- com.craftsvilla.testcase.Sanity -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
