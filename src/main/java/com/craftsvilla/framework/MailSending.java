@@ -160,23 +160,27 @@ public class MailSending {
 
 	public static String severityWiseCount(List<TestCaseResult> failedTestCaseslist) {
 		String result;
+		if (failedTestCaseslist.size() >= 0) {
+			for (int i = 0; i < failedTestCaseslist.size(); i++) {
+				System.out.println("INSIDE COUNT----------------");
+				System.out.println(
+						failedTestCaseslist.get(i).getSeverity() + failedTestCaseslist.get(i).getTestCaseName());
+				if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("Medium")) {
+					medium++;
+				}
+				if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("Critical")) {
+					critical++;
+				}
+				if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("high")) {
+					high++;
+				}
+				if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("low")) {
+					low++;
+				}
 
-		for (int i = 0; i < failedTestCaseslist.size(); i++) {
-			System.out.println("INSIDE COUNT----------------");
-			System.out.println(failedTestCaseslist.get(i).getSeverity() + failedTestCaseslist.get(i).getTestCaseName());
-			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("Medium")) {
-				medium++;
-			}
-			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("Critical")) {
-				critical++;
-			}
-			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("high")) {
-				high++;
-			}
-			if ((failedTestCaseslist.get(i).getSeverity()).equalsIgnoreCase("low")) {
-				low++;
 			}
 		}
+
 		if (critical != 0) {
 			result = critical + "Critical testcases are failing";
 			return result;
@@ -195,6 +199,5 @@ public class MailSending {
 			}
 
 		}
-
 	}
 }
