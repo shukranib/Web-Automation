@@ -180,7 +180,6 @@ public class MailSending {
 				}
 			}
 		}
-
 		if (critical != 0) {
 			result = critical + "Critical testcases are failing";
 			return result;
