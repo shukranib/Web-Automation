@@ -161,6 +161,7 @@ public class MailSending {
 	public static String severityWiseCount(List<TestCaseResult> failedTestCaseslist) {
 		String result;
 		if (failedTestCaseslist.size() > 0) {
+			System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%sdffjldfljkdkjff%%%%%%%%%%%%%%%%%%%%%%");
 			for (int i = 0; i < failedTestCaseslist.size(); i++) {
 				System.out.println("INSIDE COUNT----------------");
 				System.out.println(
