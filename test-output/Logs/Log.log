@@ -616,3 +616,7 @@ ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcasestartup
 ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcaseclickOnAllFeedPageTest
 ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcasestartup
 ERROR com.craftsvilla.framework.Startup.main() TEST - Executing testcaseclickOnAllFeedPageTest
+ERROR main TEST - Executing testcasestartup
+ERROR main TEST - Executing testcaseloginTest
+ERROR main TEST - Executing testcasestartup
+ERROR main TEST - Executing testcaseloginTest

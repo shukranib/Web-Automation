@@ -1,33 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="1" failed="1" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="6075" started-at="2016-02-02T12:04:52Z" finished-at="2016-02-02T12:04:58Z">
+  <suite name="Default Suite" duration-ms="51804" started-at="2016-08-11T11:22:49Z" finished-at="2016-08-11T11:23:41Z">
     <groups>
     </groups>
-    <test name="Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0" duration-ms="6075" started-at="2016-02-02T12:04:52Z" finished-at="2016-02-02T12:04:58Z">
-      <class name="testcase.Sanity">
-        <test-method status="FAIL" signature="clickOnAllFeedPageTest()[pri:0, instance:testcase.Sanity@6d390fef]" name="clickOnAllFeedPageTest" duration-ms="6057" started-at="2016-02-02T17:34:52Z" finished-at="2016-02-02T17:34:58Z">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+    <test name="Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db" duration-ms="51804" started-at="2016-08-11T11:22:49Z" finished-at="2016-08-11T11:23:41Z">
+      <class name="com.craftsvilla.testcase.Cart">
+        <test-method status="SKIP" signature="testpriceverification(org.openqa.selenium.WebDriver)[pri:0, instance:com.craftsvilla.testcase.Cart@4c1d9d4b]" name="testpriceverification" duration-ms="0" started-at="2016-08-11T16:52:49Z" finished-at="2016-08-11T16:52:49Z">
+          <exception class="org.testng.TestNGException">
             <message>
-              <![CDATA[Error communicating with the remote browser. It may have died.
-Build info: version: '2.49.0', revision: '365eeb44deba2067b1761c8862ef21d55250e063', time: '2016-01-13 11:57:39'
-System info: host: 'N/A', ip: 'N/A', os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.32-573.12.1.el6.x86_64', java.version: '1.8.0_72'
-Driver info: driver.version: RemoteWebDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=38.5.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 0ff02c1d-7e34-4f1f-8af2-9dc1c3c3e978]]>
+              <![CDATA[
+Method testpriceverification requires 1 parameters but 0 were supplied in the @Test annotation.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.49.0', revision: '365eeb44deba2067b1761c8862ef21d55250e063', time: '2016-01-13 11:57:39'
-System info: host: 'N/A', ip: 'N/A', os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.32-573.12.1.el6.x86_64', java.version: '1.8.0_72'
-Driver info: driver.version: RemoteWebDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=38.5.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 0ff02c1d-7e34-4f1f-8af2-9dc1c3c3e978
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
-	at com.craftsvilla.framework.DriverSelector.getDriver(DriverSelector.java:18)
-	at testcase.Sanity.clickOnAllFeedPageTest(Sanity.java:33)
+              <![CDATA[org.testng.TestNGException: 
+Method testpriceverification requires 1 parameters but 0 were supplied in the @Test annotation.
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:191)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:127)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:376)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:451)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1274)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:989)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1079)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at com.craftsvilla.framework.Startup.main(Startup.java:69)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testpriceverification -->
+      </class> <!-- com.craftsvilla.testcase.Cart -->
+      <class name="com.craftsvilla.testcase.Login">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.craftsvilla.testcase.Login@12d4bf7e]" name="loginTest" duration-ms="46695" started-at="2016-08-11T16:52:49Z" finished-at="2016-08-11T16:53:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:com.craftsvilla.testcase.Login@12d4bf7e]" name="closeBrowser" is-config="true" duration-ms="5085" started-at="2016-08-11T16:53:36Z" finished-at="2016-08-11T16:53:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=Login.loginTest()[pri:0, instance:com.craftsvilla.testcase.Login@12d4bf7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="FAIL" signature="startup()[pri:0, instance:com.craftsvilla.testcase.Login@12d4bf7e]" name="startup" duration-ms="1" started-at="2016-08-11T16:53:41Z" finished-at="2016-08-11T16:53:41Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.craftsvilla.testcase.Login.startup(Login.java:23)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -49,99 +93,39 @@ Session ID: 0ff02c1d-7e34-4f1f-8af2-9dc1c3c3e978
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
 	at org.testng.TestNG.run(TestNG.java:1064)
-	at com.craftsvilla.framework.Startup.main(Startup.java:68)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:293)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
-	... 31 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 46 more
+	at com.craftsvilla.framework.Startup.main(Startup.java:69)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnAllFeedPageTest -->
-        <test-method status="FAIL" signature="closeBrowser()[pri:0, instance:testcase.Sanity@6d390fef]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2016-02-02T17:34:58Z" finished-at="2016-02-02T17:34:58Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at testcase.Sanity.closeBrowser(Sanity.java:48)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at com.craftsvilla.framework.Startup.main(Startup.java:68)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:293)
-	at java.lang.Thread.run(Thread.java:745)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- testcase.Sanity -->
-      <class name="testcase.Login">
-        <test-method status="PASS" signature="startup()[pri:0, instance:testcase.Login@7bccb7d4]" name="startup" duration-ms="5" started-at="2016-02-02T17:34:52Z" finished-at="2016-02-02T17:34:52Z">
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startup -->
-        <test-method status="FAIL" signature="closeBrowser()[pri:0, instance:testcase.Login@7bccb7d4]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2016-02-02T17:34:52Z" finished-at="2016-02-02T17:34:52Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="FAIL" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:com.craftsvilla.testcase.Login@12d4bf7e]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2016-08-11T16:53:41Z" finished-at="2016-08-11T16:53:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=startup status=FAILURE method=Login.startup()[pri:0, instance:com.craftsvilla.testcase.Login@12d4bf7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.remote.SessionNotFoundException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'shukrani-244', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.19.0-25-generic', java.version: '1.8.0_92'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at testcase.Login.closeBrowser(Login.java:91)
+              <![CDATA[org.openqa.selenium.remote.SessionNotFoundException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'shukrani-244', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.19.0-25-generic', java.version: '1.8.0_92'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
+	at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:326)
+	at com.craftsvilla.framework.FailedTestCases.actionAfterFailedTestcase(FailedTestCases.java:21)
+	at com.craftsvilla.testcase.Login.closeBrowser(Login.java:93)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -165,20 +149,14 @@ Caused by: java.net.ConnectException: Connection refused
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
 	at org.testng.TestNG.run(TestNG.java:1064)
-	at com.craftsvilla.framework.Startup.main(Startup.java:68)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:293)
-	at java.lang.Thread.run(Thread.java:745)
+	at com.craftsvilla.framework.Startup.main(Startup.java:69)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.remote.SessionNotFoundException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testcase.Login -->
-    </test> <!-- Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0 -->
+      </class> <!-- com.craftsvilla.testcase.Login -->
+    </test> <!-- Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db -->
   </suite> <!-- Default Suite -->
 </testng-results>

@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Default_Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,  1 skipped,  1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,10 +102,24 @@
                     <div class="method-list-content failed suite-Default_Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="testcase.Sanity" hash-for-method="clickOnAllFeedPageTest">clickOnAllFeedPageTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.craftsvilla.testcase.Login" hash-for-method="startup">startup</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_Suite" class="hide-methods skipped suite-Default_Suite"> (hide)</a> <!-- hide-methods skipped suite-Default_Suite -->
+                      <a href="#" panel-name="suite-Default_Suite" class="show-methods skipped suite-Default_Suite"> (show)</a> <!-- show-methods skipped suite-Default_Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_Suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.craftsvilla.testcase.Cart" hash-for-method="testpriceverification">testpriceverification</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Default_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,7 +130,7 @@
                     <div class="method-list-content passed suite-Default_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="testcase.Login" hash-for-method="startup">startup</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="com.craftsvilla.testcase.Login" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_Suite -->
@@ -134,65 +148,7 @@
           <div class="suite-Default_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">testcase.Sanity</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="clickOnAllFeedPageTest">
-                  </a> <!-- clickOnAllFeedPageTest -->
-                  <span class="method-name">clickOnAllFeedPageTest</span>
-                  <div class="stack-trace">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: &apos;2.49.0&apos;, revision: &apos;365eeb44deba2067b1761c8862ef21d55250e063&apos;, time: &apos;2016-01-13 11:57:39&apos;
-System info: host: &apos;N/A&apos;, ip: &apos;N/A&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.32-573.12.1.el6.x86_64&apos;, java.version: &apos;1.8.0_72&apos;
-Driver info: driver.version: RemoteWebDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=38.5.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 0ff02c1d-7e34-4f1f-8af2-9dc1c3c3e978
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
-	at com.craftsvilla.framework.DriverSelector.getDriver(DriverSelector.java:18)
-	at testcase.Sanity.clickOnAllFeedPageTest(Sanity.java:33)
-	at com.craftsvilla.framework.Startup.main(Startup.java:68)
-	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:293)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:170)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
-	... 31 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
-	... 46 more
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_Suite-class-failed -->
-          <div class="suite-Default_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testcase.Login</span>
+              <span class="class-name">com.craftsvilla.testcase.Login</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -200,6 +156,46 @@ Caused by: java.net.ConnectException: Connection refused
                   <a name="startup">
                   </a> <!-- startup -->
                   <span class="method-name">startup</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.craftsvilla.testcase.Login.startup(Login.java:23)
+	at com.craftsvilla.framework.Startup.main(Startup.java:69)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_Suite-class-failed -->
+          <div class="suite-Default_Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.craftsvilla.testcase.Cart</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testpriceverification">
+                  </a> <!-- testpriceverification -->
+                  <span class="method-name">testpriceverification</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Method testpriceverification requires 1 parameters but 0 were supplied in the @Test annotation.
+	at com.craftsvilla.framework.Startup.main(Startup.java:69)
+... Removed 20 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_Suite-class-skipped -->
+          <div class="suite-Default_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.craftsvilla.testcase.Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest">
+                  </a> <!-- loginTest -->
+                  <span class="method-name">loginTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -213,13 +209,12 @@ Caused by: java.net.ConnectException: Connection refused
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Default Suite&quot;&gt;
-  &lt;test name=&quot;Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0&quot;&gt;
+  &lt;test name=&quot;Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testcase.Login&quot;&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.WishList&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;startup&quot;/&gt;
-          &lt;include name=&quot;clickOnAllFeedPageTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -228,9 +223,56 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -239,15 +281,62 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testcase.Login --&gt;
-      &lt;class name=&quot;testcase.ForgotPassWordTest&quot;&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.WishList --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.Sanity&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;startup&quot;/&gt;
-          &lt;include name=&quot;clickOnAllFeedPageTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -256,9 +345,56 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -267,15 +403,62 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testcase.ForgotPassWordTest --&gt;
-      &lt;class name=&quot;testcase.OrderPlacing&quot;&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.Sanity --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.Login&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;startup&quot;/&gt;
-          &lt;include name=&quot;clickOnAllFeedPageTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -284,9 +467,56 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -295,15 +525,62 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testcase.OrderPlacing --&gt;
-      &lt;class name=&quot;testcase.Sanity&quot;&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.Login --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.ForgotPassWordTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;startup&quot;/&gt;
-          &lt;include name=&quot;clickOnAllFeedPageTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -312,9 +589,56 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
-          &lt;exclude name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
           &lt;exclude name=&quot;RegisterTest&quot;/&gt;
           &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
           &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
@@ -323,12 +647,685 @@ Caused by: java.net.ConnectException: Connection refused
           &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
           &lt;exclude name=&quot;addToCartTest&quot;/&gt;
           &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
           &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
           &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testcase.Sanity --&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.ForgotPassWordTest --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.PerformanceReport&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;startup&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.PerformanceReport --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.OrderPlacing&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;startup&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.OrderPlacing --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.MegamenuScript&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;startup&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.MegamenuScript --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.Cart&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;startup&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.Cart --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.TestChrome&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;startup&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+          &lt;exclude name=&quot;RegisterTest&quot;/&gt;
+          &lt;exclude name=&quot;keepUserNameAndPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;keepPasswordBlank&quot;/&gt;
+          &lt;exclude name=&quot;checkValidationMessageForRegister&quot;/&gt;
+          &lt;exclude name=&quot;testforgotPassWord&quot;/&gt;
+          &lt;exclude name=&quot;forgotPassWordEmailValidationTest&quot;/&gt;
+          &lt;exclude name=&quot;addToCartTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceTest&quot;/&gt;
+          &lt;exclude name=&quot;cancelfirstOrder&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllLinkFromHomePageTest&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTest&quot;/&gt;
+          &lt;exclude name=&quot;clickOnAllFeedPageTest&quot;/&gt;
+          &lt;exclude name=&quot;codOrderAfterLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenregister&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceAddtoCartThenLogin&quot;/&gt;
+          &lt;exclude name=&quot;codOrderPlaceGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000SearchPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter1000_2000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifypriceFilter500_1000CategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter0_500CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilterAbove5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000SearchPageTest&quot;/&gt;
+          &lt;exclude name=&quot;verifyPriceFilter2000_5000CategoryPageTest&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDSCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;testASCPriceSortingOnSearchPage&quot;/&gt;
+          &lt;exclude name=&quot;loadingTimeForCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;guestCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;loginCheckOutScript&quot;/&gt;
+          &lt;exclude name=&quot;megamenuScript&quot;/&gt;
+          &lt;exclude name=&quot;prepaidOrderWithGuestCheckout&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove50_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove40_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove30_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove20_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testdiscountFilterAbove10_OnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testDiscountSortingOnCategoryPage&quot;/&gt;
+          &lt;exclude name=&quot;testbackButtonOnnwishlistpage&quot;/&gt;
+          &lt;exclude name=&quot;testdeletefirstproductfromWishList&quot;/&gt;
+          &lt;exclude name=&quot;testshareWishList&quot;/&gt;
+          &lt;exclude name=&quot;testaddwishlistdate&quot;/&gt;
+          &lt;exclude name=&quot;addProductToWishlistTestfromcategory&quot;/&gt;
+          &lt;exclude name=&quot;testAddnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testeditsnotetoseller&quot;/&gt;
+          &lt;exclude name=&quot;testcontinueshoppingbutton_oncartpage&quot;/&gt;
+          &lt;exclude name=&quot;testforupdateWishList&quot;/&gt;
+          &lt;exclude name=&quot;testAddTocartusingAddtocart&quot;/&gt;
+          &lt;exclude name=&quot;testremoveproductfromcart&quot;/&gt;
+          &lt;exclude name=&quot;testquantitymodificationAddtoCart&quot;/&gt;
+          &lt;exclude name=&quot;testpriceAssertion&quot;/&gt;
+          &lt;exclude name=&quot;testloginAddtocartlogout&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_Single&quot;/&gt;
+          &lt;exclude name=&quot;testAddtocartfromWihlist_All&quot;/&gt;
+          &lt;exclude name=&quot;wishlistAddtocartAll&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.TestChrome --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0 --&gt;
+  &lt;/test&gt; &lt;!-- Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db --&gt;
+  &lt;test name=&quot;Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.Login&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;closeBrowser&quot;/&gt;
+          &lt;include name=&quot;startup&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.Login --&gt;
+      &lt;class name=&quot;com.craftsvilla.testcase.Cart&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;testpriceverification&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.craftsvilla.testcase.Cart --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Default Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -340,7 +1337,10 @@ Caused by: java.net.ConnectException: Connection refused
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Command line test a9e8b4b3-b09c-464d-8f2d-b37bb61e69a0 (4 classes)</span>
+                <span class="test-name">Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db (9 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">Command line test b3047013-a70c-45ca-bcf5-b6a77a9d28db(failed) (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -366,20 +1366,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'clickOnAllFeedPageTest')
-data.setCell(0, 2, 'testcase.Sanity')
-data.setCell(0, 3, 6057);
+data.setCell(0, 1, 'loginTest')
+data.setCell(0, 2, 'com.craftsvilla.testcase.Login')
+data.setCell(0, 3, 46695);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'startup')
-data.setCell(1, 2, 'testcase.Login')
-data.setCell(1, 3, 5);
+data.setCell(1, 2, 'com.craftsvilla.testcase.Login')
+data.setCell(1, 3, 1);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testpriceverification')
+data.setCell(2, 2, 'com.craftsvilla.testcase.Cart')
+data.setCell(2, 3, 0);
 window.suiteTableData['Default_Suite']= { tableData: data, tableDiv: 'times-div-Default_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 46 seconds</span>
               <div id="times-div-Default_Suite">
               </div> <!-- times-div-Default_Suite -->
             </div> <!-- times-div -->
@@ -394,17 +1398,85 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">12 ignored methods</span>
+            <span class="header-content">56 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">testcase.Login</span>
+              <span class="ignored-class-name">com.craftsvilla.testcase.WishList</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">loginTest</span>
+                <span class="ignored-method-name">addProductToWishlistTest</span>
+                <br/>
+                <span class="ignored-method-name">addProductToWishlistTestfromcategory</span>
+                <br/>
+                <span class="ignored-method-name">testaddwishlistdate</span>
+                <br/>
+                <span class="ignored-method-name">testshareWishList</span>
+                <br/>
+                <span class="ignored-method-name">testbackButtonOnnwishlistpage</span>
+                <br/>
+                <span class="ignored-method-name">testforupdateWishList</span>
+                <br/>
+                <span class="ignored-method-name">testdeletefirstproductfromWishList</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.craftsvilla.testcase.Sanity</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">clickOnAllFeedPageTest</span>
+                <br/>
+                <span class="ignored-method-name">verifypriceFilter1000_2000SearchPage</span>
+                <br/>
+                <span class="ignored-method-name">testdiscountFilterAbove30_OnCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">testDSCPriceSortingOnSearchPage</span>
+                <br/>
+                <span class="ignored-method-name">verifypriceFilter500_1000SearchPage</span>
+                <br/>
+                <span class="ignored-method-name">testASCPriceSortingOnSearchPage</span>
+                <br/>
+                <span class="ignored-method-name">verifyPriceFilterAbove5000CategoryPageTest</span>
+                <br/>
+                <span class="ignored-method-name">testdiscountFilterAbove20_OnCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">testASCPriceSortingOnCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">addProductToWishlistTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPriceFilter2000_5000SearchPageTest</span>
+                <br/>
+                <span class="ignored-method-name">verifypriceFilter500_1000CategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">verifyPriceFilter2000_5000CategoryPageTest</span>
+                <br/>
+                <span class="ignored-method-name">testdiscountFilterAbove40_OnCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">testDSCPriceSortingOnCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">verifyPriceFilter0_500SearchPageTest</span>
+                <br/>
+                <span class="ignored-method-name">testdiscountFilterAbove50_OnCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">verifyPriceFilter0_500CategoryPageTest</span>
+                <br/>
+                <span class="ignored-method-name">verifyPriceFilterAbove5000SearchPageTest</span>
+                <br/>
+                <span class="ignored-method-name">searchTest</span>
+                <br/>
+                <span class="ignored-method-name">testdiscountFilterAbove10_OnCategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">verifypriceFilter1000_2000CategoryPage</span>
+                <br/>
+                <span class="ignored-method-name">clickOnAllLinkFromHomePageTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.craftsvilla.testcase.Login</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">checkValidationMessageForRegisterTest</span>
                 <br/>
                 <span class="ignored-method-name">keepUserNameAndPasswordBlankTest</span>
-                <br/>
-                <span class="ignored-method-name">checkValidationMessageForRegisterTest</span>
                 <br/>
                 <span class="ignored-method-name">keepPasswordBlankTest</span>
                 <br/>
@@ -413,7 +1485,7 @@ return data;
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
-              <span class="ignored-class-name">testcase.ForgotPassWordTest</span>
+              <span class="ignored-class-name">com.craftsvilla.testcase.ForgotPassWordTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">forgotPassWordEmailValidationTest</span>
                 <br/>
@@ -422,22 +1494,62 @@ return data;
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
-              <span class="ignored-class-name">testcase.OrderPlacing</span>
+              <span class="ignored-class-name">com.craftsvilla.testcase.PerformanceReport</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">loadingTimeForCategoryPage</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.craftsvilla.testcase.OrderPlacing</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">prepaidOrderWithGuestCheckout</span>
+                <br/>
+                <span class="ignored-method-name">codOrderPlaceAddtoCartThenLogin</span>
+                <br/>
+                <span class="ignored-method-name">cancelfirstOrder</span>
+                <br/>
+                <span class="ignored-method-name">codOrderAfterLogin</span>
+                <br/>
+                <span class="ignored-method-name">codOrderPlaceGuestCheckout</span>
+                <br/>
                 <span class="ignored-method-name">codOrderPlaceTest</span>
+                <br/>
+                <span class="ignored-method-name">codOrderPlaceAddtoCartThenregister</span>
                 <br/>
                 <span class="ignored-method-name">addToCartTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
-              <span class="ignored-class-name">testcase.Sanity</span>
+              <span class="ignored-class-name">com.craftsvilla.testcase.MegamenuScript</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">searchTest</span>
+                <span class="ignored-method-name">megamenuScript</span>
                 <br/>
-                <span class="ignored-method-name">clickOnAllLinkFromHomePageTest</span>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.craftsvilla.testcase.Cart</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">testpriceAssertion</span>
                 <br/>
-                <span class="ignored-method-name">addProductToWishlistTest</span>
+                <span class="ignored-method-name">testcontinueshoppingbutton_oncartpage</span>
+                <br/>
+                <span class="ignored-method-name">testAddTocartusingAddtocart</span>
+                <br/>
+                <span class="ignored-method-name">testremoveproductfromcart</span>
+                <br/>
+                <span class="ignored-method-name">testAddnotetoseller</span>
+                <br/>
+                <span class="ignored-method-name">testloginAddtocartlogout</span>
+                <br/>
+                <span class="ignored-method-name">testeditsnotetoseller</span>
+                <br/>
+                <span class="ignored-method-name">testquantitymodificationAddtoCart</span>
+                <br/>
+                <span class="ignored-method-name">testAddtocartfromWihlist_Single</span>
+                <br/>
+                <span class="ignored-method-name">testAddtocartfromWihlist_All</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -449,31 +1561,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testcase.Login</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.craftsvilla.testcase.Login</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">startup</span>
+                <span class="method-name">loginTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">5 ms</span>
+                <span class="method-name">closeBrowser([TestResult name=loginTest status=SUCCESS method=Login.loginTest()[pri:0, instance:com.craftsvilla.t...)</span>
+                <span class="method-start">46696 ms</span>
               </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">testcase.Sanity</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">clickOnAllFeedPageTest</span>
-                <span class="method-start">7 ms</span>
+                <span class="method-name">startup</span>
+                <span class="method-start">51781 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">6064 ms</span>
+                <span class="method-name">closeBrowser([TestResult name=startup status=FAILURE method=Login.startup()[pri:0, instance:com.craftsvilla.testc...)</span>
+                <span class="method-start">51782 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
