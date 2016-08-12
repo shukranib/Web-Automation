@@ -1,5 +1,6 @@
 package com.craftsvilla.commonflow;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.craftsvilla.framework.DriverActions;
@@ -30,7 +31,7 @@ public class CheckOut {
 		HomePage.clickOnCODPaymentMethod(driver);
 		Wait.defaultMediumWait(driver);
 		HomePage.clickOnPlaceOrder(driver);
-		Wait.defaultMediumWait(driver);
+		Wait.defaultHighWait(driver);
 		cancelFirstOrderFromOrderHistory(driver, productName);
 
 	}
@@ -129,8 +130,10 @@ public class CheckOut {
 
 		CheckOutPage.clickOnCODOrderPlace(driver);
 		Wait.defaultHighWait(driver);
+		Wait.defaultHighWait(driver);
 		String successurl = driver.getCurrentUrl();
-		if (successurl.contains("payment-success")) {
+		boolean status = driver.findElement(By.xpath(".//*[@class='thnku']")).isDisplayed();
+		if ((successurl.contains("payment-success")) || (status == true)) {
 			return true;
 		} else {
 			return false;

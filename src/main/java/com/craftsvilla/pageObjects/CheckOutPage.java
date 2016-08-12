@@ -109,9 +109,9 @@ public class CheckOutPage {
 	public static void entertelephone_BillingInfo(WebDriver driver) {
 		Random rand = new Random();
 		int number = rand.nextInt(1000) + 1;
-
+		String usertelephone = Long.toString(new Date().getTime());
 		String no = "1111111" + Integer.toString(number);
-		DriverActions.sendKeys(driver, ObjectRepository_HomePage.Shipping_textBox_mobileNo, no);
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.Shipping_textBox_mobileNo, usertelephone);
 	}
 
 	public static void enterEmailForguestcheckout(WebDriver driver) {
