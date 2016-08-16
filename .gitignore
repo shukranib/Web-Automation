@@ -1,1 +1,30 @@
 /target/
+--all
+test-output/bullet_point.png
+test-output/collapseall.gif
+test-output/Default suite
+test-output/Default Suite
+test-output/emailable-report.html
+test-output/failed.png
+test-output/index.html
+test-output/jquery-1.7.1.min.js
+test-output/junitreports
+test-output/Logs
+test-output/navigator-bullet.png
+test-output/old
+test-output/passed.png
+test-output/skipped.png
+test-output/Suite
+test-output/testng.css
+test-output/testng-failed.xml
+test-output/testng-reports.css
+test-output/testng-reports.js
+test-output/testng-results.xml
+test-output/TmpSuite
+target/classes
+target/com
+target/dependency-jars
+target/generated-sources
+target/maven-archiver
+target/maven-status
+target/surefire
