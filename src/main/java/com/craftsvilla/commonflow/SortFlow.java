@@ -9,9 +9,7 @@ public class SortFlow {
 	public static boolean priceSortOnCategoryPage(WebDriver driver, String sort) {
 		boolean result;
 
-		Wait.defaultHighWait(driver);
-		ProductPages.clickOnPriceSorting(driver, sort);
-		Wait.defaultHighWait(driver);
+		
 		result = ProductPages.getPriceofproductsOncategorypage(driver, sort);
 		Wait.defaultHighWait(driver);
 		return result;

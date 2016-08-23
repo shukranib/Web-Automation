@@ -22,8 +22,20 @@ public class HomePage {
 		System.out.println("Clicking on login");
 		Wait.defaultMediumWait(driver);
 		driver.findElement(By.xpath(".//*[@class='user-icon']")).click();
-		// Screenshot.takeScreenshot(driver, "After Login");
-		// DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
+
+	}
+
+	public static void clickonLogoutbutton(WebDriver driver) {
+		DriverActions.click(driver, ObjectRepository_HomePage.Button_logout);
+	}
+
+	public static void clickonAddToCartButton(WebDriver driver) {
+		DriverActions.scrollDownWindow(driver);
+		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToCart);
+	}
+
+	public static void clickOnWishListbutton(WebDriver driver) {
+		DriverActions.click(driver, ObjectRepository_HomePage.link_wishlistfromhomepage);
 	}
 
 	public static void clickONSignInButton(WebDriver driver) {
@@ -40,16 +52,30 @@ public class HomePage {
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, TestData.passWordLogin);
 	}
 
+	public static void enterPasswordForLogin(WebDriver driver, String password) {
+		System.out.println("User NAme" + password);
+		Wait.defaultMediumWait(driver);
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_password, password);
+	}
+
 	public static void EnterUserNameForLogin(WebDriver driver) {
 		System.out.println("User NAme" + TestData.userNameLogin);
 		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, TestData.userNameLogin);
 	}
 
-	public static void clickOnFirstProduct(WebDriver driver) {
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.FirstProductFromCategory);
+	public static void EnterUserNameForLogin(WebDriver driver, String userNames) {
+		System.out.println("User NAme" + userNames);
+		// driver.findElement(By.id(ObjectRepository_HomePage.textBox_emailId)).sendKeys("shukrani.bille@craftsvilla.com");
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailId, userNames);
+	}
 
+	public static void clickOnFirstProduct(WebDriver driver) {
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.FirstProductFromCategory);
+		System.out.println("DISPLAY");
+		//	DriverActions.scrollDownWindow(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstProductFromCategory);
+		System.out.println("Clicked");
 	}
 
 	public static boolean checkIfRegisterPopupIsDisplay(WebDriver driver) {
@@ -89,7 +115,9 @@ public class HomePage {
 	}
 
 	public static void eneterMobileNo(WebDriver driver) {
-		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_MobileNo, TestData.mobileNo);
+		System.out.println("Method called" + TestData.mobileNo);
+		//DriverActions.clear(driver, ObjectRepository_HomePage.textBox_MobileNo);
+		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_MobileNo, TestData.telephone_BillingInfo);
 	}
 
 	public static void clearPasswordForRegister(WebDriver driver) {
@@ -112,7 +140,7 @@ public class HomePage {
 	}
 
 	public static void enetrEmailIdForregister(WebDriver driver) {
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.textBox_emailIdRegister);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.textBox_emailIdRegister);
 		String userEmail = TestData.emailIdRegister + new Date().getTime() + "@gmail.com";
 		Log4jLogger.writeErrorLog("New register Email" + userEmail);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_emailIdRegister, userEmail);
@@ -124,13 +152,12 @@ public class HomePage {
 	}
 
 	public static void clickOnFistCategory(WebDriver driver) {
-		DriverActions.clickByLinkText(driver, TestData.ProductCategorysarees);
+		DriverActions.click(driver, ObjectRepository_HomePage.link_firstCategory);
 
 	}
 
 	public static void clickOnBuyNowButton(WebDriver driver) {
-		driver.findElement(By.id("buynow")).sendKeys(Keys.ENTER);
-
+		DriverActions.click(driver, ObjectRepository_HomePage.button_buyNow);
 	}
 
 	public static boolean checkIfloginIsSuccessful(WebDriver driver) {
@@ -152,7 +179,7 @@ public class HomePage {
 	}
 
 	public static void clickOnProceedToPaymentButton(WebDriver driver) {
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.button_proceedToPayment);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.button_proceedToPayment);
 		DriverActions.click(driver, ObjectRepository_HomePage.button_proceedToPayment);
 	}
 
@@ -248,7 +275,7 @@ public class HomePage {
 	public static void clickOnWishButton(WebDriver driver) {
 
 		Wait.defaultHighWait(driver);
-		DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.Button_addToWishList);
+		//DriverActions.waitUntilElementdisplay(driver, ObjectRepository_HomePage.Button_addToWishList);
 		// Screenshot.takeScreenshot(driver, "Clicking on WishlistButton");
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.Button_addToWishList);

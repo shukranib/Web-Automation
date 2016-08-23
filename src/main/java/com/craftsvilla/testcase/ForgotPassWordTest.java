@@ -25,7 +25,7 @@ public class ForgotPassWordTest {
 	@Test(testName = "testforgotPassWordTest")
 	public void testforgotPassWord() {
 
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 		HomePage.clickOnLoginButton(driver);
 		Wait.defaultMediumWait(driver);
 		/*
@@ -42,7 +42,7 @@ public class ForgotPassWordTest {
 	@Test()
 	public void forgotPassWordEmailValidationTest() {
 
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 		HomePage.clickOnLoginButton(driver);
 		HomePage.clickOnForgotPassWordButton(driver);
 		Wait.defaultMediumWait(driver);

@@ -28,7 +28,7 @@ public class Login {
 
 		Boolean result;
 
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 
 		LoginFlow login = new LoginFlow();
 		result = login.loginflow(driver);
@@ -39,7 +39,7 @@ public class Login {
 	@Test()
 	public void RegisterTest() {
 		Boolean result;
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 
 		result = Register.registerFlow(driver);
 		// Screenshot.takeScreenshot(driver);
@@ -51,7 +51,7 @@ public class Login {
 	@Test()
 	public void keepUserNameAndPasswordBlankTest() {
 		Boolean result;
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 		HomePage.clickOnLoginButton(driver);
 		HomePage.clearPassWordNameTextBox(driver);
 		HomePage.clearUserNameTextBox(driver);
@@ -66,7 +66,7 @@ public class Login {
 	@Test()
 	public void keepPasswordBlankTest() {
 		Boolean result;
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 		HomePage.clickOnLoginButton(driver);
 		HomePage.clearPassWordNameTextBox(driver);
 		HomePage.EnterUserNameForLogin(driver);
@@ -80,7 +80,7 @@ public class Login {
 	@Test()
 	public void checkValidationMessageForRegisterTest() {
 		Boolean result;
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 		result = Register.checkValidationRegisterFlow(driver);
 		// Screenshot.takeScreenshot(driver);
 		Assert.assertTrue(result);

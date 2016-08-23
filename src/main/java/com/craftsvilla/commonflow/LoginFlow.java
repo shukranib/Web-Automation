@@ -17,5 +17,16 @@ public class LoginFlow {
 		return HomePage.checkIfloginIsSuccessful(driver);
 
 	}
+	public boolean loginflow(WebDriver driver,String userName,String password) {
+
+		HomePage.clickOnLoginButton(driver);
+		HomePage.EnterUserNameForLogin(driver,userName);
+		HomePage.enterPasswordForLogin(driver,password);
+		HomePage.clickONSignInButton(driver);
+		Wait.defaultMediumWait(driver);
+		// return false;
+		return HomePage.checkIfloginIsSuccessful(driver);
+
+	}
 
 }

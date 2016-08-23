@@ -69,7 +69,9 @@ public class CustomReportGenerator implements ITestListener {
 
 		System.out.println("Started code cleanup");
 		FailedTestCases.codecleanup();
-
+		passcount = 0;
+		failCount = 0;
+		testCaseResults.clear();
 	}
 
 }

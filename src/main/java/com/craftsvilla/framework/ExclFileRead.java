@@ -14,6 +14,8 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
+import com.craftsvilla.dataobjects.Environment;
+import com.craftsvilla.dataobjects.MultitabBo;
 import com.craftsvilla.dataobjects.TestCaseBo;
 import com.craftsvilla.dataobjects.TestDataBO;
 import com.craftsvilla.dataobjects.UIElementsBo;
@@ -28,8 +30,48 @@ public class ExclFileRead {
 	public static UIElementsBo elementsBo;
 	public static TestDataBO testDataBO;
 	public static List<TestDataBO> listTestData = new ArrayList<>();
-
+	public static List<MultitabBo> listmultilab = new ArrayList<>();
 	public static List<TestCaseBo> testCasesList = new ArrayList<>();
+	public static MultitabBo multitabobj;
+	public static List<Environment> envlist = new ArrayList<>();
+	public static Environment envobj;
+
+	public static List<MultitabBo> readMultiTabXls() {
+		try {
+			ipstr = new FileInputStream(new File("src/main/resources/Multitab.xls"));
+
+			wb = new HSSFWorkbook(ipstr);
+			ws = wb.getSheetAt(0);
+
+			Iterator<Row> rowiterator = ws.iterator();
+			while (rowiterator.hasNext()) {
+				Row row = rowiterator.next();
+
+				Cell mainCategory = row.getCell(0);
+
+				Cell subCategory = row.getCell(1);
+				Cell link = row.getCell(2);
+				multitabobj = new MultitabBo(mainCategory.getStringCellValue(), subCategory.getStringCellValue(),
+						link.getStringCellValue());
+				listmultilab.add(multitabobj);
+				//return listmultilab;
+
+			}
+		} catch (FileNotFoundException e) {
+
+		} catch (IOException e) {
+
+		} finally {
+			try {
+				ipstr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return listmultilab;
+	}
 
 	public static List<UIElementsBo> exclFileRead() {
 
@@ -146,13 +188,56 @@ public class ExclFileRead {
 		return testCasesList;
 	}
 
+	public static List<Environment> readElx_envirnment() {
+		System.out.println("Called");
+		try {
+			ipstr = new FileInputStream(new File("src/main/resources/Input/Environment.xls"));
+
+			wb = new HSSFWorkbook(ipstr);
+
+			ws = wb.getSheetAt(0);
+
+			Iterator<Row> rowiterator = ws.iterator();
+			while (rowiterator.hasNext()) {
+				Row row = rowiterator.next();
+
+				Cell mainCategory = row.getCell(0);
+				System.out.println("Test");
+				Cell subCategory = row.getCell(1);
+				Cell link = row.getCell(2);
+				envobj = new Environment(mainCategory.getStringCellValue(), subCategory.getStringCellValue(),
+						link.getStringCellValue());
+
+				envlist.add(envobj);
+				//return listmultilab;
+
+			}
+		} catch (FileNotFoundException e) {
+
+		} catch (IOException e) {
+
+		} finally {
+			try {
+				ipstr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return envlist;
+	}
 	// Testing purpose for data
 
-	// public static void main(String[] args) {
-	// List<TestCaseBo> elements = ExclFileRead.readTestCasexls();
-	// for (int i = 0; i < elements.size(); i++) {
-	// System.out.println(elements.get(i));
-	// }
-	// System.out.println(elements);
-	// }
+	public static void main(String[] args) {
+
+		List<Environment> elements = new ArrayList<>();
+		elements.addAll(ExclFileRead.readElx_envirnment());
+		System.out.println("HEllo");
+		System.out.println("SIZE" + elements.size());
+		for (int i = 0; i < elements.size(); i++) {
+			System.out.println(elements.get(i).getOsName() + "\t" + elements.get(i).getBrowsername() + "\t"
+					+ elements.get(i).getVersion());
+		}
+	}
 }
