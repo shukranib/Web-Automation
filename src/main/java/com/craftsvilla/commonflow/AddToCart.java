@@ -39,7 +39,7 @@ public class AddToCart {
 			System.out.println("Stagging environment");
 			driver.get("http://dev6.craftsvilla.com/activate");
 			Wait.defaultMediumWait(driver);
-			driver.findElement(By.id("dev7")).click();
+			driver.findElement(By.id("dev8")).click();
 			Wait.defaultMediumWait(driver);
 			driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/3522831");
 			Wait.defaultHighWait(driver);
