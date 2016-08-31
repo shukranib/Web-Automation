@@ -41,7 +41,7 @@ public class AddToCart {
 			Wait.defaultMediumWait(driver);
 			driver.findElement(By.id("dev8")).click();
 			Wait.defaultMediumWait(driver);
-			driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/3522831");
+			driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/155036/s/kareena-earrings");
 			Wait.defaultHighWait(driver);
 
 		} else {
