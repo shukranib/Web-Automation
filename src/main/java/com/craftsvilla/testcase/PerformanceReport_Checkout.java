@@ -14,6 +14,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 import com.craftsvilla.framework.DriverActions;
+import com.craftsvilla.framework.DriverSelector;
 import com.craftsvilla.framework.PropertyReader;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.CheckOutPage;
@@ -30,13 +31,16 @@ public class PerformanceReport_Checkout {
 
 	@Test
 	public void loadingTimeForCategoryPage_checkout() {
-		DesiredCapabilities capability = new DesiredCapabilities();
+		DesiredCapabilities caps = new DesiredCapabilities();
 		final String USERNAME = "abhipsasahu1";
 		final String AUTOMATE_KEY = "djb6gQSnhg15hHF5zG3n";
 		final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
-		capability.setPlatform(Platform.WIN8);
-		capability.setCapability("BrowserName", "Firefox");
+		caps.setCapability("browser", "Firefox");
+		caps.setCapability("browser_version", "47.0");
+		caps.setCapability("os", "Windows");
+		caps.setCapability("os_version", "7");
+		caps.setCapability("resolution", "1024x768");
 		PropertyReader read = new PropertyReader();
 		File csvfile = new File("src/main/resources/Input/PerformanceReport.csv");
 		if (!csvfile.exists()) {
@@ -59,7 +63,7 @@ public class PerformanceReport_Checkout {
 			writer.append("\n");
 
 			//driver = new FirefoxDriver();
-			driver = new RemoteWebDriver(new URL(URL), capability);
+			driver = new RemoteWebDriver(new URL(URL), caps);
 			driver.manage().window().maximize();
 			if (read.getPropertyValue("prodenv").equalsIgnoreCase("N")) {
 				System.out.println("Stagging environment");
@@ -177,14 +181,17 @@ public class PerformanceReport_Checkout {
 
 	@Test
 	public void loadingTimeForCategoryPage_checkoutafter() {
-		DesiredCapabilities capability = new DesiredCapabilities();
+		DesiredCapabilities caps = new DesiredCapabilities();
 		final String USERNAME = "abhipsasahu1";
 		final String AUTOMATE_KEY = "djb6gQSnhg15hHF5zG3n";
 		final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
-		capability.setPlatform(Platform.WIN8);
-		capability.setCapability("BrowserName", "Firefox");
 
+		caps.setCapability("browser", "Firefox");
+		caps.setCapability("browser_version", "47.0");
+		caps.setCapability("os", "Windows");
+		caps.setCapability("os_version", "7");
+		caps.setCapability("resolution", "1024x768");
 		PropertyReader read = new PropertyReader();
 		File csvfile = new File("src/main/resources/Input/PerformanceReport.csv");
 		if (!csvfile.exists()) {
@@ -205,7 +212,8 @@ public class PerformanceReport_Checkout {
 			writer.append(";");
 			writer.append("Date and time");
 			writer.append("\n");
-			driver = new RemoteWebDriver(new URL(URL), capability);
+			//driver=DriverSelector.getDriver();
+			driver = new RemoteWebDriver(new URL(URL), caps);
 			//driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 			if (read.getPropertyValue("prodenv").equalsIgnoreCase("N")) {

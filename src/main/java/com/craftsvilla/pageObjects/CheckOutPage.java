@@ -33,6 +33,7 @@ public class CheckOutPage {
 	}
 
 	public static void clickOnsaveAndContinueGuest(WebDriver driver) {
+		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.button_saveAndContinueGuest);
 	}
 

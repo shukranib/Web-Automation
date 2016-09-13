@@ -56,6 +56,7 @@ public class Cart {
 		Assert.assertEquals(actualmsg, expectedmsg);
 		
 	}
+	
 
 	@Test
 	public void testpriceAssertion() {

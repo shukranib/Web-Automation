@@ -119,7 +119,9 @@ public class ProductPages {
 		int price;
 		for (int i = 0; i < productsprice.size(); i++) {
 			String formattedvalue = productsprice.get(i).getText();
+			formattedvalue=formattedvalue.trim();
 			if (formattedvalue.contains(",")) {
+				formattedvalue=formattedvalue.trim();
 				StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
 				System.out.println("Price is" + formattedvalue);
 				int pos = formattedvaluebuffer.indexOf(",");
@@ -128,7 +130,11 @@ public class ProductPages {
 					pos = formattedvaluebuffer.indexOf(",");
 
 				}
-				price = Integer.parseInt(formattedvaluebuffer.toString());
+				int detelechar=formattedvaluebuffer.indexOf("₹");
+				
+				formattedvaluebuffer.deleteCharAt(detelechar);
+				
+				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
 				intproductprice.add(price);
 			} else {
 				price = Integer.parseInt(formattedvalue);

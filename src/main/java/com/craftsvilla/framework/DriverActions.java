@@ -362,4 +362,21 @@ public class DriverActions {
 		jse.executeScript("scroll(250,0)");
 	}
 
+	public static WebElement findElement(WebDriver driver, String elementName) {
+		// TODO Auto-generated method stub
+		String by = elements.getbyName(elementName);
+		String locator = elements.getlocatorName(elementName);
+		WebElement element = null;
+		if (by.equals("id")) {
+
+			element = driver.findElement(By.id(locator));
+			return element;
+		}
+		if (by.equals("xpath")) {
+			element = driver.findElement(By.xpath(locator));
+			return element;
+		}
+		return element;
+	}
+
 }
