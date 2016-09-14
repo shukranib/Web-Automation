@@ -64,6 +64,7 @@ public class AddToCart {
 	public static void addToCartWithoutLoginAddtocartbutton(WebDriver driver) {
 		driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/4331545/s/self-red");
 		Wait.defaultHighWait(driver);
+		System.out.println("Test");
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
 		HomePage.clickonAddToCartButton(driver);
