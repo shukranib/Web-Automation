@@ -119,9 +119,9 @@ public class ProductPages {
 		int price;
 		for (int i = 0; i < productsprice.size(); i++) {
 			String formattedvalue = productsprice.get(i).getText();
-			formattedvalue=formattedvalue.trim();
+			formattedvalue = formattedvalue.trim();
 			if (formattedvalue.contains(",")) {
-				formattedvalue=formattedvalue.trim();
+				formattedvalue = formattedvalue.trim();
 				StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
 				System.out.println("Price is" + formattedvalue);
 				int pos = formattedvaluebuffer.indexOf(",");
@@ -130,11 +130,12 @@ public class ProductPages {
 					pos = formattedvaluebuffer.indexOf(",");
 
 				}
-				int detelechar=formattedvaluebuffer.indexOf("₹");
-				
+				int detelechar = formattedvaluebuffer.indexOf("₹");
+
 				formattedvaluebuffer.deleteCharAt(detelechar);
-				
+
 				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
+				System.out.println("price is" + price);
 				intproductprice.add(price);
 			} else {
 				price = Integer.parseInt(formattedvalue);
@@ -194,8 +195,14 @@ public class ProductPages {
 					pos = formattedvaluebuffer.indexOf(",");
 
 				}
-				price = Integer.parseInt(formattedvaluebuffer.toString());
+				int detelechar = formattedvaluebuffer.indexOf("₹");
+
+				formattedvaluebuffer.deleteCharAt(detelechar);
+
+				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
 				intproductprice.add(price);
+				//price = Integer.parseInt(formattedvaluebuffer.toString());
+				//intproductprice.add(price);
 			} else {
 				price = Integer.parseInt(formattedvalue);
 				intproductprice.add(price);
@@ -233,9 +240,9 @@ public class ProductPages {
 	public static void clickOnPriceSortingOnCategoryPage(WebDriver driver, String sort) {
 		Wait.defaultHighWait(driver);
 		if (sort.equalsIgnoreCase("ASC")) {
-			DriverActions.click(driver, ObjectRepository_HomePage.button_AscSort);
+			DriverActions.click(driver, ObjectRepository_HomePage.priceAsc_SortCategory);
 		} else {
-			DriverActions.click(driver, ObjectRepository_HomePage.button_DescSort);
+			DriverActions.click(driver, ObjectRepository_HomePage.priceDsc_SortCategory);
 		}
 	}
 

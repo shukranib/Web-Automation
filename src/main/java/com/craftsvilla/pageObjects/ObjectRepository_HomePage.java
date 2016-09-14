@@ -4,7 +4,8 @@ public class ObjectRepository_HomePage {
 	public static String shippingicon_shippingpage = "shippingicon_shippingpage";
 	public static String paymenticon_paymentpage = "paymenticon_paymentpage";
 	public static String learnmore_cartpage = "learnmore_cartpage";
-
+	public static String priceDsc_SortCategory = "priceDsc_SortCategory";
+	public static String priceAsc_SortCategory = "priceAsc_SortCategory";
 	public static String button_paySecurly = "button_paySecurly";
 	public static String Button_logout = "Button_logout";
 	public static String Span_subttalpricewithoutshipping = "Span_subttalpricewithoutshipping";

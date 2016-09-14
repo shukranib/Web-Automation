@@ -49,14 +49,13 @@ public class Cart {
 		driver = DriverSelector.getDriver();
 		DriverActions.click(driver, ObjectRepository_HomePage.Span_noofproductincart);
 		Wait.defaultHighWait(driver);
-		String url=driver.getCurrentUrl();
+		String url = driver.getCurrentUrl();
 		Assert.assertTrue(url.contains("cart"));
-		String actualmsg=DriverActions.getText(driver, ObjectRepository_HomePage.Span_cartempty);
-		String expectedmsg="YOUR CART IS EMPTY";
+		String actualmsg = DriverActions.getText(driver, ObjectRepository_HomePage.Span_cartempty);
+		String expectedmsg = "YOUR CART IS EMPTY";
 		Assert.assertEquals(actualmsg, expectedmsg);
-		
+
 	}
-	
 
 	@Test
 	public void testpriceAssertion() {
@@ -73,10 +72,10 @@ public class Cart {
 		Wait.defaultMediumWait(driver);
 		driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/642674/");
 		Wait.defaultHighWait(driver);
-		String secondprod_pdp = DriverActions.getText(driver, ObjectRepository_HomePage.product_priceonPDP);
-		int secondprod = AddToCartPage.formatOrderamountinInteger(driver, secondprod_pdp);
-		System.out.println("First prod" + secondprod);
-		int total = firstprodpdp + secondprod;
+		//String secondprod_pdp = DriverActions.getText(driver, ObjectRepository_HomePage.product_priceonPDP);
+		//int secondprod = AddToCartPage.formatOrderamountinInteger(driver, secondprod_pdp);
+		//System.out.println("First prod" + secondprod);
+		//int total = firstprodpdp + secondprod;
 		Wait.defaultHighWait(driver);
 		HomePage.clickOnBuyNowButton(driver);
 		Wait.defaultHighWait(driver);
