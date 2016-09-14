@@ -62,7 +62,7 @@ public class AddToCart {
 	}
 
 	public static void addToCartWithoutLoginAddtocartbutton(WebDriver driver) {
-		driver.get(read.getPropertyValue("url") + "catalog/product/view/id/4331545/s/self-red");
+		driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/4331545/s/self-red");
 		Wait.defaultHighWait(driver);
 		DriverActions.scrollDownWindow(driver);
 		Wait.defaultHighWait(driver);
