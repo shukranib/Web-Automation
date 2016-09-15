@@ -81,6 +81,6 @@ public class Startup {
 			testNG.run();
 
 		}
-		MailSending.mailingBrowserStackResult();
+		//MailSending.mailingBrowserStackResult();
 	}
 }
