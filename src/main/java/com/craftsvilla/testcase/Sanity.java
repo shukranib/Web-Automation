@@ -19,7 +19,7 @@ public class Sanity {
 	WebDriver driver;
 	boolean result;
 
-	@Test()
+	@Test(enabled = false)
 	public void searchTest() {
 		driver = DriverSelector.getDriver_browserstacknew();
 		HomePage.enterTextToSearch(driver);
