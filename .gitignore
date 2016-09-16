@@ -28,3 +28,6 @@ target/generated-sources
 target/maven-archiver
 target/maven-status
 target/surefire
+.classpath
+target/*
+libs/*.jar
