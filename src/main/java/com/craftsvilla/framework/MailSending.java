@@ -230,7 +230,6 @@ public class MailSending {
 	}
 
 }
-
 /*public static void mailingBrowserStackResult() {
 
 	htmlbody_browserstack.append("<h4>" + configReader.getPropertyValue("url") + "</h4>");
