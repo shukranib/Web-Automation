@@ -31,3 +31,4 @@ target/surefire
 .classpath
 target/*
 libs/*.jar
+/bin/

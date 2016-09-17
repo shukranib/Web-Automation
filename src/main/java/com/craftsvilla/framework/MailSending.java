@@ -122,6 +122,8 @@ public class MailSending {
 		if (failCount == 0) {
 			// message.setSubject("All testcases are passed");
 			emailMessage.setSubject("COD Check Passed");
+			// no need to send mail in case of pass
+			return;
 		} else {
 			emailMessage.setSubject(severityWiseCount(failedTestCases));
 
