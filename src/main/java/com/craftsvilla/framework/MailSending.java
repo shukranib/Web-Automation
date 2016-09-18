@@ -263,7 +263,10 @@ public class MailSending {
 
 			htmlbody_browserstack.append("</thead>");
 			for (int i = 1; i < browserlist.size(); i++) {
-
+				System.out.println("brOESWERS LIST IS ");
+				for (int j = 0; j < browserlist.size(); j++) {
+					System.out.println(browserlist.get(j).BrowserName);
+				}
 				htmlbody_browserstack.append(
 						"<tr style='background-color: rgba(153, 83, 83, 0.04);padding:10px 0;font-size: 14px;color:#000000;font-weight: bold;'>");
 				htmlbody_browserstack.append("<td style='padding:5px;'>" + browserlist.get(i).getOSVersion() + "</td>");
