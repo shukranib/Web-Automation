@@ -65,11 +65,11 @@ public class DriverSelector {
 		System.out.println("#######Browser is ===" + browserName);
 		System.out.println("#######Version  is ===" + version);
 		System.out.println("############ OS is ===" + osname);
-		if (osname.equals("Windows 8")) {
+		if (osname.equals("Windows8")) {
 			System.out.println("ON WINDOWS");
 			capability.setPlatform(Platform.WIN8);
 		}
-		if (osname.equals("Windows 7")) {
+		if (osname.equals("Windows7")) {
 			capability.setCapability("os", "Windows");
 			capability.setCapability("os_version", "7");
 			capability.setCapability("resolution", "1280x800");
