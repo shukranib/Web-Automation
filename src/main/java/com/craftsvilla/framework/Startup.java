@@ -27,7 +27,7 @@ public class Startup {
 		List<String> excludetestcaseName = TestCase.getTestCasesNames("N");
 		List<Environment> environmentlist = ExclFileRead.readElx_envirnment();
 		TestsuitEnvironment.setenvirnment();
-		for (int i = 1; i < environmentlist.size(); i++) {
+		for (int i = 0; i < environmentlist.size(); i++) {
 
 			EnvironmentBo.setOs(environmentlist.get(i).getOsName());
 			EnvironmentBo.setBrowsersName(environmentlist.get(i).getBrowsername());
