@@ -1,14 +1,21 @@
 package com.craftsvilla.testcase;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import com.craftsvilla.commonflow.AddToCart;
 import com.craftsvilla.commonflow.CheckOut;
@@ -23,8 +30,30 @@ public class TestMidTracking {
 	static WebDriver driver;
 	String pageName, pageType, pageURL, productID, categoryName, subcategoryName, deviceType, currencyCode;
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-	SoftAssert softAssert = new SoftAssert();
-	VerifyError verify = new VerifyError();
+	static File urlForFailedTestcases = new File("test-output/FailedTestcasesResons.txt");
+	static FileOutputStream output;
+	static BufferedWriter bufferedWriter;
+	static FileWriter fileWriter;
+
+	@BeforeClass
+	public void creatingFile() {
+		if (!urlForFailedTestcases.exists()) {
+			try {
+				urlForFailedTestcases.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		try {
+			fileWriter = new FileWriter(urlForFailedTestcases, true);
+			bufferedWriter = new BufferedWriter(fileWriter);
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	@Test
 	public void testPDPTracking() {
@@ -52,13 +81,16 @@ public class TestMidTracking {
 			Assert.assertTrue(Tracking.testAddtocart_MIDtracking(driver), "Assertion for Addtocart fails");
 
 		} catch (AssertionError e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error in reponse");
-			flag = false;
 
-			//e.printStackTrace();
+			try {
+				System.out.println(e.getMessage());
+				System.out.println("Error in reponse");
+				bufferedWriter.write("URL for \tis\t" + driver.getCurrentUrl() + "\treason" + e.getMessage());
+				flag = false;
+			} catch (IOException ioexp) {
+				e.getMessage();
+			}
 
-			// TODO: handle exception
 		}
 		Assert.assertTrue(flag);
 
@@ -79,13 +111,14 @@ public class TestMidTracking {
 			Assert.assertEquals(currencyCode, "INR", "Wrong currency");
 
 		} catch (AssertionError e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error in reponse");
-			flag = false;
-
-			//e.printStackTrace();
-
-			// TODO: handle exception
+			try {
+				System.out.println(e.getMessage());
+				System.out.println("Error in reponse");
+				bufferedWriter.write("URL for \t is\t" + driver.getCurrentUrl() + "\treason" + e.getMessage());
+				flag = false;
+			} catch (IOException ioexp) {
+				e.getMessage();
+			}
 		}
 		Assert.assertTrue(flag);
 	}
@@ -116,13 +149,14 @@ public class TestMidTracking {
 		} catch (WebDriverException e) {
 			System.out.println(e.getMessage());
 		} catch (AssertionError e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error in reponse");
-			flag = false;
-
-			//e.printStackTrace();
-
-			// TODO: handle exception
+			try {
+				System.out.println(e.getMessage());
+				System.out.println("Error in reponse");
+				bufferedWriter.write("URL for \t is\t" + driver.getCurrentUrl() + "\treason" + e.getMessage());
+				flag = false;
+			} catch (IOException ioexp) {
+				e.getMessage();
+			}
 		}
 		Assert.assertTrue(flag);
 
@@ -147,13 +181,14 @@ public class TestMidTracking {
 		} catch (WebDriverException e) {
 			System.out.println(e.getMessage());
 		} catch (AssertionError e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error in reponse");
-			flag = false;
-
-			//e.printStackTrace();
-
-			// TODO: handle exception
+			try {
+				System.out.println(e.getMessage());
+				System.out.println("Error in reponse");
+				bufferedWriter.write("URL for \t is\t" + driver.getCurrentUrl() + "\treason" + e.getMessage());
+				flag = false;
+			} catch (IOException ioexp) {
+				e.getMessage();
+			}
 		}
 		Assert.assertTrue(flag);
 
@@ -180,13 +215,14 @@ public class TestMidTracking {
 			Assert.assertEquals(currencyCode, "INR", "Wrong currency");
 
 		} catch (AssertionError e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error in reponse");
-			flag = false;
-
-			//e.printStackTrace();
-
-			// TODO: handle exception
+			try {
+				System.out.println(e.getMessage());
+				System.out.println("Error in reponse");
+				bufferedWriter.write("URL for \t is\t" + driver.getCurrentUrl() + "\treason" + e.getMessage());
+				flag = false;
+			} catch (IOException ioexp) {
+				e.getMessage();
+			}
 		}
 		Assert.assertTrue(flag);
 	}
@@ -206,13 +242,14 @@ public class TestMidTracking {
 			Assert.assertEquals(currencyCode, "INR", "Wrong currency");
 
 		} catch (AssertionError e) {
-			System.out.println(e.getMessage());
-			System.out.println("Error in reponse");
-			flag = false;
-
-			//e.printStackTrace();
-
-			// TODO: handle exception
+			try {
+				System.out.println(e.getMessage());
+				System.out.println("Error in reponse");
+				bufferedWriter.write("URL for \t is\t" + driver.getCurrentUrl() + "\treason" + e.getMessage());
+				flag = false;
+			} catch (IOException ioexp) {
+				ioexp.getMessage();
+			}
 		}
 		Assert.assertTrue(flag);
 	}
@@ -246,6 +283,17 @@ public class TestMidTracking {
 		}
 		driver.quit();
 
+	}
+
+	@AfterClass
+	public void closeresources() {
+		try {
+			// fileWriter.close();
+			bufferedWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

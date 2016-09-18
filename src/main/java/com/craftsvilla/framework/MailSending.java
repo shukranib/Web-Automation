@@ -58,7 +58,7 @@ public class MailSending {
 					"<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
 			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase Failed = " + failCount + "</th>");
 			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
-			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
+
 			htmlbody.append("</thead>");
 			for (int i = 0; i < failedTestCases.size(); i++) {
 				System.out.println(failedTestCases.get(i).toString());
@@ -67,9 +67,7 @@ public class MailSending {
 				htmlbody.append("<tr style='background-color:#C91909; padding:10px 0;font-size:16px; color:#000000;'>");
 				htmlbody.append("<td style='padding:5px;'>" + caseResult.getTestCaseName() + "</td>");
 				htmlbody.append("<td style='padding:5px;'>Failed</td> ");
-				htmlbody.append("<td style='padding:5px'>" + caseResult.getSeverity() + "</td> ");
-				htmlbody.append("<td style='padding:5px;'>" + osName + "</td> ");
-				htmlbody.append("<td style='padding:5px'>" + browserName + "</td> ");
+
 				htmlbody.append("</tr>");
 			}
 			htmlbody.append("</table>");
@@ -84,9 +82,7 @@ public class MailSending {
 					"<thead style=' padding:10px 0;font-weight:bold; font-size:16px; background-color:#B5B0AF; color:#000000;'>");
 			htmlbody.append("<th style='width:60%; padding:5px 0;'>TestCase  Passed = " + passcount + "</th>");
 			htmlbody.append("<th style='width:20%; padding:5px 0;'>Status</th> ");
-			htmlbody.append("<th style='width:20%;padding:5px 0;'>Severity</th> ");
-			htmlbody.append("<th style='width:20%; padding:5px 0;'>OS Name</th> ");
-			htmlbody.append("<th style='width:20%;padding:5px 0;'>Browser</th> ");
+
 			htmlbody.append("</thead>");
 			for (int i = 0; i < passedTestCases.size(); i++) {
 				caseResult = new TestCaseResult(passedTestCases.get(i).getTestCaseName(),
@@ -95,9 +91,7 @@ public class MailSending {
 				htmlbody.append("<tr style='background-color:#599953; padding:10px 0;font-size:16px; color:#000000;'>");
 				htmlbody.append("<td style='padding:5px;'>" + caseResult.getTestCaseName() + "</td>");
 				htmlbody.append("<td style='padding:5px;'>Passed</td> ");
-				htmlbody.append("<td style='padding:5px'>" + caseResult.getSeverity() + "</td> ");
-				htmlbody.append("<td style='padding:5px'>" + osName + "</td> ");
-				htmlbody.append("<td style='padding:5px'>" + browserName + "</td> ");
+
 				htmlbody.append("</tr>");
 
 			}
@@ -119,7 +113,7 @@ public class MailSending {
 
 		if (failCount == 0) {
 			//message.setSubject("All testcases are passed");
-			emailMessagenew.setSubject("All testcases are passed passed");
+			emailMessagenew.setSubject("[Tracking]All testcases are passed passed");
 		} else {
 			emailMessagenew.setSubject(severityWiseCount(failedTestCases));
 			//message.setSubject(severityWiseCount(failedTestCases));
@@ -136,7 +130,8 @@ public class MailSending {
 
 		{
 			String str = listfile[i].getName();
-			if (str.endsWith(".jpg") || str.equalsIgnoreCase("FailedTestcasesUrl.txt")) {
+			if (str.endsWith(".jpg") || str.equalsIgnoreCase("FailedTestcasesUrl.txt")
+					|| str.equalsIgnoreCase("FailedTestcasesResons.txt")) {
 				//MimeBodyPart attachmentmessageBodyPart = new MimeBodyPart();
 				System.out.println(listfile[i].getName());
 				//DataSource source = new FileDataSource(
@@ -209,18 +204,18 @@ public class MailSending {
 			}
 		}
 		if (critical != 0) {
-			result = critical + "Critical testcases are failing";
+			result = "[Tracking]" + critical + "Critical testcases are failing";
 			return result;
 		} else {
 			if (high > 0) {
-				result = high + " Major testcases are failing";
+				result = "[Tracking]" + high + " Major testcases are failing";
 				return result;
 			} else {
 				if (medium > 0) {
-					result = medium + "  Medium testcases are failing";
+					result = "[Tracking]" + medium + "  Medium testcases are failing";
 					return result;
 				} else {
-					result = low + "  Minor testcases are failing";
+					result = "[Tracking]" + low + "  Minor testcases are failing";
 					return result;
 				}
 			}
