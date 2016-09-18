@@ -108,10 +108,11 @@ public class CheckOutPage {
 	}
 
 	public static void entertelephone_BillingInfo(WebDriver driver) {
-		Random rand = new Random();
-		int number = rand.nextInt(10000000) + 1;
+		Random random = new Random();
+		long number = (long) (100000000000000L + random.nextFloat() * 900000000000000L);
 
-		String no = "111" + Integer.toString(number);
+		String no = "111" + Long.toString(number);
+		System.out.println("Number is" + no);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.Shipping_textBox_mobileNo, no);
 	}
 
