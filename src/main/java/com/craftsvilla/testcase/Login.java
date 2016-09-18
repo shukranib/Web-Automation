@@ -20,7 +20,7 @@ public class Login {
 	@Test()
 
 	public void startup() {
-
+		Assert.assertTrue(false);
 	}
 
 	@Test()
