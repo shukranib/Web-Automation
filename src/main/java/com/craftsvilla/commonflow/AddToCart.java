@@ -22,7 +22,8 @@ public class AddToCart {
 	}
 
 	public static void addToCartWithoutLogin(WebDriver driver) {
-		driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/4331545/s/test");
+		driver.get(read.getPropertyValue("url")
+				+ "/catalog/product/view/id/4331545/s/test?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
 
 		/*HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
