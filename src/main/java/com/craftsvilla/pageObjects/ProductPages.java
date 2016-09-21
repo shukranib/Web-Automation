@@ -13,6 +13,7 @@ import com.craftsvilla.framework.Wait;
 
 public class ProductPages {
 	public static void applyDiscountFilterAbove50(WebDriver driver) {
+		Wait.defaultMediumWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.span_DiscountFilter50);
 	}
 
@@ -114,15 +115,22 @@ public class ProductPages {
 	public static boolean getPriceofproductsOncategorypage(WebDriver driver, int min, int max) {
 		System.out.println("Price is");
 		List<WebElement> productsprice = DriverActions.findElements(driver, ObjectRepository_HomePage.productprice);
+		List<WebElement> nondiscproductsprice = DriverActions.findElements(driver,
+				ObjectRepository_HomePage.nondiscountproduct_PDP);
+		productsprice.addAll(nondiscproductsprice);
 		System.out.println("Price is" + productsprice.size());
 		List<Integer> intproductprice = new ArrayList<>();
 		int price;
 		for (int i = 0; i < productsprice.size(); i++) {
 			String formattedvalue = productsprice.get(i).getText();
 			formattedvalue = formattedvalue.trim();
+			StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
+			int detelechar = formattedvaluebuffer.indexOf("₹");
+
+			formattedvaluebuffer.deleteCharAt(detelechar);
 			if (formattedvalue.contains(",")) {
 				formattedvalue = formattedvalue.trim();
-				StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
+
 				System.out.println("Price is" + formattedvalue);
 				int pos = formattedvaluebuffer.indexOf(",");
 				while (pos != -1) {
@@ -130,15 +138,13 @@ public class ProductPages {
 					pos = formattedvaluebuffer.indexOf(",");
 
 				}
-				int detelechar = formattedvaluebuffer.indexOf("₹");
-
-				formattedvaluebuffer.deleteCharAt(detelechar);
 
 				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
 				System.out.println("price is" + price);
 				intproductprice.add(price);
 			} else {
-				price = Integer.parseInt(formattedvalue);
+				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
+				System.out.println("Price is" + price);
 				intproductprice.add(price);
 			}
 		}

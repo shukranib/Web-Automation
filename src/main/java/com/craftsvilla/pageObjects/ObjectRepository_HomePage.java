@@ -1,6 +1,10 @@
 package com.craftsvilla.pageObjects;
 
 public class ObjectRepository_HomePage {
+
+	public static String nondiscountproduct_PDP = "nondiscountproduct_PDP";
+	public static String discountedprice_search = "discountedprice_search";
+	public static String nondiscountproduct_search = "nondiscountproduct_search";
 	public static String shippingicon_shippingpage = "shippingicon_shippingpage";
 	public static String paymenticon_paymentpage = "paymenticon_paymentpage";
 	public static String learnmore_cartpage = "learnmore_cartpage";
