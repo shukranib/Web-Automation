@@ -3,7 +3,6 @@ package com.craftsvilla.pageObjects;
 import java.util.Date;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +20,7 @@ public class HomePage {
 	public static void clickOnLoginButton(WebDriver driver) {
 		System.out.println("Clicking on login");
 		Wait.defaultMediumWait(driver);
-		driver.findElement(By.xpath(".//*[@class='user-icon']")).click();
+		DriverActions.click(driver, ObjectRepository_HomePage.button_Login);
 
 	}
 

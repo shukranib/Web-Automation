@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 
 import com.craftsvilla.dataobjects.EnvironmentBo;
 
@@ -124,6 +125,24 @@ public class DriverSelector {
 		}
 		return driver;
 
+	}
+
+	public static WebDriver getDriver_grid() {
+		// TODO Auto-generated method stub
+		DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setBrowserName("firefox");
+		WebDriver driver = null;
+		try {
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), dc);
+			driver.get(configReader.getPropertyValue("url"));
+			return driver;
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+			Assert.assertTrue(false);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return driver;
 	}
 
 }

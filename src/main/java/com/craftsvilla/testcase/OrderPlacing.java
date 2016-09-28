@@ -48,7 +48,7 @@ public class OrderPlacing {
 
 	@Test
 	public void prepaidOrderWithGuestCheckout() {
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 		CheckOut.PrePaymentOrderPlace(driver);
 	}
 

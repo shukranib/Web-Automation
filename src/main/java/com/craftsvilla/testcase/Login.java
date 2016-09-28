@@ -20,7 +20,7 @@ public class Login {
 	@Test()
 
 	public void startup() {
-		Assert.assertTrue(false);
+
 	}
 
 	@Test()
@@ -28,7 +28,7 @@ public class Login {
 
 		Boolean result;
 
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver_grid();
 
 		LoginFlow login = new LoginFlow();
 		result = login.loginflow(driver);
