@@ -39,10 +39,10 @@ public class AddToCart {
 			System.out.println("Stagging environment");
 			driver.get("http://dev6.craftsvilla.com/activate");
 			Wait.defaultMediumWait(driver);
-			driver.findElement(By.id("dev10")).click();
+			driver.findElement(By.id("dev7")).click();
 			Wait.defaultMediumWait(driver);
 			driver.get(
-					"http://dev10.craftsvilla.com/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
+					"http://dev7.craftsvilla.com/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
 			Wait.defaultHighWait(driver);
 
 		} else {
