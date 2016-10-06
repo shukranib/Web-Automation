@@ -23,6 +23,8 @@ import com.craftsvilla.dataobjects.EnvironmentBo;
 public class Startup {
 	public static void main(String[] args) {
 		System.out.println("this is new testsuits");
+		String DEFAULT_FILTER = System.getenv("URL");
+		System.out.println("URL IS+" + DEFAULT_FILTER);
 		List<String> includetestcaseNames = TestCase.getTestCasesNames("Y");
 		List<String> excludetestcaseName = TestCase.getTestCasesNames("N");
 		List<Environment> environmentlist = ExclFileRead.readElx_envirnment();
