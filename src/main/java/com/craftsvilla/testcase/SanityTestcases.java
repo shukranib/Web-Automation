@@ -33,6 +33,7 @@ public class SanityTestcases {
 
 	@Test()
 	public void RegisterTest() {
+		System.out.println("TESTCASES URL IS" + read.getPropertyValue("url"));
 		Boolean result;
 		driver = DriverSelector.getDriver_browserstacknew();
 

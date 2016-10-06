@@ -34,25 +34,22 @@ public class Startup {
 		try {
 			String URL = read.getPropertyValue("url");
 			System.out.println("URL IS +++++++++++" + URL);
-			out = new FileOutputStream("src/main/resources/Input/Config.properties");
+
 			FileInputStream in = new FileInputStream("src/main/resources/Input/Config.properties");
 			Properties props = new Properties();
 			props.load(in);
 			in.close();
+
+			out = new FileOutputStream("src/main/resources/Input/Config.properties");
 			props.setProperty("url", DEFAULT_URL);
 			props.store(out, null);
-
+			out.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				out.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
-		String URL = read.getPropertyValue("url");
-		System.out.println("URL IS +++++++++++" + URL);
+		PropertyReader read1 = new PropertyReader();
+		String URL = read1.getPropertyValue("url");
+		System.out.println("UPDATEDURL IS +++++++++++" + URL);
 		//System.out.println("URL IS+" + DEFAULT_FILTER);
 		List<String> includetestcaseNames = TestCase.getTestCasesNames("Y");
 		List<String> excludetestcaseName = TestCase.getTestCasesNames("N");
