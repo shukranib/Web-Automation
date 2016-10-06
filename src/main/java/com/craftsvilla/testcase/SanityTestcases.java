@@ -35,7 +35,7 @@ public class SanityTestcases {
 	public void RegisterTest() {
 		System.out.println("TESTCASES URL IS" + read.getPropertyValue("url"));
 		Boolean result;
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 
 		result = Register.registerFlow(driver);
 		// Screenshot.takeScreenshot(driver);
@@ -47,7 +47,7 @@ public class SanityTestcases {
 	@Test()
 	public void addToCartTestWithLogin() {
 		boolean flag = true;
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 
 		AddToCart.addToCartWithoutLoginAddtocartbutton(driver);
 		String firstprodprice_pdp = DriverActions.getText(driver, ObjectRepository_HomePage.product_priceonPDP);
@@ -67,7 +67,7 @@ public class SanityTestcases {
 
 	@Test
 	public void prepaidOrderWithGuestCheckout() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		CheckOut.PrePaymentOrderPlace(driver);
 	}
 
@@ -75,7 +75,7 @@ public class SanityTestcases {
 	public void testquantitymodificationAddtoCart()
 
 	{
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		AddToCart.addToCartWithoutLogin(driver);
 		Wait.defaultHighWait(driver);
 		String amount = AddToCartPage.getorderAmount(driver);
@@ -100,13 +100,13 @@ public class SanityTestcases {
 
 	@Test
 	public void codOrderPlaceGuestCheckout() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		Assert.assertTrue(CheckOut.codOrderPlaceGuestCheckout(driver));
 	}
 
 	@Test
 	public void verifyPriceFilter0_500SearchPageTest() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		FiltersFlow.goToSearchPage(driver);
 		ProductPages.applypricefilter0_500OnSearchPage(driver);
 		Assert.assertTrue(FiltersFlow.applyPriceFilter(driver, 0, 500));
@@ -114,7 +114,7 @@ public class SanityTestcases {
 
 	@Test
 	public void colorfilteTestOnSearchPage() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		HomePage.enterTextToSearch(driver, "Kareena kapoor");
 		Wait.defaultMediumWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstColorFromColorFilter_search);
@@ -135,7 +135,7 @@ public class SanityTestcases {
 	@Test
 	public void subCategoryDiscountFilter() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		DriverActions.scrollDownhalfWindow(driver);
 		Wait.defaultMediumWait(driver);
@@ -150,7 +150,7 @@ public class SanityTestcases {
 	@Test
 	public void subCategoryPriceFilterFilter() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
 		ProductPages.applypricefilter0_500(driver);
@@ -162,7 +162,7 @@ public class SanityTestcases {
 	@Test
 	public void subCategoryPriceSortDSC() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
 		ProductPages.clickOnPriceSortingOnCategoryPage(driver, "DSC");
@@ -173,7 +173,7 @@ public class SanityTestcases {
 	@Test
 	public void subCategoryPriceSortASC() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
 		ProductPages.clickOnPriceSortingOnCategoryPage(driver, "ASC");
@@ -185,7 +185,7 @@ public class SanityTestcases {
 	@Test
 	public void subCategoryDiscountSorting() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.button_DiscountSort);
@@ -196,7 +196,7 @@ public class SanityTestcases {
 	@Test
 	public void subsubCategoryDiscountFilter() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		DriverActions.scrollDownhalfWindow(driver);
 		Wait.defaultMediumWait(driver);
@@ -211,7 +211,7 @@ public class SanityTestcases {
 	@Test
 	public void subsubCategoryPriceFilterFilter() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
 		ProductPages.applypricefilter0_500(driver);
@@ -223,7 +223,7 @@ public class SanityTestcases {
 	@Test
 	public void subsubCategoryPriceSortDSC() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
 		ProductPages.clickOnPriceSortingOnCategoryPage(driver, "DSC");
@@ -234,7 +234,7 @@ public class SanityTestcases {
 	@Test
 	public void subsubCategoryPriceSortASC() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
 		ProductPages.clickOnPriceSortingOnCategoryPage(driver, "ASC");
@@ -246,7 +246,7 @@ public class SanityTestcases {
 	@Test
 	public void subsubCategoryDiscountSorting() {
 		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultHighWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.button_DiscountSort);
@@ -257,7 +257,7 @@ public class SanityTestcases {
 	@Test
 	public void colorfilteTestOnCategoryPage() {
 
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		DriverActions.mousehover(driver, ObjectRepository_HomePage.megaMenu_salwarsuit);
 		Wait.defaultMediumWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);
@@ -277,7 +277,7 @@ public class SanityTestcases {
 
 	@Test
 	public void recentlyViewedProductOnProductpage() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		DriverActions.mousehover(driver, ObjectRepository_HomePage.megaMenu_salwarsuit);
 		Wait.defaultMediumWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);
@@ -297,7 +297,7 @@ public class SanityTestcases {
 	@Test
 	public void addToCartTestWithoutLogin() {
 		boolean flag = true;
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		AddToCart.addToCartWithoutLoginAddtocartbutton(driver);
 		try {
 
@@ -309,7 +309,7 @@ public class SanityTestcases {
 
 	@Test
 	public void feedpage_HomeBanner() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		DriverActions.click(driver, ObjectRepository_HomePage.Span_scrollingImages);
 		Wait.defaultHighWait(driver);
 		String count = DriverActions.getText(driver, ObjectRepository_HomePage.span_totalProduct);
@@ -326,7 +326,7 @@ public class SanityTestcases {
 
 	@Test
 	public void pincodecheckOnPDPpage() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		driver.get(read.getPropertyValue("testproduct-url"));
 		DriverActions.click(driver, ObjectRepository_HomePage.button_checkpincode);
 		DriverActions.sendKeys(driver, ObjectRepository_HomePage.textBox_pincode, TestData.postcode_BillingInfo);
@@ -340,7 +340,7 @@ public class SanityTestcases {
 
 	@Test
 	public void paginationOnvendorPageTest() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		DriverActions.mousehover(driver, ObjectRepository_HomePage.megaMenu_salwarsuit);
 		Wait.defaultMediumWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);
@@ -370,7 +370,7 @@ public class SanityTestcases {
 
 	@Test
 	public void paginationOnCategoryPageTest() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		DriverActions.mousehover(driver, ObjectRepository_HomePage.megaMenu_salwarsuit);
 		Wait.defaultMediumWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);
@@ -402,7 +402,7 @@ public class SanityTestcases {
 
 	@Test
 	public void feedpage_HomeBanner_Sorting() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		DriverActions.click(driver, ObjectRepository_HomePage.Span_scrollingImages);
 		Wait.defaultHighWait(driver);
 		ProductPages.clickOnPriceSorting(driver, "ASC");
@@ -413,7 +413,7 @@ public class SanityTestcases {
 
 	@Test
 	public void cartIconFromHomepage() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		DriverActions.click(driver, ObjectRepository_HomePage.Span_noofproductincart);
 		Wait.defaultHighWait(driver);
 		String url = driver.getCurrentUrl();
@@ -426,7 +426,7 @@ public class SanityTestcases {
 
 	@Test
 	public void outOfStockMsgOnPDP() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		String prod_id = read.getPropertyValue("OutOfStockProductid");
 		String url = read.getPropertyValue("url") + "/catalog/product/view/id/"
 				+ read.getPropertyValue("OutOfStockProductid")
@@ -440,7 +440,7 @@ public class SanityTestcases {
 
 	@Test
 	public void codNotAvailableMsgOnPDP() {
-		driver = DriverSelector.getDriver_browserstacknew();
+		driver = DriverSelector.getDriver();
 		String prod_id = read.getPropertyValue("OutOfStockProductid");
 		String url = read.getPropertyValue("url") + "/catalog/product/view/id/"
 				+ read.getPropertyValue("nonCODProductid")
