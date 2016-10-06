@@ -1,8 +1,12 @@
 package com.craftsvilla.framework;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 import org.reflections.Reflections;
@@ -22,9 +26,31 @@ import com.craftsvilla.dataobjects.EnvironmentBo;
 
 public class Startup {
 	public static void main(String[] args) {
+		PropertyReader read = new PropertyReader();
 		System.out.println("this is new testsuits");
-		String DEFAULT_FILTER = System.getenv("URL");
-		System.out.println("URL IS+" + DEFAULT_FILTER);
+		String DEFAULT_URL = System.getenv("URL");
+		FileOutputStream out = null;
+		try {
+			out = new FileOutputStream("src/main/resources/Input/Config.properties");
+			FileInputStream in = new FileInputStream("src/main/resources/Input/Config.properties");
+			Properties props = new Properties();
+			props.load(in);
+			in.close();
+			props.setProperty("url", DEFAULT_URL);
+			props.store(out, null);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		String URL = read.getPropertyValue("url");
+		System.out.println("URL IS +++++++++++" + URL);
+		//System.out.println("URL IS+" + DEFAULT_FILTER);
 		List<String> includetestcaseNames = TestCase.getTestCasesNames("Y");
 		List<String> excludetestcaseName = TestCase.getTestCasesNames("N");
 		List<Environment> environmentlist = ExclFileRead.readElx_envirnment();
