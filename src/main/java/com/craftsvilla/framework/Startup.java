@@ -29,6 +29,7 @@ public class Startup {
 		PropertyReader read = new PropertyReader();
 		System.out.println("this is new testsuits");
 		String DEFAULT_URL = System.getenv("URL");
+		//String DEFAULT_URL = read.getPropertyValue("url");
 		System.out.println("RUN time PArameter" + DEFAULT_URL);
 		FileOutputStream out = null;
 		try {

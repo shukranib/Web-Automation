@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import com.craftsvilla.commonflow.AddToCart;
 import com.craftsvilla.commonflow.CheckOut;
 import com.craftsvilla.commonflow.FiltersFlow;
+import com.craftsvilla.commonflow.LoginFlow;
 import com.craftsvilla.commonflow.Register;
 import com.craftsvilla.commonflow.SortFlow;
 import com.craftsvilla.framework.DriverActions;
@@ -435,6 +436,17 @@ public class SanityTestcases {
 		driver.get(url);
 		Wait.defaultHighWait(driver);
 		Assert.assertTrue(DriverActions.isElementDisplay(driver, ObjectRepository_HomePage.div_outOfStock));
+
+	}
+
+	@Test
+	public void testBuyNowWithoutLogin() {
+
+		driver = DriverSelector.getDriver();
+		LoginFlow login = new LoginFlow();
+		Assert.assertTrue(login.loginflow(driver));
+		AddToCart.addFirstProductToCart(driver);
+		Assert.assertTrue(DriverActions.isElementDisplay(driver, ObjectRepository_HomePage.button_proceedToPayment));
 
 	}
 
