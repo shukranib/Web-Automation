@@ -3,7 +3,6 @@ package com.craftsvilla.commonflow;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.craftsvilla.framework.DriverActions;
 import com.craftsvilla.framework.PropertyReader;
 import com.craftsvilla.framework.Wait;
 import com.craftsvilla.pageObjects.HomePage;
@@ -39,14 +38,15 @@ public class AddToCart {
 			System.out.println("Stagging environment");
 			driver.get("http://dev6.craftsvilla.com/activate");
 			Wait.defaultMediumWait(driver);
-			driver.findElement(By.id("dev7")).click();
+			driver.findElement(By.id("dev8")).click();
 			Wait.defaultMediumWait(driver);
 			driver.get(
-					"http://dev7.craftsvilla.com/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
+					"http://dev8.craftsvilla.com/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
 			Wait.defaultHighWait(driver);
 
 		} else {
-			driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/4331545/s/self-red");
+			driver.get(read.getPropertyValue("url")
+					+ "/catalog/product/view/id/4331545/s/test?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
 		}
 		/*HomePage.clic	kOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
@@ -63,10 +63,21 @@ public class AddToCart {
 	}
 
 	public static void addToCartWithoutLoginAddtocartbutton(WebDriver driver) {
-		driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/4331545/s/self-red");
-		Wait.defaultHighWait(driver);
-		System.out.println("Test");
-		DriverActions.scrollDownWindow(driver);
+		Wait.defaultMediumWait(driver);
+		if (read.getPropertyValue("prodenv").equalsIgnoreCase("N")) {
+			System.out.println("Stagging environment");
+			driver.get("http://dev6.craftsvilla.com/activate");
+			Wait.defaultMediumWait(driver);
+			driver.findElement(By.id("dev8")).click();
+			Wait.defaultMediumWait(driver);
+			driver.get(
+					"http://dev8.craftsvilla.com/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
+			Wait.defaultHighWait(driver);
+
+		} else {
+			driver.get(read.getPropertyValue("url")
+					+ "/catalog/product/view/id/4331545/s/test?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
+		}
 		Wait.defaultHighWait(driver);
 		HomePage.clickonAddToCartButton(driver);
 		Wait.defaultHighWait(driver);

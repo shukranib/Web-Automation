@@ -1,10 +1,21 @@
 package com.craftsvilla.pageObjects;
 
 public class ObjectRepository_HomePage {
-
+	public static String FirstproductFromSimlarProduct = "FirstproductFromSimlarProduct";
+	public static String FirstProductFromRecentlyViewed = "FirstProductFromRecentlyViewed";
+	public static String FirstColorFromColorFilter_search = "FirstColorFromColorFilter_search";
+	public static String FirstColorFromColorFilter_category = "FirstColorFromColorFilter_category";
+	public static String textBox_pincode = "textBox_pincode";
+	public static String span_msgpinCheck = "span_msgpinCheck";
+	public static String firstVendortFromCategory = "firstVendortFromCategory";
+	public static String firstProductNameFromVendorPage = "firstProductNameFromVendorPage";
+	public static String productprice_FeedPage = "productprice_FeedPage";
+	public static String Span_scrollingImages = "Span_scrollingImages";
 	public static String nondiscountproduct_PDP = "nondiscountproduct_PDP";
 	public static String discountedprice_search = "discountedprice_search";
 	public static String nondiscountproduct_search = "nondiscountproduct_search";
+	public static String button_submitpincode = "button_submitpincode";
+	public static String button_checkpincode = "button_checkpincode";
 	public static String shippingicon_shippingpage = "shippingicon_shippingpage";
 	public static String paymenticon_paymentpage = "paymenticon_paymentpage";
 	public static String learnmore_cartpage = "learnmore_cartpage";
@@ -113,13 +124,16 @@ public class ObjectRepository_HomePage {
 	static String ListBox_countryBilligInfo = "ListBox_countryBilligInfo";
 	static String ListBox_regoinBilligInfo = "ListBox_regoinBilligInfo";
 	static String button_placeOrder = "button_placeOrder";
+	static public String discountpriceSort_Category = "discountpriceSort_Category";
+	public static String div_CODNotAvailable = "div_CODNotAvailable";
+	public static String div_outOfStock = "div_outOfStock";
 	static String span_loginErrorMessage = "span_loginErrorMessage";
 	static String link_forgotPassWord = "link_forgotPassWord";
 	static String textBox_forgotPassword = "textBox_forgotPassword";
 	static String button_submitForgotPassword = "button_submitForgotPassword";
 	static public String span_Message = "span_Message";
 	static String button_searchText = "button_searchText";
-	static String Span_lastPageNo = "Span_lastPageNo";
+	public static String Span_lastPageNo = "Span_lastPageNo";
 	public static String span_addeddatewishlist = "span_addeddatewishlist";
 	static String span_firstPage = "span_firstPage";
 	static String link_allCategoryfromHomepage = "link_allCategoryfromHomepage";
@@ -136,7 +150,9 @@ public class ObjectRepository_HomePage {
 	static String PriceFilter_2000_5000 = "PriceFilter_2000_5000";
 	static String PriceFilter_above5000 = "PriceFilter_above5000";
 	static String productprice = "productprice";
-	static String ListBox_sortOrder = "ListBox_sortOrder";
+	static public String megaMenu_salwarsuit = "megaMenu_salwarsuit";
+	static public String megamenu_Anarkali = "megamenu_Anarkali";
+	static public String ListBox_sortOrder = "ListBox_sortOrder";
 	public static String span_msgforsharewishlist = "span_msgforsharewishlist";
 	static public String link_subcategory = "link_subcategory";
 	static public String link_subcategory_Uppdasaree = "link_subcategory_Uppdasaree";

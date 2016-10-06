@@ -286,17 +286,17 @@ public class DriverActions {
 		if (by != null && locator != null) {
 			if (by.equals("xpath")) {
 				Wait.defaultsmallWait(driver);
-				WebElement we = driver.findElement(By.xpath(elementName));
+				WebElement we = driver.findElement(By.xpath(locator));
 				action.moveToElement(we).build().perform();
 			}
 			if (by.equals("id")) {
 				Wait.defaultsmallWait(driver);
-				WebElement we = driver.findElement(By.id(elementName));
+				WebElement we = driver.findElement(By.id(locator));
 				action.moveToElement(we).build().perform();
 			}
 			if (by.equals("class")) {
 
-				WebElement we = driver.findElement(By.className(elementName));
+				WebElement we = driver.findElement(By.className(locator));
 				action.moveToElement(we).build().perform();
 			}
 			if (by.equals("linktext")) {
@@ -377,6 +377,14 @@ public class DriverActions {
 			return element;
 		}
 		return element;
+	}
+
+	public static void scrollDownWindowTillpagination(WebDriver driver) {
+		// TODO Auto-generated method stub
+		System.out.println("Scrolling Down More Than half window");
+		jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,700)", "");
+
 	}
 
 }

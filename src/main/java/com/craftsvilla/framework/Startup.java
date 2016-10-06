@@ -28,7 +28,7 @@ public class Startup {
 		List<Environment> environmentlist = ExclFileRead.readElx_envirnment();
 		TestsuitEnvironment.setenvirnment();
 		for (int i = 1; i < environmentlist.size(); i++) {
-
+			System.out.println("os is++++++++" + environmentlist.get(i).getOsName());
 			EnvironmentBo.setOs(environmentlist.get(i).getOsName());
 			EnvironmentBo.setBrowsersName(environmentlist.get(i).getBrowsername());
 			EnvironmentBo.setBrowserversion(environmentlist.get(i).getVersion());

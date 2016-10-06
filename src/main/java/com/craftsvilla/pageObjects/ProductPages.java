@@ -187,9 +187,11 @@ public class ProductPages {
 	public static boolean getPriceofproductsOncategorypage(WebDriver driver, String sort) {
 		// TODO Auto-generated method stub
 		List<WebElement> productsprice = DriverActions.findElements(driver, ObjectRepository_HomePage.productprice);
+		//productsprice.addAll(DriverActions.findElements(driver, ObjectRepository_HomePage.productprice));
 		List<Integer> intproductprice = new ArrayList<>();
 		List<Integer> sortedPrice = new ArrayList<>();
 		Boolean result = true;
+		System.out.println("Total product" + productsprice);
 		int price;
 		for (int i = 0; i < productsprice.size(); i++) {
 			String formattedvalue = productsprice.get(i).getText();
@@ -210,10 +212,69 @@ public class ProductPages {
 				//price = Integer.parseInt(formattedvaluebuffer.toString());
 				//intproductprice.add(price);
 			} else {
-				price = Integer.parseInt(formattedvalue);
+				StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
+				int detelechar = formattedvaluebuffer.indexOf("₹");
+
+				formattedvaluebuffer.deleteCharAt(detelechar);
+				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
 				intproductprice.add(price);
 			}
+			System.out.println(price);
+		}
+		sortedPrice.addAll(intproductprice);
+		if (sort.equalsIgnoreCase("ASC")) {
+			System.out.println("ASC sorting");
+			Collections.sort(sortedPrice);
+		} else {
+			Collections.sort(sortedPrice, Collections.reverseOrder());
+		}
+		for (int i = 0; i < intproductprice.size(); i++) {
+			if (!intproductprice.get(i).equals(sortedPrice.get(i))) {
+				System.out.println("Price Sorting mismatch" + sortedPrice.get(i));
+				result = false;
+			}
+		}
 
+		return result;
+	}
+
+	public static boolean getPriceofproductsOnFeedpage(WebDriver driver, String sort) {
+		// TODO Auto-generated method stub
+		List<WebElement> productsprice = DriverActions.findElements(driver,
+				ObjectRepository_HomePage.productprice_FeedPage);
+
+		List<Integer> intproductprice = new ArrayList<>();
+		List<Integer> sortedPrice = new ArrayList<>();
+		Boolean result = true;
+		System.out.println("Total product" + productsprice);
+		int price;
+		for (int i = 0; i < productsprice.size(); i++) {
+			String formattedvalue = productsprice.get(i).getText();
+			if (formattedvalue.contains(",")) {
+				StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
+				int pos = formattedvaluebuffer.indexOf(",");
+				while (pos != -1) {
+					formattedvaluebuffer.deleteCharAt(pos);
+					pos = formattedvaluebuffer.indexOf(",");
+
+				}
+				int detelechar = formattedvaluebuffer.indexOf("₹");
+
+				formattedvaluebuffer.deleteCharAt(detelechar);
+
+				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
+				intproductprice.add(price);
+				//price = Integer.parseInt(formattedvaluebuffer.toString());
+				//intproductprice.add(price);
+			} else {
+				StringBuffer formattedvaluebuffer = new StringBuffer(formattedvalue);
+				int detelechar = formattedvaluebuffer.indexOf("₹");
+
+				formattedvaluebuffer.deleteCharAt(detelechar);
+				price = Integer.parseInt(formattedvaluebuffer.toString().trim());
+				intproductprice.add(price);
+			}
+			System.out.println(price);
 		}
 		sortedPrice.addAll(intproductprice);
 		if (sort.equalsIgnoreCase("ASC")) {
@@ -268,6 +329,39 @@ public class ProductPages {
 				return result;
 			}
 		}
+		return result;
+	}
+
+	public static Boolean getDiscountofproductsOncategorypage_Sort(WebDriver driver, String sort) {
+		List<WebElement> discountList = DriverActions.findElements(driver,
+				ObjectRepository_HomePage.span_DiscountSaveOnProduct);
+		List<Integer> intproductprice = new ArrayList<>();
+		List<Integer> sortedPrice = new ArrayList<>();
+		int price;
+		boolean result = true;
+		for (int i = 0; i < discountList.size(); i++) {
+			String discount = discountList.get(i).getText().trim();
+			discount = discount.replace("Save", "  ");
+			discount = discount.replace("%", "  ").trim();
+			price = Integer.parseInt(discount);
+			System.out.println(price);
+			intproductprice.add(price);
+
+		}
+		sortedPrice.addAll(intproductprice);
+		if (sort.equalsIgnoreCase("ASC")) {
+			System.out.println("ASC sorting");
+			Collections.sort(sortedPrice);
+		} else {
+			Collections.sort(sortedPrice, Collections.reverseOrder());
+		}
+		for (int i = 0; i < intproductprice.size(); i++) {
+			if (!intproductprice.get(i).equals(sortedPrice.get(i))) {
+				System.out.println("Price Sorting mismatch" + sortedPrice.get(i));
+				result = false;
+			}
+		}
+
 		return result;
 	}
 
