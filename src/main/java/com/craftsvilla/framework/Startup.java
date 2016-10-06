@@ -29,8 +29,9 @@ public class Startup {
 		PropertyReader read = new PropertyReader();
 		System.out.println("this is new testsuits");
 		String DEFAULT_URL = System.getenv("URL");
+		String RunOnBrowserStack = System.getenv("RunOnBrowserStack");
 		//String DEFAULT_URL = read.getPropertyValue("url");
-		System.out.println("RUN time PArameter" + DEFAULT_URL);
+		//System.out.println("RUN time PArameter" + DEFAULT_URL);
 		FileOutputStream out = null;
 		try {
 			String URL = read.getPropertyValue("url");
@@ -43,6 +44,7 @@ public class Startup {
 
 			out = new FileOutputStream("src/main/resources/Input/Config.properties");
 			props.setProperty("url", DEFAULT_URL);
+			props.setProperty("RunOnBrowserStack", RunOnBrowserStack);
 			props.store(out, null);
 			out.close();
 		} catch (IOException e) {

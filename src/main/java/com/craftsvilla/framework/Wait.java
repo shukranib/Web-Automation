@@ -10,7 +10,7 @@ public class Wait {
 
 		synchronized (driver) {
 			try {
-				driver.wait(2000);
+				driver.wait(700);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -21,7 +21,7 @@ public class Wait {
 	public static void defaultHighWait(WebDriver driver) {
 		synchronized (driver) {
 			try {
-				driver.wait(7000);
+				driver.wait(5000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -32,7 +32,7 @@ public class Wait {
 	public static void defaultsmallWait(WebDriver driver) {
 		synchronized (driver) {
 			try {
-				driver.wait(1000);
+				driver.wait(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
