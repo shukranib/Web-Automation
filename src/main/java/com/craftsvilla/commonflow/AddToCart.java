@@ -34,7 +34,7 @@ public class AddToCart {
 	public static void addToCartWithoutLogin(WebDriver driver) {
 
 		Wait.defaultMediumWait(driver);
-		if (read.getPropertyValue("prodenv").equalsIgnoreCase("N")) {
+		if (read.getPropertyValue("url").contains("dev")) {
 			System.out.println("Stagging environment");
 			driver.get("http://dev6.craftsvilla.com/activate");
 			Wait.defaultMediumWait(driver);
