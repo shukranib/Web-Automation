@@ -15,7 +15,8 @@ public class AddToCart {
 
 		login.loginflow(driver);
 		Wait.defaultHighWait(driver);
-		driver.get(read.getPropertyValue("url") + "/catalog/product/view/id/4331545/s/self-red");
+		driver.get(read.getPropertyValue("url")
+				+ "/catalog/product/view/id/5273209/sfycymf-villa-exclusive-dress-blue-suits-material");
 		//http://www.craftsvilla.com/catalog/product/view/id/4331545/s/test
 		/*HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
@@ -46,7 +47,7 @@ public class AddToCart {
 
 		} else {
 			driver.get(read.getPropertyValue("url")
-					+ "/catalog/product/view/id/4331545/s/test?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
+					+ "/catalog/product/view/id/5273209/sfycymf-villa-exclusive-dress-blue-suits-material?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
 		}
 		/*HomePage.clic	kOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
@@ -76,7 +77,7 @@ public class AddToCart {
 
 		} else {
 			driver.get(read.getPropertyValue("url")
-					+ "/catalog/product/view/id/4331545/s/test?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
+					+ "/catalog/product/view/id/5273209/sfycymf-villa-exclusive-dress-blue-suits-material?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
 		}
 		Wait.defaultHighWait(driver);
 		HomePage.clickonAddToCartButton(driver);
