@@ -14,9 +14,21 @@ public class AddToCart {
 	public static void addFirstProductToCart(WebDriver driver) {
 
 		login.loginflow(driver);
-		Wait.defaultHighWait(driver);
-		driver.get(read.getPropertyValue("url")
-				+ "/catalog/product/view/id/5273209/sfycymf-villa-exclusive-dress-blue-suits-material");
+		Wait.defaultMediumWait(driver);
+		if (read.getPropertyValue("url").contains("dev")) {
+			System.out.println("Stagging environment");
+			driver.get("http://dev6.craftsvilla.com/activate");
+			Wait.defaultMediumWait(driver);
+			driver.findElement(By.id("dev8")).click();
+			Wait.defaultMediumWait(driver);
+			driver.get(
+					"http://dev8.craftsvilla.com/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
+			Wait.defaultHighWait(driver);
+
+		} else {
+			driver.get(read.getPropertyValue("url")
+					+ "/catalog/product/view/id/5273209/sfycymf-villa-exclusive-dress-blue-suits-material?utm_medium=CVTEST&utm_source=CVTEST&utm_campaign=CVTEST");
+		}
 		//http://www.craftsvilla.com/catalog/product/view/id/4331545/s/test
 		/*HomePage.clickOnFistCategory(driver);
 		Wait.defaultHighWait(driver);
@@ -71,8 +83,9 @@ public class AddToCart {
 			Wait.defaultMediumWait(driver);
 			driver.findElement(By.id("dev8")).click();
 			Wait.defaultMediumWait(driver);
-			driver.get(
-					"http://dev8.craftsvilla.com/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
+
+			driver.get(read.getPropertyValue("url")
+					+ "/catalog/product/view/id/329234/s/turquoise-blue-full-work-flower-potli-batwa");
 			Wait.defaultHighWait(driver);
 
 		} else {
