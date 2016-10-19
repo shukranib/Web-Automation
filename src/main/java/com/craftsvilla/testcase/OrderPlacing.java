@@ -15,7 +15,7 @@ public class OrderPlacing {
 
 	@Test
 	public void codOrderPlaceGuestCheckout() {
-		driver = DriverSelector.getDriver();
+		driver = DriverSelector.getDriver_browserstacknew();
 		Assert.assertTrue(CheckOut.codOrderPlaceGuestCheckout(driver));
 	}
 
