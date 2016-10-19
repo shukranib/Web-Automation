@@ -27,4 +27,8 @@ target/dependency-jars
 target/generated-sources
 target/maven-archiver
 target/maven-status
+.classpath
+test-output
 target/surefire
+target
+
