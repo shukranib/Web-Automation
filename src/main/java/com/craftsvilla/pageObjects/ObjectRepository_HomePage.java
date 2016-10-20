@@ -1,6 +1,7 @@
 package com.craftsvilla.pageObjects;
 
 public class ObjectRepository_HomePage {
+	public static String lastproduct_Category = "lastproduct_Category";
 	public static String FirstproductFromSimlarProduct = "FirstproductFromSimlarProduct";
 	public static String FirstProductFromRecentlyViewed = "FirstProductFromRecentlyViewed";
 	public static String FirstColorFromColorFilter_search = "FirstColorFromColorFilter_search";
