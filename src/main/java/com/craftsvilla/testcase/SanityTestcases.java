@@ -242,11 +242,11 @@ public class SanityTestcases {
 		ProductPages.clickOnPriceSortingOnCategoryPage(driver, "ASC");
 		Wait.defaultHighWait(driver);
 		Assert.assertTrue(SortFlow.priceSortOnCategoryPage(driver, "ASC"));
-
 	}
 
 	@Test
 	public void subsubCategoryDiscountSorting() {
+
 		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/banarasi-sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
