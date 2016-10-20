@@ -136,7 +136,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subCategoryDiscountFilter() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		DriverActions.scrollDownhalfWindow(driver);
@@ -151,7 +151,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subCategoryPriceFilterFilter() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
@@ -163,7 +163,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subCategoryPriceSortDSC() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
@@ -174,7 +174,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subCategoryPriceSortASC() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
@@ -186,7 +186,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subCategoryDiscountSorting() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultHighWait(driver);
@@ -197,7 +197,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subsubCategoryDiscountFilter() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/banarasi-sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		DriverActions.scrollDownhalfWindow(driver);
@@ -212,7 +212,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subsubCategoryPriceFilterFilter() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/banarasi-sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
@@ -224,7 +224,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subsubCategoryPriceSortDSC() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/banarasi-sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
@@ -235,7 +235,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subsubCategoryPriceSortASC() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/banarasi-sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultMediumWait(driver);
@@ -247,7 +247,7 @@ public class SanityTestcases {
 
 	@Test
 	public void subsubCategoryDiscountSorting() {
-		String url = read.getPropertyValue("url") + "womens-clothing/sarees/banarasi-sarees/";
+		String url = read.getPropertyValue("url") + "/womens-clothing/sarees/banarasi-sarees/";
 		driver = DriverSelector.getDriver();
 		driver.get(url);
 		Wait.defaultHighWait(driver);
