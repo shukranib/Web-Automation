@@ -48,6 +48,7 @@ public class MailSending {
 		htmlbody.append("<h3>Total Passed testcases = " + passcount);
 		htmlbody.append("<br>");
 		htmlbody.append("Total Failed testcases = " + failCount + "</h3>");
+		htmlbody.append("Comment With Build " + System.getenv("Comment") + "</h3>");
 		String browserName = EnvironmentBo.getBrowsersName();
 		String osName = EnvironmentBo.getOs();
 
@@ -113,7 +114,7 @@ public class MailSending {
 
 		if (failCount == 0) {
 			//message.setSubject("All testcases are passed");
-			emailMessagenew.setSubject("[Tracking]All testcases are passed passed");
+			emailMessagenew.setSubject("[Sanity]All testcases are passed passed");
 		} else {
 			emailMessagenew.setSubject(severityWiseCount(failedTestCases));
 			//message.setSubject(severityWiseCount(failedTestCases));
@@ -204,18 +205,18 @@ public class MailSending {
 			}
 		}
 		if (critical != 0) {
-			result = "[Tracking]" + critical + "Critical testcases are failing";
+			result = "[Sanity]" + critical + "Critical testcases are failing";
 			return result;
 		} else {
 			if (high > 0) {
-				result = "[Tracking]" + high + " Major testcases are failing";
+				result = "[Sanity]" + high + " Major testcases are failing";
 				return result;
 			} else {
 				if (medium > 0) {
-					result = "[Tracking]" + medium + "  Medium testcases are failing";
+					result = "[Sanity]" + medium + "  Medium testcases are failing";
 					return result;
 				} else {
-					result = "[Tracking]" + low + "  Minor testcases are failing";
+					result = "[Sanity]" + low + "  Minor testcases are failing";
 					return result;
 				}
 			}
