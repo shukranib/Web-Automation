@@ -285,12 +285,18 @@ public class SanityTestcases {
 		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);
 		DriverActions.click(driver, ObjectRepository_HomePage.FirstProductFromCategory);
 		Wait.defaultHighWait(driver);
-		DriverActions.mousehover(driver, ObjectRepository_HomePage.megaMenu_salwarsuit);
+		driver.navigate().back();
+		/*DriverActions.mousehover(driver, ObjectRepository_HomePage.megaMenu_salwarsuit);
 		Wait.defaultMediumWait(driver);
-		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);
-		Wait.defaultMediumWait(driver);
-		driver.findElement(By.xpath(".//*[@id='listProducts']/div[1]/div[4]/div[1]/a/img")).click();
-		DriverActions.scrollDownWindowTillpagination(driver);
+		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);*/
+		Wait.defaultHighWait(driver);
+		driver.findElement(By.xpath(".//*[@id='listProducts']/div[1]/div[4]/div/div[1]/a/img")).click();
+		Wait.defaultHighWait(driver);
+		WebElement element = DriverActions.findElement(driver, ObjectRepository_HomePage.FirstProductFromRecentlyViewed);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element);
+		// actions.click();.//*[@id='main']/div[9]/h2
+		actions.perform();
 		Assert.assertTrue(
 				DriverActions.isElementDisplay(driver, ObjectRepository_HomePage.FirstProductFromRecentlyViewed));
 
@@ -356,6 +362,7 @@ public class SanityTestcases {
 		String prodname = DriverActions.getText(driver, ObjectRepository_HomePage.firstProductNameFromVendorPage);
 		System.out.println("Product Name" + prodname);
 		driver.findElement(By.id("vpp2")).click();
+		Wait.defaultHighWait(driver);
 		String prodnamesecond = DriverActions.getText(driver, ObjectRepository_HomePage.firstProductNameFromVendorPage);
 		System.out.println("Product Name" + prodnamesecond);
 		if (prodname.equals(prodnamesecond)) {
@@ -378,14 +385,14 @@ public class SanityTestcases {
 		Wait.defaultMediumWait(driver);
 		DriverActions.click(driver, ObjectRepository_HomePage.megamenu_Anarkali);
 
-		Wait.defaultMediumWait(driver);
+		Wait.defaultHighWait(driver);
 		String prodname = DriverActions.getText(driver, ObjectRepository_HomePage.FirstProductFromCategory);
 		System.out.println("Product Name" + prodname);
 		//DriverActions.scrollDownWindow(driver);
-		WebElement element = driver.findElement(By.xpath(".//*[@id='main']/div/div[9]/h2"));
+		WebElement element = DriverActions.findElement(driver, ObjectRepository_HomePage.lastproduct_Category);
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
-		// actions.click();
+		// actions.click();.//*[@id='main']/div[9]/h2
 		actions.perform();
 		driver.findElement(By.id("cpp2")).click();
 		String prodnamesecond = DriverActions.getText(driver, ObjectRepository_HomePage.FirstProductFromCategory);
