@@ -47,7 +47,7 @@ public class MailSending {
 		failedTestCases.addAll(getStatusWiseList(testcasesResult, "Failed"));
 		htmlbody.append("<h3>Total Passed testcases = " + passcount);
 		htmlbody.append("<br>");
-		htmlbody.append("Total Failed testcases = " + failCount + "</h3>");
+		htmlbody.append("Total Failed testcases = " + failCount);
 		htmlbody.append("Comment With Build " + System.getenv("Comment") + "</h3>");
 		String browserName = EnvironmentBo.getBrowsersName();
 		String osName = EnvironmentBo.getOs();
